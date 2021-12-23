@@ -14,7 +14,7 @@ module.exports = {
     name: `황성우`,
     bio: {
       role: `개발자`,
-      description: ['놀라울정도로 집착하는', '내부구조에 관심 있는', '능동적으로 성장하는'],
+      description: ['기본기에 자신있는', '내부구조에 관심 있는', '능동적으로 성장하는'],
       thumbnail: 'zoomkoding.gif', // Path to the image in the 'asset' folder
     },
     social: {
@@ -57,6 +57,13 @@ module.exports = {
         links: {
           post: 'https://solved.ac/profile/hsw0194',
         },
+      },
+      {
+        date:'2021.10 ~',
+        activity : 'Google Developer Student Clubs',
+        links :{
+          post: 'https://gdsc.community.dev/hanyang-university/'
+        }
       },
     ],
 
