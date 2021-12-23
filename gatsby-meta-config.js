@@ -1,26 +1,26 @@
 module.exports = {
-  title: `zoomkoding.com`,
-  description: `줌코딩의 개발일기`,
+  title: `becomeweasel.github.io`,
+  description: `황성우의 우당탕탕 개발기`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
-  siteUrl: `https://www.zoomkoding.com`,
+  siteUrl: `https://becomeweasel.github.io/`,
   ogImage: `/og-image.png`, // Path to your in the 'static' folder
   comments: {
     utterances: {
-      repo: ``, // `zoomkoding/zoomkoding-gatsby-blog`,
+      repo: `BecomeWeasel/BecomeWeasel.github.io`, // `zoomkoding/zoomkoding-gatsby-blog`,
     },
   },
   ga: '0', // Google Analytics Tracking ID
   author: {
-    name: `정진혁`,
+    name: `황성우`,
     bio: {
       role: `개발자`,
-      description: ['사람에 가치를 두는', '능동적으로 일하는', '이로운 것을 만드는'],
-      thumbnail: 'sample.png', // Path to the image in the 'asset' folder
+      description: ['놀라울정도로 집착하는', '내부구조에 관심 있는', '능동적으로 성장하는'],
+      thumbnail: 'zoomkoding.gif', // Path to the image in the 'asset' folder
     },
     social: {
-      github: ``, // `https://github.com/zoomKoding`,
-      linkedIn: ``, // `https://www.linkedin.com/in/jinhyeok-jeong-800871192`,
-      email: ``, // `zoomkoding@gmail.com`,
+      github: `https://github.com/BecomeWeaselg`,
+      linkedIn: `https://www.linkedin.com/in/sungwoo-hwang/`,
+      email: `hsw0194@gmail.com`,
     },
   },
 
@@ -43,12 +43,19 @@ module.exports = {
       // ========================================================
       // ========================================================
       {
-        date: '2021.02 ~',
-        activity: '개인 블로그 개발 및 운영',
+        date: '2019.01 ~',
+        activity: '개발 시작',
+      },
+      {
+        date: '2019.09 ~ 2019.12',
+        activity: 'SKT AI 커리큘럼 Capstone Project 최우수상',
+      },
+
+      {
+        date: '2020.06 ~ 2021.8',
+        activity: '알고리즘 휴학 & 코드포스 블루 달성',
         links: {
-          post: '/gatsby-starter-zoomkoding-introduction',
-          github: 'https://github.com/zoomkoding/zoomkoding-gatsby-blog',
-          demo: 'https://www.zoomkoding.com',
+          post: 'https://solved.ac/profile/hsw0194',
         },
       },
     ],
@@ -71,18 +78,18 @@ module.exports = {
       },
       // ========================================================
       // ========================================================
+      /*
       {
-        title: '개발 블로그 테마 개발',
+        title: '만다오(프로모션 웹앱 빌더) 개발',
         description:
-          '개발 블로그를 운영하는 기간이 조금씩 늘어나고 점점 많은 생각과 경험이 블로그에 쌓아가면서 제 이야기를 담고 있는 블로그를 직접 만들어보고 싶게 되었습니다. 그동안 여러 개발 블로그를 보면서 좋았던 부분과 불편했던 부분들을 바탕으로 레퍼런스를 참고하여 직접 블로그 테마를 만들게 되었습니다.',
-        techStack: ['gatsby', 'react'],
-        thumbnailUrl: 'blog.png',
+          '만다오는 우아한형제들에 입사한 후 처음으로 진행한 프로젝트로, 각종 프로모션 페이지를 마케터와 디자이너가 개발자 없이 만들 수 있게 하기 위한 WYSIWYG 방식의 웹 에디터입니다. 만다오 팀은 모든 사람이 디자인을 해야한다는 신념 하에 모든 팀원들이 직접 기획, 디자인, 개발을 진행하고 있습니다. 만다오는 제가 합류한 후에 고도화된 기능들이 많이 추가되어 가고 있고, 최종적으로는 모든 프로모션 페이지를 만들 수 있도록 계속해서 기능을 확장해나갈 예정입니다.',
+        techStack: ['react', 'nestjs'],
+        thumbnailUrl: 'mandao.png',
         links: {
-          post: '/gatsby-starter-zoomkoding-introduction',
-          github: 'https://github.com/zoomkoding/zoomkoding-gatsby-blog',
-          demo: 'https://www.zoomkoding.com',
+          post: 'https://techblog.woowahan.com/2719',
         },
       },
+      */
     ],
   },
 };

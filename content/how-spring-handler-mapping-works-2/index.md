@@ -1,0 +1,122 @@
+---
+emoji: 📓
+title: Spring MVC - HandlerMapping의 동작방식 이해하기 2편
+date: '2021-6-9 00:00:00'
+author: weasel
+tags: Spring handlerMapping
+categories: Spring
+---
+![](./image.png)
+
+### MappingRegistry
+`MappingRegistry`는 아까 살펴본 `AbstractHandlerMethodMapping`의 내부 클래스다. `MappingRegistry`는 **handler method에 대한 모든 mapping을 유지 관리**하고 **`lookup`을 수행하는 method**를 가지고 있고 동시성을 가진 접근을 가능하게 해주는 레지스트리다.
+>A registry that maintains all mappings to handler methods, exposing methods to perform lookups and providing concurrent access.
+Package-private for testing purposes.
+
+가장 중요한 부분이 **handler method에 대한 모든 mapping을 유지 관리**하고 **`lookup`을 수행하는 method**를 가지고 있다는 것이다.
+
+```java
+class MappingRegistry {
+  private final Map<T, MappingRegistration<T>> registry = new HashMap<>();
+
+  private final Map<T, HandlerMethod> mappingLookup = new LinkedHashMap<>();
+
+  private final MultiValueMap<String, T> urlLookup = new LinkedMultiValueMap<>();
+
+  private final Map<String, List<HandlerMethod>> nameLookup = new ConcurrentHashMap<>();
+
+  private final Map<HandlerMethod, CorsConfiguration> corsLookup = new ConcurrentHashMap<>();
+
+  private final ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
+  ...
+  ...
+  
+  // methods
+}
+```
+`MappingRegistry` 안에서 `Map` 자료구조를 가진 멤버 변수들이 있다. 그 중에서`LinkedMultiValueMap`이라는 자료구조를 사용한다. 이건 한개의 key에 여러 value들을 저장하는 `MultiValueMap`을 `LinkedHashMap`으로 감싼 자료구조로 Spring이 만든 자료구조다.
+
+`urlLookup`은 `LinkedMultiValueMap`의 자료구조인데, key는 `url`을 가지고, value는 `RequestMappingInfo`를 가진다. `LinkedMultiValueMap`을 쓰는 이유는 하나의 `url`에 여러 handlerMethod들에 대한 정보가 담기기 때문이다.
+
+예를 들어 `"/app/user"`라는 `url` 아래 user에 대한 정보를 조회하는 `GET`,user를 추가하는 `POST`가 매핑될때, 아래처럼 `RequestMappingInfo`가 들어가는 것이다.
+```javascript
+key : "/app/user/ 
+value : [GET /app/user,POST /app/user]
+```
+
+위와 같은 구조를 통해 `MappingRegistry`는 `url`에 해당하는 handlerMethod를 구별할 수 있게 된다. 코드로 보자.
+
+```java
+protected HandlerMethod lookupHandlerMethod(String lookupPath, HttpServletRequest request) throws Exception {
+  List<Match> matches = new ArrayList<>();
+  List<T> directPathMatches = this.mappingRegistry.getMappingsByUrl(lookupPath);
+  if (directPathMatches != null) {
+    addMatchingMappings(directPathMatches, matches, request);
+  }
+  ...
+  ...
+  if (!matches.isEmpty()) {
+    ...
+    ...
+    matches.sort(comparator);
+    Match bestMatch = matches.get(0);
+    ...
+    ...
+    request.setAttribute(BEST_MATCHING_HANDLER_ATTRIBUTE, bestMatch.handlerMethod);
+    handleMatch(bestMatch.mapping, lookupPath, request);
+    return bestMatch.handlerMethod;
+  }
+
+```
+위는 아까 잠깐 언급한 `lookupHandlerMethod`이다. _**적절한 `handlerMethod`를 가져온 후 return 한다**_ 고 했는데 그 과정이 담겨있다. 
+길다고 겁먹지 말고 한줄씩 보자. (_match되는 것이 없거나, 2개 이상인 경우는 제외함_)
+
+```java
+List<Match> matches = new ArrayList<>();
+```
+`match`를 담는 `matches`라는 리스트가 있다.
+```java 
+List<T> directPathMatches = this.mappingRegistry.getMappingsByUrl(lookupPath);
+
+```
+현재 `url`에 mapping되는 handler method들의 `RequestMappingInfo`들을 `getMappingsByUrl`로 가져온 후 `directPathMatches`에 저장한다. 예를 들어 `url`이 `/app/user`이면 `directPathMatches`에는 `[GET /app/user, POST /app/user]` 와 같은 정보가 들어오는 것이다.
+
+```java
+if (directPathMatches != null) {
+    addMatchingMappings(directPathMatches, matches, request);
+}
+```
+그 후 `[GET /app/user, POST /app/user]` 중에서 request 정보와 일치하는 것들을 `addMatchingMappings`을 통해서 `matches`에 추가한다.
+
+```java
+matches.sort(comparator);
+Match bestMatch = matches.get(0);
+```
+`matches`들을 우선순위에 맞게끔 정렬하고, request와 가장 일치하는 0번째 `match`를 `bestMatch`에 저장한다.
+
+```java
+request.setAttribute(BEST_MATCHING_HANDLER_ATTRIBUTE, bestMatch.handlerMethod);
+handleMatch(bestMatch.mapping, lookupPath, request);
+return bestMatch.handlerMethod;
+```
+`bestMatch`의 멤버인 `handlerMethod`를 return해서 최종적으로 적합한 handler method를 찾게 된다.
+
+```java
+private class Match {
+
+  private final T mapping;
+
+  private final HandlerMethod handlerMethod;
+
+}
+```
+### Reflection
+이제 마지막 궁금증만이 남았다.
+
+### 출처 
+[MappingReigstry javadoc](https://docs.spring.io/spring-framework/docs/4.3.2.RELEASE_to_4.3.3.RELEASE/Spring%20Framework%204.3.3.RELEASE/org/springframework/web/servlet/handler/AbstractHandlerMethodMapping.MappingRegistry.html)
+[LinkedMultiValueMap javadoc](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/LinkedMultiValueMap.html)
+
+```toc
+
+```
