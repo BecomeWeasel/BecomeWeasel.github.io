@@ -9,7 +9,7 @@ module.exports = {
       repo: `BecomeWeasel/BecomeWeasel.github.io`, // `zoomkoding/zoomkoding-gatsby-blog`,
     },
   },
-  ga: '0', // Google Analytics Tracking ID
+  ga: 'G-NE46C2SFP9', // Google Analytics Tracking ID
   author: {
     name: `황성우`,
     bio: {
