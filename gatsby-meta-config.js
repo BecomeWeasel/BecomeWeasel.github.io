@@ -1,8 +1,8 @@
 module.exports = {
-  title: `becomeweasel.github.io`,
+  title: `becomeweasel.me`,
   description: `황성우의 우당탕탕 개발기`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
-  siteUrl: `https://becomeweasel.github.io/`,
+  siteUrl: `https://becomeweasel.me/`,
   ogImage: `/og-image.png`, // Path to your in the 'static' folder
   comments: {
     utterances: {
