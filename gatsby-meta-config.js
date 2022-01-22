@@ -15,7 +15,7 @@ module.exports = {
     bio: {
       role: `개발자`,
       description: ['기본기에 자신있는', '내부구조에 관심 있는', '능동적으로 성장하는'],
-      thumbnail: 'zoomkoding.gif', // Path to the image in the 'asset' folder
+      thumbnail: 'profile.png', // Path to the image in the 'asset' folder
     },
     social: {
       github: `https://github.com/BecomeWeasel`,
