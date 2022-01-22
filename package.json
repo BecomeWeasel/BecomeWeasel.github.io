@@ -35,6 +35,7 @@
     "react-dom": "^17.0.1",
     "react-rotating-text": "^1.4.1",
     "sass": "^1.43.4",
+    "sharp": "^0.29.3",
     "typeface-montserrat": "^1.1.13"
   },
   "devDependencies": {
@@ -53,7 +54,7 @@
     "build": "gatsby clean && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "copy" : "cp google6d00c4bdca1a2655.html public/",
+    "copy": "cp google6d00c4bdca1a2655.html public/",
     "deploy": "gatsby clean && gatsby build && npm run copy && gh-pages -d public",
     "start": "npm run develop",
     "serve": "gatsby serve",
