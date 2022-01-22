@@ -18,7 +18,7 @@ module.exports = {
       thumbnail: 'zoomkoding.gif', // Path to the image in the 'asset' folder
     },
     social: {
-      github: `https://github.com/BecomeWeaselg`,
+      github: `https://github.com/BecomeWeasel`,
       linkedIn: `https://www.linkedin.com/in/sungwoo-hwang/`,
       email: `hsw0194@gmail.com`,
     },
