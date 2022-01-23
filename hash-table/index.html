@@ -64,324 +64,98 @@
         }
       }
     })
-  </script><title data-react-helmet="true">프로세스 스케쥴링 알고리즘</title><meta data-react-helmet="true" name="viewport" content="initial-scale=1, width=device-width"/><meta data-react-helmet="true" property="og:title" content="프로세스 스케쥴링 알고리즘"/><meta data-react-helmet="true" property="og:site_title" content="프로세스 스케쥴링 알고리즘"/><meta data-react-helmet="true" name="description" content="일단 프로세스 스케쥴링 알고리즘에 대해서 언급하기 전에, 프로세스의 상태와 Context-Switching에 대해서 알아야 한다. 여러가지 프로세스의 상태를 기반으로 전이(Transition)되며 이를 바탕으로 스케쥴링 알고리즘이 이루어진다. 프로세스의 상태  프로세스의 상태는 OS에 따라서 개수도 다르고, 명칭도 조금 다르지만, 가장 대표적인 그림은 위의 상태와 같다.  : 프로세스가 생성된 상태이다. 이때는 Readuy Queue 안에 들어 있지 않기 때문에 CPU를 받을 대상이 아니다.  : 프로세스가 CPU를 할당받기 위해 대기하는 상태이다. 보통 Ready Queue 안에 들어와있는 상태라고 얘기한다. 스케쥴링의 대상이 된다.  : 현재 CPU를 할당받아 작업중인 상태다. Single core 시스템에서는 1개다.  : 프로세스가 입출력이나 이벤트가 끝나기를 기다리는 상태이다.  : 프로세스가 종료된 상태다. 단 프로세스 구조체가 사라진 것은 아니다. 그림에서 프로세스의 …"/><meta data-react-helmet="true" property="og:description" content="일단 프로세스 스케쥴링 알고리즘에 대해서 언급하기 전에, 프로세스의 상태와 Context-Switching에 대해서 알아야 한다. 여러가지 프로세스의 상태를 기반으로 전이(Transition)되며 이를 바탕으로 스케쥴링 알고리즘이 이루어진다. 프로세스의 상태  프로세스의 상태는 OS에 따라서 개수도 다르고, 명칭도 조금 다르지만, 가장 대표적인 그림은 위의 상태와 같다.  : 프로세스가 생성된 상태이다. 이때는 Readuy Queue 안에 들어 있지 않기 때문에 CPU를 받을 대상이 아니다.  : 프로세스가 CPU를 할당받기 위해 대기하는 상태이다. 보통 Ready Queue 안에 들어와있는 상태라고 얘기한다. 스케쥴링의 대상이 된다.  : 현재 CPU를 할당받아 작업중인 상태다. Single core 시스템에서는 1개다.  : 프로세스가 입출력이나 이벤트가 끝나기를 기다리는 상태이다.  : 프로세스가 종료된 상태다. 단 프로세스 구조체가 사라진 것은 아니다. 그림에서 프로세스의 …"/><meta data-react-helmet="true" property="og:author" content="황성우"/><meta data-react-helmet="true" property="og:image" content="/og-image.png"/><meta data-react-helmet="true" property="og:type" content="website"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc4.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxK.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc4.woff2"/><style>@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc-.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxM.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc-.woff) format("woff")}</style><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link as="script" rel="preload" href="/webpack-runtime-ed04c4f53aa1c5db1755.js"/><link as="script" rel="preload" href="/framework-0c9ef8497ca6780b4a3f.js"/><link as="script" rel="preload" href="/app-08df93537b7dfc1b6aa5.js"/><link as="script" rel="preload" href="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-97a8d3c35e8d1fa14a1b.js"/><link as="script" rel="preload" href="/component---src-templates-blog-template-js-ef83b594aa693e649d30.js"/><link as="fetch" rel="preload" href="/page-data/process-scheduling-algorithm/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1073350324.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1956554647.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2938748437.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="page-wrapper"><header class="page-header-wrapper"><div class="page-header"><div class="front-section"><a class="link" href="/">becomeweasel.me</a></div><div class="trailing-section"><a class="link" href="/about">about</a><a class="link" href="/posts">posts</a><div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1l6di18" role="combobox" aria-expanded="false"><div class="search-input-wrapper"><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root search-input css-feqhe6"><div class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-11tfndm"><input type="text" aria-invalid="false" autoComplete="off" value="" class="MuiInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mnn31" aria-autocomplete="list" autoCapitalize="none" spellcheck="false"/><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium search-icon css-vubbuv" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="SearchOutlinedIcon"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></div></div></div></div></div></div></header><main class="page-content"><header class="post-header"><div class="emoji">📓</div><div class="info"><div class="categories"><a class="category" href="/posts/운영체제">운영체제</a></div></div><h1 class="title">프로세스 스케쥴링 알고리즘</h1><div class="info"><div class="author">posted by <strong>weasel</strong>,</div> <!-- -->December 25, 2021</div></header><div class="post-content"><div class="markdown"><p>일단 프로세스 스케쥴링 알고리즘에 대해서 언급하기 전에, 프로세스의 상태와 Context-Switching에 대해서 알아야 한다.</p>
-<p>여러가지 프로세스의 상태를 기반으로 전이(Transition)되며 이를 바탕으로 스케쥴링 알고리즘이 이루어진다.</p>
-<h2 id="프로세스의-상태" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%9D%98-%EC%83%81%ED%83%9C" aria-label="프로세스의 상태 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>프로세스의 상태</strong></h2>
-<p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
-    >
-      <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 80%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB3UlEQVQ4y+VU2W7aUBC9AgRm+f/PqCAhjR9wVSoWEWynNirGZbcRYRVgDJj1RDMSVprnPlTqSEfjO8u5c2dGFkII/GX864TJZBLRaBSRSASSJCGTySCVSiGdToN8BDqTJv/9TKBYslFuLBbjHCHLMuRnGfnHPAqFAprNJvr9PmzbxnA4xGg0Qq/XDb9J93o9jrEsC4qiIPsli6f8E3K5HIRhGHCGDvrdPjqdDmazGd7exphMJgiCAMvlksld18HlcgHJdDrFer3GeDyG3bJh/bJg/jRRq9YgKPFwOGCz2eB0OnFCu91GtVqFrutsJ6Lz+czVl8tl6K86/J3PsefTGZ7n4Xg8cjFiPp+z43a7sSZjwzRRKVXQMBrodjtsXywWKP4o4uHxAdlcFqqmhjl3IS5BBB+FqqEnaaqGltWC7/uh3f5tQ/mmcGu2222Yc71ew2KYkHq12+0Y+/2e4Y5cJtZ1DS/1F1QqZR4G9Zv89ES6jPSdkOIF9YgMnrfhfhGo9CA4cIDVtFCv1WEaJlRV5X7RxTSU1WoVDoqEcoWmaeE6OI4TwnVdHkLxe5HXQv4qo1QqYTAY/BFHZ67ccXiIIpFIQJISIP0ZtMTxeBzxRJwXl5aY8Dnuo138fz+Hd45V7ag5zclUAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="Untitled"
-        title="Untitled"
-        src="/static/3cd3f8aa2252e3e8c5282a5fa75d52c9/37523/process_state.png"
-        srcset="/static/3cd3f8aa2252e3e8c5282a5fa75d52c9/e9ff0/process_state.png 180w,
-/static/3cd3f8aa2252e3e8c5282a5fa75d52c9/f21e7/process_state.png 360w,
-/static/3cd3f8aa2252e3e8c5282a5fa75d52c9/37523/process_state.png 720w,
-/static/3cd3f8aa2252e3e8c5282a5fa75d52c9/302a4/process_state.png 1080w,
-/static/3cd3f8aa2252e3e8c5282a5fa75d52c9/21b4d/process_state.png 1280w"
-        sizes="(max-width: 720px) 100vw, 720px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-    </span></p>
-<p>프로세스의 상태는 OS에 따라서 개수도 다르고, 명칭도 조금 다르지만, 가장 대표적인 그림은 위의 상태와 같다.</p>
-<ul>
-<li><code class="language-text">new</code> : 프로세스가 생성된 상태이다. 이때는 Readuy Queue 안에 들어 있지 않기 때문에 <strong>CPU를 받을 대상이 아니다.</strong></li>
-<li><code class="language-text">ready</code> : 프로세스가 <strong>CPU를 할당받기 위해 대기</strong>하는 상태이다. 보통 <strong>Ready Queue 안</strong>에 들어와있는 상태라고 얘기한다. <strong>스케쥴링의 대상</strong>이 된다.</li>
-<li><code class="language-text">running</code> : 현재 CPU를 할당받아 <strong>작업중인</strong> 상태다. Single core 시스템에서는 1개다.</li>
-<li><code class="language-text">wating</code> : 프로세스가 <strong>입출력이나 이벤트가 끝나기를 기다리는</strong> 상태이다.</li>
-<li><code class="language-text">terminated</code> : 프로세스가 <strong>종료된</strong> 상태다. 단 프로세스 구조체가 사라진 것은 아니다.</li>
-</ul>
-<p>그림에서 프로세스의 상태가 특정 작업들로 인하여 변하는 것을 볼 수 있는데 이것을 프로세스의 <strong>상태 전이(Transition)</strong> 라고 한다.</p>
-<ul>
-<li><code class="language-text">admitted</code> : 생성된 프로세스가 CPU를 받을 준비가 되어서 <strong>Long-term Scheduler(Job Scheduler)</strong> 에 의해서 선택받아 Reaudy queue로 옮겨지는 작업이다.
-<ul>
-<li><strong>Long Term Scheduer :</strong> 어떠한 프로세스를 레디큐로 옮길지 선택하는 스케쥴러다. 자주 일어나지 않고, <strong>멀티프로그래밍의 정도(DOM)</strong> 가 이것에 영향을 받는다.
-<ul>
-<li>일반적으로 많은 프로세스가 한꺼번에 메모리에 올라오면, 일부는 디스크에 저장된다.</li>
-<li>존재하는 이유는 기존의 프로세스들이 자원을 확보하기 위해서 존재한다. 무턱대고 다 RQ로 올리면 기존의 프로세스는 작업이 진행되지 않는다.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code class="language-text">scheduler dispatch</code> : <code class="language-text">ready</code> 상태에 있는 프로세스를 <strong>Short term Scheduler</strong>가 선택해서 자원을 할당한 후 실행시키는 행위다.
-<ul>
-<li><strong>Short Term Scheduler :</strong> RQ에 있는 프로세스 중에서 어떠한 것이 다음으로 실행될지, CPU를 할당할지 선택하는 스케쥴러다.
-<ul>
-<li>빈번하게 발생한다. 그렇기에 이 스케쥴러의 오버헤드를를 줄여야 전체 오버헤드를 줄일 수 있다.</li>
-<li>스케쥴링 알고리즘과 아주 깊은 연관이 있다.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code class="language-text">interrupt</code>  : 인터럽트는 조금 논란이 있는데, 저 그림상에서는 입출력 이벤트는 포함하지 않는다. <strong>Context-switching이 일어난다.</strong>
-<ul>
-<li>선점식(preemptive) 방식에서는 타이머(<strong>Timer)</strong> 이벤트가 있다. 인터럽트 핸들러가 인터럽트를 일으켜서 STS에게 다른 프로세스를 선택할지, 지금 프로세스를 그대로 둘지 결정하게끔 한다. 만약 바뀐다면 전이가 일어난다.</li>
-<li>비선점식(non-preemptive 혹은 cooperative) 방식에서는 양보(<strong>Yield</strong>)가 있다. 이 방식에서는 OS가 프로세스를 스케쥴링할때 인터럽트를 사용,허용하지 않는다. 대신에 작동중인 프로세스가 자발적으로 양보를 해서 스케쥴러가 다른 프로세스를 스케쥴링할 수 있는 방식을 쓴다.</li>
-</ul>
-</li>
-<li><code class="language-text">I/O or event wait</code> : 실행 중인 프로세스가 입출력이나 이벤트를 처리해야 하는 경우, 입출력/이벤트가 끝날때까지 대기 상태로 만드는 것. <strong>Context-switching이 일어난다.</strong>
-<ul>
-<li>여기서 왜 <strong>ready로 안보내는지가 중요하다.</strong> 왜냐면, 이 프로세스는 ready로 가서 자원을 할당받을 자격이 없다. <strong>이벤트나 입출력이 끝나지 않았으니 자원을 받아도 사용하지 못하기 때문이다.</strong></li>
-</ul>
-</li>
-<li><code class="language-text">I/O or event completion</code> : 입출력/이벤트가 끝난 프로세스를 ready 상태로 만들어 STS에게 선택될수 있게끔 한다. <code class="language-text">wait</code> 과는 다르게 자원을 할당받기만 하면 작업을 이어나갈 수 있기 때문이다.</li>
-</ul>
-<h2 id="context-switching" style="position:relative;"><a href="#context-switching" aria-label="context switching permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>Context-switching?</strong></h2>
-<p>정확한 정의는 ”<strong>CPU</strong>가 <strong>다른 프로세스로 스위치</strong>할때, 시스템(OS)이 <strong>기존의 프로세스의 상태를 저장</strong>하고, <strong>다음</strong> 진행될 <strong>프로세스의 저장된 상태값을 불러오는것</strong>“이다.</p>
-<ul>
-<li>이 때 중요한것이 PCB 등인데, PCB 안에는 CPU 레지스터에 대한 정보, PC,페이지 테이블과 관련된 정보가 있다. 그렇기에 PCB는 프로세스의 문맥을 보관하고 있는 것이다.</li>
-<li>다시 작업을 수행할때 이것을 참조해서 어디부터 다시 시작할지 참고 할 수 있다. 그렇기에 새로운 프로세스로 선택될때도 PCB를 불러와야하고, ready 상태나 waiting 상태로 프로세스가 전이될때도 PCB를 저장해야한다.</li>
-</ul>
-<p>일반적으로 context switch하는 시간은 순전한 오버헤드다. 대부분의 시스템은 이 전환 시간동안 어떤 의미있는 작업을 하지 않는다.</p>
-<p>또 가장 중요한 부분이 <strong>context-swtichg을 하면서 Cache flushing이 일어난다</strong>. 그렇기에 그 다음에는 <strong>연속적인 캐시 미스</strong>(successive cache misses)가 발생한다. 이 과정이 대부분의 오버헤드를 차지한다.</p>
+  </script><title data-react-helmet="true">Hash Table에 대해서 완전 자세하게 알아보자.</title><meta data-react-helmet="true" name="viewport" content="initial-scale=1, width=device-width"/><meta data-react-helmet="true" property="og:title" content="Hash Table에 대해서 완전 자세하게 알아보자."/><meta data-react-helmet="true" property="og:site_title" content="Hash Table에 대해서 완전 자세하게 알아보자."/><meta data-react-helmet="true" name="description" content="내부적으로 배열을 사용하여 조회,삽입,삭제 모두 안에 수행하기 위한 특별한 자료구조다. 배열의 인덱스를 유일하게(혹은 그에 가깝게) 지정하기 위해서 데이터와 연관된 고유한 숫자를 만들어낸 후 그것을 인덱스로 사용한다. 또 일반적으로 순서를 보장하지 않기 때문에, 순서, 관계가 있는 목적에는 적합하지 않다. Hash funciton 데이터에 연관된 고유한 값을 만들기 위해서 해시 함수를 사용한다. 이 해시 함수를 통해서 나온 결과값을 해시 값(혹은 해쉬 코드,해쉬)라고 하고 이것을 이용해 데이터에 대한 접근 연산을 수행한다. 가장 많이 쓰이는 해시 함수는 나머지 연산(modulo)를 이용한다. 키  를 어떤 정해진 수  로 나눈 나머지를  를 저장하는 버킷의 인덱스로 사용하는 것이다.
+→  일반적으로  는 적절히 큰 소수(prime number)를 사용하는데 이유는 다음과 같다. 만약 D를 소수가 아닌 값이라 하면, D의 모든 약수는 자신의 배수가 곧 키값이 된다. 해시충돌이 많이 …"/><meta data-react-helmet="true" property="og:description" content="내부적으로 배열을 사용하여 조회,삽입,삭제 모두 안에 수행하기 위한 특별한 자료구조다. 배열의 인덱스를 유일하게(혹은 그에 가깝게) 지정하기 위해서 데이터와 연관된 고유한 숫자를 만들어낸 후 그것을 인덱스로 사용한다. 또 일반적으로 순서를 보장하지 않기 때문에, 순서, 관계가 있는 목적에는 적합하지 않다. Hash funciton 데이터에 연관된 고유한 값을 만들기 위해서 해시 함수를 사용한다. 이 해시 함수를 통해서 나온 결과값을 해시 값(혹은 해쉬 코드,해쉬)라고 하고 이것을 이용해 데이터에 대한 접근 연산을 수행한다. 가장 많이 쓰이는 해시 함수는 나머지 연산(modulo)를 이용한다. 키  를 어떤 정해진 수  로 나눈 나머지를  를 저장하는 버킷의 인덱스로 사용하는 것이다.
+→  일반적으로  는 적절히 큰 소수(prime number)를 사용하는데 이유는 다음과 같다. 만약 D를 소수가 아닌 값이라 하면, D의 모든 약수는 자신의 배수가 곧 키값이 된다. 해시충돌이 많이 …"/><meta data-react-helmet="true" property="og:author" content="황성우"/><meta data-react-helmet="true" property="og:image" content="/og-image.png"/><meta data-react-helmet="true" property="og:type" content="website"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc4.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxK.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc4.woff2"/><style>@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc-.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxM.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc-.woff) format("woff")}</style><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link as="script" rel="preload" href="/webpack-runtime-ed04c4f53aa1c5db1755.js"/><link as="script" rel="preload" href="/framework-0c9ef8497ca6780b4a3f.js"/><link as="script" rel="preload" href="/app-08df93537b7dfc1b6aa5.js"/><link as="script" rel="preload" href="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-97a8d3c35e8d1fa14a1b.js"/><link as="script" rel="preload" href="/component---src-templates-blog-template-js-ef83b594aa693e649d30.js"/><link as="fetch" rel="preload" href="/page-data/hash-table/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1073350324.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1956554647.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2938748437.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="page-wrapper"><header class="page-header-wrapper"><div class="page-header"><div class="front-section"><a class="link" href="/">becomeweasel.me</a></div><div class="trailing-section"><a class="link" href="/about">about</a><a class="link" href="/posts">posts</a><div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1l6di18" role="combobox" aria-expanded="false"><div class="search-input-wrapper"><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root search-input css-feqhe6"><div class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-11tfndm"><input type="text" aria-invalid="false" autoComplete="off" value="" class="MuiInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mnn31" aria-autocomplete="list" autoCapitalize="none" spellcheck="false"/><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium search-icon css-vubbuv" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="SearchOutlinedIcon"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></div></div></div></div></div></div></header><main class="page-content"><header class="post-header"><div class="emoji">📓</div><div class="info"><div class="categories"><a class="category" href="/posts/자료구조">자료구조</a></div></div><h1 class="title">Hash Table에 대해서 완전 자세하게 알아보자.</h1><div class="info"><div class="author">posted by <strong>weasel</strong>,</div> <!-- -->January 10, 2022</div></header><div class="post-content"><div class="markdown"><p>내부적으로 배열을 사용하여 조회,삽입,삭제 모두 <code class="language-text">O(1)</code>안에 수행하기 위한 특별한 자료구조다. 배열의 인덱스를 유일하게(혹은 그에 가깝게) 지정하기 위해서 데이터와 연관된 고유한 숫자를 만들어낸 후 그것을 인덱스로 사용한다.</p>
+<p>또 일반적으로 순서를 보장하지 않기 때문에, 순서, 관계가 있는 목적에는 적합하지 않다.</p>
+<h3 id="hash-funciton" style="position:relative;"><a href="#hash-funciton" aria-label="hash funciton permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hash funciton</h3>
+<p>데이터에 연관된 고유한 값을 만들기 위해서 해시 함수를 사용한다. 이 해시 함수를 통해서 나온 결과값을 해시 값(혹은 해쉬 코드,해쉬)라고 하고 이것을 이용해 데이터에 대한 접근 연산을 수행한다.</p>
+<p>가장 많이 쓰이는 해시 함수는 나머지 연산(modulo)를 이용한다. 키 <code class="language-text">k</code> 를 어떤 정해진 수 <code class="language-text">D</code> 로 나눈 나머지를 <code class="language-text">k</code> 를 저장하는 버킷의 인덱스로 사용하는 것이다.
+→ <code class="language-text">h(k)=k</code></p>
+<p>일반적으로 <code class="language-text">D</code> 는 적절히 큰 소수(prime number)를 사용하는데 이유는 다음과 같다.</p>
 <blockquote>
-<p>💡 캐시를 날리는 이유는 새로운 프로세스는 새로운 virtual adrress를 가지는 새로운 메모리 주소다. 그렇기 때문에 기존의 캐시된 메모리의 주소 영역을 사용할 필요가 없기에 기존의 캐시된 메모리를 Flush 하는 것.</p>
+<p>만약 D를 소수가 아닌 값이라 하면, D의 모든 약수는 자신의 배수가 곧 키값이 된다. 해시충돌이 많이  일어나는것이다.</p>
 </blockquote>
-<blockquote>
-<p>참고로 스레드도 컨텍스트스위칭을 한다. 그치만 <strong>쓰레드들끼리는 주소공간을 공유</strong>하기 때문에 캐시를 flush할 필요가 없다.</p>
-</blockquote>
-<h3 id="process-context-switching-vs-thread-context-switching" style="position:relative;"><a href="#process-context-switching-vs-thread-context-switching" aria-label="process context switching vs thread context switching permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>Process context switching vs Thread context switching</strong></h3>
-<p>프로세스만 context switching을 하는 것이 아닌 쓰레드끼리도 context switching을 한다. 다만 아래와 같은 차이점이 있다.</p>
+<p>만약 이 해시 함수가 엄밀하지 못해서 <strong>여러개의 객체가 서로 같은 값을 가지게 된다면 이것을 해시 충돌(hash collision)이라고 한다</strong>.</p>
+<p>일반적인 경우에서 가능한 키들의 집합을 <code class="language-text">U</code>라고 하고, 버킷들의 개수를 <code class="language-text">m</code>이라고 할때 <code class="language-text">U>>m</code>인 경우가 대부분이므로 충돌은 필연적으로 발생한다. 이것을 해결하기 위해서 버킷의 사이즈를 단순히 키우는것은 좋은 해결책이 아니다. 메모리 사용량에서 치명적이다.</p>
+<p>좋은 해시 함수를 고안해도, <strong>여전히 해시 충돌은 불가피하다</strong>. 해시충돌이 늘어나게되면 <code class="language-text">O(1)</code>의 시간복잡도 장점을 잃어버리고 <code class="language-text">O(n)</code>에 가깝게 되니, 적절한 해결책을 세워야 한다.</p>
+<h3 id="open-addressing" style="position:relative;"><a href="#open-addressing" aria-label="open addressing permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Open Addressing</h3>
+<p>개방주소법(Open Addressing)은 간단히 말해서 해시충돌이 발생하면(계산된 인덱스로 접근한 버킷이 이미 사용중이면) 단순히 다른 인덱스에 데이터를 저장하는 방식이다.</p>
+<p>개방주소법 안에서도 여러개로 나뉜다.</p>
 <ul>
-<li>프로세스간 context switching
+<li><strong>Linear Probing</strong>
 <ul>
-<li>커널 단에서 스위칭이 일어난다.</li>
-<li>메모리 주소 공간의 전환이 일어난다.</li>
-<li>프로세서의 <strong>캐시와 TLB 모두 Flush 된다. → 연속적인 캐시 미스와 TLB 미스가 일어난다.</strong></li>
-<li>메모리 주소공간이 전환되고, 캐시미스가 <strong>필연적으로 동반되므로 훨씬 비용이 비싸다</strong>.</li>
+<li>계산된 해시값에서 해시충돌이 발생한다면, 고정폭만큼 건너뛰어 비어있는 해시에 저장하는 방법이다. 만약 그 자리에도 차있다면, 그 다음 고정폭의 위치를 탐색한다.</li>
+<li>이 방법은 단순해서 계산을 하기 쉽지만, 최악의 경우 탐색을 시작한 위치까지 돌아오게 되어 종료할 수 있다.  <code class="language-text">O(n)</code>이 걸리는 것이다.</li>
+<li>또 primary clustering이라는 특정 해쉬 값 슬롯 근처에 값들이 뭉치게 되는 문제도 생길 수 있다. <code class="language-text">x</code> 라는 해쉬 값을 공유하는 객체들이 <code class="language-text">x+1,x+2,x+3</code> 등으로 모이기 때문이다.</li>
+</ul>
+<strong>클러스터의 크기가 커질수록, 비슷한 해쉬값들이 적절히 배치되지 못하고 다음을 probing하니 클러스터가 더 빠르게 자라나고</strong>, 이는 성능적으로 이슈를 불러일으킨다.
+<ul>
+<li>다만 값들이 <em>클러스터링</em> 되어있기 때문에 <strong>cache hit</strong> 적인 측면에서는 유리하다. 처음 키에 대해서 접근을 하면 <strong>다음 키도 캐쉬에 올라와 있기 때문</strong>이다.</li>
 </ul>
 </li>
-<li>쓰레드간 context switching
+<li><strong>Quadratic Probing</strong>
 <ul>
-<li>커널 단에서 스위칭이 마찬가지로 일어난다.</li>
-<li>같은 프로세스 내에서 일어나는 스위칭이기에 메모리 주소공간을 그대로 사용한다.</li>
-<li>프로세서의 <strong>캐시와 TLB 정보가 유지된다.</strong></li>
-<li>레지스터의 값과 스택 포인터 전환 정도만 일어나니 훨씬 저렴하다.</li>
+<li>Linear Probing과 비슷하게 , 해시충돌이 발생한다면 다음 슬롯을 찾는다. 다른 점은 <code class="language-text">idx=(hash(key)+i^2) mod m</code> 의 꼴을 취하는 것이다.</li>
+<li>이 방법도 primary clustering보다는 덜 하지만 성능에 영향을 주는 secondary clustering 문제를 일으킨다.</li>
+<li>초기 hash 포지션이 아닌 좀 더 광범위하게 퍼져있는 것이다.</li>
 </ul>
 </li>
-</ul>
-<h2 id="cpu-스케쥴링-알고리즘이란" style="position:relative;"><a href="#cpu-%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%9E%80" aria-label="cpu 스케쥴링 알고리즘이란 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>CPU 스케쥴링 알고리즘이란?</strong></h2>
-<p>스케쥴링 알고리즘은 레디 큐에 있는 프로세스들을 대상으로 다음으로 실행할(CPU를 할당받을) 프로세스를 고르는 작업이다.</p>
-<p>일단 프로세스의 상태를 다이어그램으로 먼저 보자.</p>
-<p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
-    >
-      <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 61.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACAUlEQVQoz3WTXXOaQBSG/f+/xpvOtI1Jc9FpY2KN1GoQWFQEBTZ+gAqClaeza0LTJGXmsGeW3Wff95ylEd+m+B/WJMMMMlgIi7lwyLKMPMsoiwMyjvHsOWPLI4ojXNdFCMF7T+PxIcHteozHAX1zxN33GzzHJklT5rFk5I4JV0t6zTbmRZ/OfYfrL9eEYchyuSRNUx1BEJDnOQ2oCGVIxxlzaQxpC48Hy6LTvedzt89Fb8Ct5eI8/GQqLC4vr2g2mxq4Wq10xMqB552B1amq5W7TlDiKkLHUJ46GA3ZJUn8vylJv2u127Pf79y2r16kooCjIsvx80iHHtGw+tbu0un1atz+YzWaEi0W9UanabDY6P51OOqqqOgMrGeEP70mOB47Vb2SyIowiDNOibfRx/Tnr9Vrbs21b25VS6lAQzXgaGzwlw2iCMRuxybbsDhmzmc/IEZiOwBKutqhCQZIk0bZfgv4CgX2R8U0YXI3uGMwF1emE5we0egOu+iZff5kapBTW9d5ua9AzrAbmZYEVTZlvJOss1QsepeR4yCn2Oz0qdWVZ1pDXCv8BqsnieF5MBd50ii0EFx2Dj3c9us5EX3RVO9V9de+Sp+6/Ab6cULnqllKjrog58bgx+rR7BpPJGfrczde1e6PwdS3UX7CUkkUQMHYF0+mUKIr0vO/7/7X8B9PZjIsssUPCAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="Untitled"
-        title="Untitled"
-        src="/static/8bdbc78afd4ec9a6165a99fcfe0f71fe/37523/queue_diagram.png"
-        srcset="/static/8bdbc78afd4ec9a6165a99fcfe0f71fe/e9ff0/queue_diagram.png 180w,
-/static/8bdbc78afd4ec9a6165a99fcfe0f71fe/f21e7/queue_diagram.png 360w,
-/static/8bdbc78afd4ec9a6165a99fcfe0f71fe/37523/queue_diagram.png 720w,
-/static/8bdbc78afd4ec9a6165a99fcfe0f71fe/9d5da/queue_diagram.png 871w"
-        sizes="(max-width: 720px) 100vw, 720px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-    </span></p>
-<p>레디큐 뿐만 아니라, 새로 만들어지는 큐를 담는 큐도 있고, block(I/O wait) 큐도 있다. 일반적으로 CPU 스케쥴링 알고리즘은 <strong>Short-term scheduling</strong>을 얘기한다.</p>
-<p>스케쥴링 알고리즘을 얘기하기 전에 <strong>멀티 프로그래밍(Multi Programming)</strong> 과 <strong>시분할(Time sharing)</strong> (혹은 <strong>멀티 태스킹(Multi Tasking))</strong> 에 대해서 먼저 얘기를 해야한다.</p>
+<li><strong>Double hashing</strong>
 <ul>
-<li><strong>멀티 프로그래밍</strong>
-<ul>
-<li>작업들을 적절히 구성해 <strong>항상 CPU가 프로세스를 실행</strong>하도록 한다.</li>
-<li>어떤 프로세스가 CPU를 할당받아 사용하다 I/O 작업등 CPU를 필요로 하지 않는 순간이 오면,</li>
-</ul>
-다른 프로세스로 교체해서 그 프로세스가 CPU를 계속 사용할 수 있도록 한다.
-<ul>
-<li>이것의 목적은 <strong>CPU 사용률</strong>(CPU Utilization)을 최대화함에 있다.</li>
-</ul>
-</li>
-<li><strong>시분할(멀티 태스킹)</strong>
-<ul>
-<li>CPU가 일할때 <strong>매우 빈번하게 수행중인 작업을 교체</strong>해서 사용자가 상호작용할 수 있는것이다.</li>
-<li>반응하는데 걸리는 시간(Response time)이 충분히 작아야 프로그램들이 동시에 진행하는것처럼 보인다.</li>
+<li>이름 그대로 해시 충돌이 생기면, 2차 해시함수를 이용해서 다시 해시를 하는 방법.</li>
+<li>값이 퍼지게 되어서 캐쉬의 측면에서는 비효율적이고 연산량이 많이 들지만, 클러스터링에는 큰 영향을 받지 않는다.</li>
 </ul>
 </li>
 </ul>
-<h3 id="스케쥴링의-발생과-목적" style="position:relative;"><a href="#%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81%EC%9D%98-%EB%B0%9C%EC%83%9D%EA%B3%BC-%EB%AA%A9%EC%A0%81" aria-label="스케쥴링의 발생과 목적 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>스케쥴링의 발생과 목적</h3>
-<p>CPU 스케쥴링은 아래와 같은 상황에서 일어난다.</p>
+<h3 id="장점과-단점" style="position:relative;"><a href="#%EC%9E%A5%EC%A0%90%EA%B3%BC-%EB%8B%A8%EC%A0%90" aria-label="장점과 단점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>장점과 단점</h3>
+<p>이처럼 개방주소법 내에서도 여러가지 충돌 처리방식이 있다. 일반적으로 개방주소법은 <strong>적은 양의 데이터에는 효과</strong>를 보이고 메모리 효율도 분리연결법에 비해 상대적으로 좋고, 메모리 할당에 대한 오버헤드도 없는 편이다.</p>
+<p>또 일반적으로 연결리스트를 사용하는 분리연결법에 비하여 <strong>캐쉬 효율이 좋기</strong> 때문에 (<strong>특히 Linear Probing</strong>) Python에서 hashtable을 구현할때 사용된다.</p>
+<p>하지만 <strong>데이터의 삭제에서 좋지 않은 퍼포먼스를 보인다.</strong>
+예를 들어 <code class="language-text">A,B,C</code> 가 연속적으로 있을때(linear probing) <code class="language-text">A</code> 를 삭제한다고 해보자. 그럼 <code class="language-text">NULL,B,C</code> 라고 변경될텐데, 이때 <code class="language-text">C</code> 에 대해서 조회를 한다면, <code class="language-text">NULL</code> 을 만나게 된다. 이것을 <strong>원래부터 비어있는 공간</strong>인지 혹은 <strong>삭제되어서 비어있는 공간</strong>인지 알 수 없기 때문에 <code class="language-text">C</code> 를 조회하지 못하고 탐색이 종료된다.
+이를 극복하기 위해서 삭제된 공간은 삭제되었음을 표시해주는 <code class="language-text">DEL</code> 같은 표기자를 사용해 다음 index를 조회할수 있게끔 해야한다.
+물론 이러한 <code class="language-text">DEL</code> 표시자가 늘어난다면, <strong>조회할 데이터가 없어도 계속적인 탐색을 수행해줘야 하니 표시자의 개수에 따라 해시테이블 전체에 대해서 rehashing을 해줘야 한다.</strong></p>
+<p><strong>load factor를 <code class="language-text">l</code>이라고 하였을때 삽입과 조회, 삭제 모두 <code class="language-text">O(\frac{1}{1-l})</code>의 성능을 보여준다.</strong></p>
+<h3 id="seperate-chaining" style="position:relative;"><a href="#seperate-chaining" aria-label="seperate chaining permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Seperate Chaining</h3>
+<p>분리연결법(Separate Chaining)은 일반적인 상황에서 개방주소법보다는 빠른데, 개방주소법의 경우 load factor가 커질수록 최악의 경우( <code class="language-text">O(n)</code>)의 발생 빈도가 높아지기 때문이다.</p>
+<p>분리연결법은 해시충돌이 잘 발생하지 않게끔 하기 위해서 보조 해시 함수를 이용해 최악의 경우로 가는 상황을 줄이려고 한다.</p>
+<p>분리연결법에도 두가지 방법이 존재한다.</p>
 <ul>
-<li><code class="language-text">running</code> 에서 <code class="language-text">waiting</code> 으로 갈 때 (I/O Request)</li>
-<li><code class="language-text">running</code> 에서 <code class="language-text">ready</code> 로 갈 때 (timeout), <strong>Preemptive</strong></li>
-<li><code class="language-text">waiting</code> 에서 <code class="language-text">ready</code> 로 갈 때 (I/O Finish, <strong>이때 스케쥴링 해주는 이유는, I/O가 끝난 이후에 핸들링을 해줘야 하기 때문이다</strong>. 기존의 <code class="language-text">running</code> 프로세스는 고려하지 않음),<strong>Preemptive</strong></li>
-<li><code class="language-text">running</code> 에서 <code class="language-text">terminated</code> 로 갈 때 (프로세스의 종료)</li>
-</ul>
-<p>만약 스케쥴링이 1번과 4번에서만 일어난다면 , non-preempitve지만, 그렇지 않다면 <strong>preemptive</strong> 스케쥴링이다.</p>
-<p>스케쥴링 알고리즘에 대한 기준은 몇가지가 있다</p>
+<li><strong>Linked List</strong>
 <ul>
-<li><strong>CPU 이용률</strong> : CPU를 가능한 바쁘게 해야 한다. 높을 수록 좋음</li>
-<li><strong>Throughput</strong> : 단위시간당 프로세스 처리 수,batch 시스템에선 중요함, 높을 수록 좋음</li>
-<li><strong>Turnaround time</strong> : 특정 프로세스가 도착시간에서부터 끝날때까지 걸린 시간, 낮을 수록 좋음</li>
-<li><strong>Waiting time</strong> : 레디큐에서 기다린 시간의 합 , 범용적으로 중요하고, 낮을 수록 좋음</li>
-<li><strong>Response time</strong> : 요청이 들어왔을때 첫번째 응답까지 걸리는 시간,일반적인 PC에서 중요하다. Throughput과는 반대의 관계이며 낮을수록 좋다.</li>
-</ul>
-<h3 id="스케쥴링-알고리즘" style="position:relative;"><a href="#%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" aria-label="스케쥴링 알고리즘 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>스케쥴링 알고리즘</h3>
-<ul>
-<li><strong>FCFS</strong> (First-Come, First-Served)
-<ul>
-<li><strong>비선점</strong></li>
-<li>먼저 CPU를 요청한 프로세스에게 먼저 CPU가 할당된다. <strong>공평하다</strong>.</li>
-<li>큐를 이용하면 쉽게 구현이 가능하다</li>
-<li>도착순서를 바꿈으로써 전체 waiting time이 바뀐다. <strong>CPU bound job을 뒤로 하면 확 줄어든다</strong></li>
-<li><strong>Convoy Effect</strong> : <strong>시간이 짧게 걸리는 프로세스가 시간이 오래 걸리는 프로세스 뒤에 있으면 CPU 전체 사용률이 줄어든다.</strong></li>
+<li>각각의 버킷들을 연결리스트로 두어 충돌이 발생하면 해당 버킷의 리스트에 추가하는 방식.</li>
+<li>단, 연결리스트의 단점을 그대로 가지고 있다. 메모리 주소 상에서 연속적이지 않기 때문에 <strong>캐시의 효율이 나쁘고</strong>, <strong>아주 적은 데이터가 있을때의 메모리 오버헤드가 있다.(개방주소법과 비교해서)</strong></li>
+<li>또 Traverse를 할 때 최악의 경우에는  <code class="language-text">O(n)</code>의 시간복잡도를 보인다.</li>
 </ul>
 </li>
-<li><strong>SJF</strong> (Shortest Job First)
+<li><strong>Tree</strong>
 <ul>
-<li><strong>기본적으로 비선점</strong> 방식</li>
-<li>CPU burst time이 가장 작은 프로세스를 먼저 CPU 할당시킨다.</li>
-<li><strong>선점방식으로 구현하는것을 SRTF</strong>(Shortest Remaining Time First) 방법은, 현재 프로세스의 남은 시간보다 더 짧은 프로세스가 새로 들어오면, 선점해버리는 방식이다.
-<ul>
-<li>컨텍스트 스위칭에 드는 <strong>오버헤드를 고려하지 않을시에는 SJF보다 성능이 좋다.</strong></li>
-<li>만약 선점방식이라면, CPU burst time이 긴 프로세스는 계속 실행되지 못하는 <strong>기아(starvation)</strong> 현상이 발생 할 수 있다.</li>
-</ul>
-</li>
-<li>하지만 현실적으로 SJF는 구현하기 어려운데, <strong>CPU의 남은 시간을 예측불가</strong>하기 때문이다. 그래서 평균 waiting time이 최소인 Optimal한 알고리즘이다.</li>
-<li>그나마 유사하게 접근 하는 방식은 <strong>이전 CPU burst time을 기반으로 예측</strong>하는 것이다.</li>
-</ul>
-</li>
-<li><strong>Priority Scheduling</strong>
-<ul>
-<li>각 프로세스에게 우선순위 지시자가 연결되어 있다.</li>
-<li><strong>가장 높은 우선순위</strong>(일반적으로 가장 낮은 숫자)를 가진 프로세스에게 CPU가 할당된다</li>
-<li>SJF도 CPU burst time이라는 우선순위를 가지는 우선순위 스케쥴링 방식이다.</li>
-<li>선점과 비선점 방식 모두 구현이 가능하다.
-<ul>
-<li>선점 : 새<strong>로 도착한 프로세스의 우선순위가 기존의 것보다 높으면 CPU 교체</strong> (SRTF)</li>
-<li>비선점 : 신경쓰지 않고 새로운 프로세스를 <strong>그저 레디큐 맨 앞에 배치</strong></li>
-</ul>
-</li>
-<li>우선순위가 낮은 프로세스는 계속 실행되지 못하는 <strong>기아(starvation) 현상</strong>이 발생하는데, 시간이 지날때마다 프로세스의 우선순위를 올려주는 <strong>에이징(Aging) 방식으로 해결 가능</strong></li>
-</ul>
-</li>
-<li><strong>RR</strong>(Round-Robin) Scheduling
-<ul>
-<li>각각의 프로세스는 <strong>Time quantum</strong>이라 불리는 짧은 시간을 부여받음.</li>
-<li>이 시간이 <strong>끝나면</strong>, 프로세스는 <strong>다른 프로세스로 무조건 교체되고</strong>(선점) 레디큐의 마지막으로 돌아간다.(FCFS의 측면)</li>
-<li>q초의 quantum을 가지는 n개의 프로세스가 있으면, q초마다 한번씩은 1/n의 CPU 타임을 보장받는다.</li>
-</ul>
-→ *<em>최대 (n-1)<em>q 초까지만 기다리면 무조건 보장받는다. 이를 통해서 waiting time의 upper bound를 보장받게 된다.</em></em>
-<ul>
-<li>q의 사이즈를 적절히 고르는 것이 중요하다.
-<ul>
-<li>q가 너무 <strong>크면</strong> → <strong>FCFS</strong>랑 다를게 없다.</li>
-<li>q가 너무 <strong>작으면</strong> → 잦은 컨텍스트 스위칭, 그로 인한 <strong>오버헤드가 커지기 때문에 throughput이 감소한다.</strong></li>
+<li>연결리스트의 단점을 개선하기 위해 나온 것으로 연결리스트가 아닌 Tree 구조를 이용해 데이터를 저장한다.</li>
+<li>단, Tree에서도 <strong>데이터가 편향되게 들어오면</strong>  <code class="language-text">O(n)</code>의 시간복잡도를 가질 수 있으니 Red-black Tree와 같은 <strong>Balanced Binary Tree를 사용함</strong>으로써 <code class="language-text">O(logn)</code>의 연산을 보장시킨다.</li>
+<li>하지만 적은 데이터 수에서 RB Tree를 유지하는데 드는 메모리 사용량이 연결리스트보다 크니, 적은 수의 데이터보다는 <strong>어느정도 데이터가 들어왔을때  연결리스트에서 트리로 전환한다.</strong></li>
+<li>Java 8에서부터는 데이터가 8개가 넘어가면 트리로 전환하고, 6개가 되면 다시 연결리스트로 전환한다. 두개의 차이가 2가 나는 이유는 데이터의 잦은 삽입,삭제로 1개단위로 전환하게 되면 오버헤드가 더 크기 때문에 일정 수준을 유지하는것이다.</li>
+<li>AVL 트리도 균형이진트리인데 사용하지 않는 이유는, 일반적으로 hashtable 같은 경우 데이터의 조회만 intensive하게 일어나지 않기 때문에, <strong>AVL 트리를 사용하면 rotation과 같은 balance를 유지하는데 드는 오버헤드가 너무 크다.</strong></li>
+<li>이에 반해 RB 트리는 조금 더 느슨하게 균형을 유지함으로써 조회,삽입,삭제에 <strong>평균적으로 좋은</strong> 퍼포먼스를 보여주기 때문에 hashtable의 내부 자료구조로 사용되는 것이다.</li>
 </ul>
 </li>
 </ul>
-</li>
-<li><strong>Multi-Level Queue</strong>
-<ul>
-<li>레디큐를 두개 이상으로 구분해 <strong>I/O bound job</strong>과 <strong>CPU bound job</strong>으로 구분한다. 그 이유는 <strong>I/O bound job은 interaction이 많아서 response를 빨리 얻어야 하기 때문이다</strong>. (우선순위를 높여야겠지?)</li>
-<li>크게 두 분류로 나누는데 foreground와 background로 나눈다.
-<ul>
-<li>foreground : <strong>interactive</strong>하고 , I/O job 위주이며, <strong>RR 알고리즘</strong>으로 동작하여 <strong>response time</strong>을 높이는데 주력으로 둔다.</li>
-<li>background : <strong>batch job</strong>(CPU bound job)위주이며, <strong>FCFS</strong>로 동작하며 throughput을 높이는데 집중한다.</li>
-</ul>
-</li>
-<li>각 큐들은 독립적인 스케쥴링을 가지고 있고, <strong>foreground가 다 수행되어야 background를 선택한다.</strong>
-<ul>
-<li>그렇기 때문에 <strong>background job들은 기아현상</strong>이 발생할 수 있다. (계속 foreground로 들어오면)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>MLFQ</strong>
-<ul>
-<li>
-<p>프로세스들은 <strong>큐들 사이에서 서로 이동</strong>이 가능하다.</p>
-<p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 589px; "
-    >
-      <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 58.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACHElEQVQoz2VT144aQRDk73nkB7gHg1gL6bizOV4wQSevWMAscEs6cs45BxHKqkZ7wvJIrekJXVPdXWNpt9toNBrodDpotVro9XowDANOpxMuRcHL6wt8Ph/8fj/C4TDU3yrisTiSySTy+TwqlQqKxSIymYzMllwuh36/j8lkgvF4LIAMdrvdeH72wPHNge8uBW8/vQj4A0j80fHxYcBms8kDJDMcDlEulxGJRGAplUqYzWZYrVbYbrfiky39xXyOerUm1mq00Ov05HwwHEBVVfFJwBzNZhMWvmAOsqSNRiNhS38+n0vgdDr9OqMtl0tZm/Hn8xnVahWWer2Oy+UiG6yn6Q8GAykFgxlIwMVigdVyhfV6g8PhgNPphOv1KoCciSWAXBDEpJ9IJPD0ZIfD6YTiUuDxeBD4FcB7+B0pPY3PzyK8b14UCgVhygzYUMZ9MeQgC9YhlUoJs2qlAk3VENNiyBlZGCkD7dZdFXa7XQBZbxLa7/f3Lj8CctxuN+x2O2nSer3GZrO524PPs+PxKPe73e7/KROQGywqJcA0CMaZxtrR2KBHYxZM9x9As0vcYCPM9iuKIjqkqEOhEDRNEzEzTQZSbnzM7DBlxjPRIResQa1WE+UHg0EBiMfjItZXzw8E/SERND9CNpuF1WqVJlABJMLsotHonSGLyQ3zCxEonU5Lc/SEDi2iIarFBEDXdQnkL2EM2dJIhCn/BWrlXz6/huLOAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="Untitled"
-        title="Untitled"
-        src="/static/1b6079a67d732c3bf73f5859f845dda9/b1665/mlq.png"
-        srcset="/static/1b6079a67d732c3bf73f5859f845dda9/e9ff0/mlq.png 180w,
-/static/1b6079a67d732c3bf73f5859f845dda9/f21e7/mlq.png 360w,
-/static/1b6079a67d732c3bf73f5859f845dda9/b1665/mlq.png 589w"
-        sizes="(max-width: 589px) 100vw, 589px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-    </span></p>
-</li>
-<li>
-<p>새로운 프로세스는 q=8인 큐로 진입하고, <strong>큐 내부적으로는 FCFS</strong>의 행동을 취한다. <strong>Q1과 Q2의 작업이 있으면 선점한다.</strong></p>
-</li>
-<li>
-<p>CPU를 얻으면 8ms동안 수행되고, 그 안에 <strong>끝나지 않으면 Q1으로 강등당한다.</strong></p>
-</li>
-<li>
-<p>Q2에서 16ms동안 수행되고, 그 안에 <strong>끝나지 않으면, Q2로 강등당한다.</strong> 이런 방식을 취함으로써 <strong>Convoy Effect를 방지할 수 있다.</strong> (CPU bound job은 우선순위가 낮으니)</p>
-</li>
-<li>
-<p>단, <strong>yield</strong>와 같이 I/O 작업으로 인해 q가 소진되기전에 CPU를 포기하면 <strong>강등당하지 않고 우선순위를 그대로 유지한다.</strong></p>
-</li>
-<li>
-<p>MLFQ는 burst time이 짧은 <strong>대화형 작업들을 빨리 처리하려고 해 response time에서 강점을 보이지만 , CPU bound job들은 기아 현상을 겪을수 있다.</strong></p>
-<ul>
-<li>주기적으로 모든 작업의 우선순위를 <strong>상향조정</strong> 할 수 있다. 예를 들어 모두를 Q0로 올려보낸다. 이 과정에서 CPU bound job들도 조금이나마 작업을 진행할 수 있다.</li>
-</ul>
-</li>
-<li>
-<p><strong>의도적인 I/O 작업 호출</strong>로 <strong>우선순위를 유지하는 프로세스가 있을 수 있다</strong>. 이 프로세스는 예를 들어 7ms가 지난 후 의미 없는 I/O 작업으로 우선순위를 유지한다.</p>
-<ul>
-<li>누적적인 <strong>CPU 사용 시간을 기록</strong>해서 방지한다. PCB 안에 기록하지 않을까..?</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="선점식-vs-비선점식" style="position:relative;"><a href="#%EC%84%A0%EC%A0%90%EC%8B%9D-vs-%EB%B9%84%EC%84%A0%EC%A0%90%EC%8B%9D" aria-label="선점식 vs 비선점식 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>선점식 vs 비선점식</strong></h1>
-<ul>
-<li>선점식은 프로세스에게 한번 실행될때 제한된 시간만큼 CPU를 할당한다. 작업 도중에 자원을 반납당하고 ready 상태로 진입한다. 비선점식은 프로세스가 종료되거나, yield를 통해서나 I/O를 위해서 자발적으로 ready에 가지 않는 한 자원을 반납하지 않는다.</li>
-<li>선점식만 실행 중에 인터럽트를 허용한다.</li>
-<li>선점식은 프로세스의 우선순위에 따라 스케쥴링을 하는데, 우선순위가 낮은 프로세스가 선택받지 못하는 기아(starvation)현상이 일어날 수 있다. 비선점식은 수행시간이 긴 프로세스(CPU-bound job)이 스케쥴링되면, 그 뒤의 작업들이 오랜 기간동안 선택받지 못한다.</li>
-<li>선점식은 context-swtiching이 자주 일어나 이로 인한 오버헤드가 크고, 비선점식은 필수적인 context-switching을 제외하면 자주 일어나지 않아 오버헤드가 비교적 적다.</li>
-<li>선점식은 우선순위에 따른 유연성을 가지지만(예를 들어 우선순위 promotion을 진행하는 MLFQ) 비선점식은 그렇지 않다.</li>
-</ul>
-<p>이러한 특징때문에 interactive한 시스템에선 반응성 때문에 선점식을, batch job을 자주 수행하는 시스템에선 비선점식을 사용하곤 한다.</p>
+<h3 id="장점과-단점-1" style="position:relative;"><a href="#%EC%9E%A5%EC%A0%90%EA%B3%BC-%EB%8B%A8%EC%A0%90-1" aria-label="장점과 단점 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>장점과 단점</h3>
+<p>분리연결법은 load factor에 크게 민감하게 반응하지 않아도 된다. 일반적으로 개방주소법에서 load factor가 커지면 성능이 기하급수적으로 나빠지는것에 비해서
+분리연결법은 조금 linear한 나쁜 성능을 보여준다.</p>
+<p>또 개방주소법에서는 hash table의 resize가 필연적으로 일어나게 되는데, 이것은 <code class="language-text">O(m) , (m은 key의  개수)</code>의 시간복잡도를 요구하니 꽤 치명적이다.
+하지만 분리연결법에서는 하나의 버킷에 대해 지속적으로 사용하기 때문에 테이블의 확장이 <strong>개방주소법보다는 더디게</strong> 일어나는 편이다.</p>
+<p>다만 일반적으로 개방주소법에서 버킷들의 캐시 효율이 좋은 반면 분리연결법은 링크드리스트나 트리를 이용하기에 캐시의 효율이 좋지 않다.</p>
+<h3 id="해시-테이블-자체의-단점" style="position:relative;"><a href="#%ED%95%B4%EC%8B%9C-%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%9E%90%EC%B2%B4%EC%9D%98-%EB%8B%A8%EC%A0%90" aria-label="해시 테이블 자체의 단점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>해시 테이블 자체의 단점</h3>
+<p>데이터가 pseudo-random 위치에 저장되기 때문에, <strong>데이터를 정렬된 순서로 접근하는 것에 있어서 엄청난 비용이 발생한다</strong>. Self-balancing binary tree와 같은 자료구조에서는 <code class="language-text">O(logn)</code>의 조회를 보장해 조금 느리고 구현이 더 복잡하지만 데이터는 정렬되어 있다.</p>
+<p>또 데이터를 loop하면서 traverse하는 능력도 떨어지는데, <strong>데이터가 흩뿌려질(산재된) 확률이 높은 해쉬테이블의 특성상</strong> <strong>빈 슬롯도 모조리 체크</strong>해가면서 순회해야 하기 때문이다.</p>
+<p>일반적으로 해시 테이블은 지역참조성에 취약한데, 해시 테이블의 조회 자체가 <strong>버킷들을 건너띄면서 확인하는 방식이기 때문이다.</strong> 그렇기에 프로세스가 계속해서 <strong>캐시 미스를 발생시키고 이는 오버헤드로 이어진다.</strong> 데이터가 적고 type이 간단한(Integer…) 경우에는 배열을 이용한 자료구조가 더 나은 성능을 보일 수 있다.</p>
 <div class="table-of-contents">
 <ul>
-<li>
-<p><a href="#%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%9D%98-%EC%83%81%ED%83%9C"><strong>프로세스의 상태</strong></a></p>
-</li>
-<li>
-<p><a href="#context-switching"><strong>Context-switching?</strong></a></p>
-<ul>
-<li><a href="#process-context-switching-vs-thread-context-switching"><strong>Process context switching vs Thread context switching</strong></a></li>
+<li><a href="#hash-funciton">Hash funciton</a></li>
+<li><a href="#open-addressing">Open Addressing</a></li>
+<li><a href="#%EC%9E%A5%EC%A0%90%EA%B3%BC-%EB%8B%A8%EC%A0%90">장점과 단점</a></li>
+<li><a href="#seperate-chaining">Seperate Chaining</a></li>
+<li><a href="#%EC%9E%A5%EC%A0%90%EA%B3%BC-%EB%8B%A8%EC%A0%90-1">장점과 단점</a></li>
+<li><a href="#%ED%95%B4%EC%8B%9C-%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%9E%90%EC%B2%B4%EC%9D%98-%EB%8B%A8%EC%A0%90">해시 테이블 자체의 단점</a></li>
 </ul>
-</li>
-<li>
-<p><a href="#cpu-%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%EB%9E%80"><strong>CPU 스케쥴링 알고리즘이란?</strong></a></p>
-<ul>
-<li><a href="#%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81%EC%9D%98-%EB%B0%9C%EC%83%9D%EA%B3%BC-%EB%AA%A9%EC%A0%81">스케쥴링의 발생과 목적</a></li>
-<li><a href="#%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">스케쥴링 알고리즘</a></li>
-</ul>
-</li>
-</ul>
-</div></div></div><div class="post-navigator"><div class="post-navigator-card-wrapper"><a class="post-card prev" href="/process-and-thread/"><div class="direction">이전 글</div><div class="title">프로세스와 쓰레드</div></a></div><div class="post-navigator-card-wrapper"><a class="post-card next" href="/hash-table/"><div class="direction">다음 글</div><div class="title">Hash Table에 대해서 완전 자세하게 알아보자.</div></a></div></div><div class="utterances"></div></main><footer class="page-footer-wrapper"><p class="page-footer">© <!-- -->2022<!-- --> <a href="https://github.com/BecomeWeasel">황성우</a> powered by<a href="https://github.com/zoomKoding/zoomkoding-gatsby-blog"> zoomkoding-gatsby-blog</a></p></footer><div class="dark-mode-button-wrapper"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium dark-mode-button css-1yxmbwk" tabindex="0" type="button"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge dark-mode-icon css-6flbmm" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="DarkModeIcon"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/process-scheduling-algorithm/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-cd840d73727c2e366b63.js"],"app":["/app-08df93537b7dfc1b6aa5.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-3c26d4b7e3608ed0ece4.js"],"component---src-pages-404-js":["/component---src-pages-404-js-67e5e074dc44aed4cec5.js"],"component---src-pages-about-js":["/component---src-pages-about-js-76722c62de2a2d859ee0.js"],"component---src-pages-index-js":["/component---src-pages-index-js-bc882cd03f70c89c8148.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-ef83b594aa693e649d30.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-fea460fedd50cffb10cd.js"]};/*]]>*/</script><script src="/polyfill-cd840d73727c2e366b63.js" nomodule=""></script><script src="/component---src-templates-blog-template-js-ef83b594aa693e649d30.js" async=""></script><script src="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-97a8d3c35e8d1fa14a1b.js" async=""></script><script src="/app-08df93537b7dfc1b6aa5.js" async=""></script><script src="/framework-0c9ef8497ca6780b4a3f.js" async=""></script><script src="/webpack-runtime-ed04c4f53aa1c5db1755.js" async=""></script></body></html>
+</div></div></div><div class="post-navigator"><div class="post-navigator-card-wrapper"><a class="post-card prev" href="/process-scheduling-algorithm/"><div class="direction">이전 글</div><div class="title">프로세스 스케쥴링 알고리즘</div></a></div><div class="post-navigator-card-wrapper"></div></div><div class="utterances"></div></main><footer class="page-footer-wrapper"><p class="page-footer">© <!-- -->2022<!-- --> <a href="https://github.com/BecomeWeasel">황성우</a> powered by<a href="https://github.com/zoomKoding/zoomkoding-gatsby-blog"> zoomkoding-gatsby-blog</a></p></footer><div class="dark-mode-button-wrapper"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium dark-mode-button css-1yxmbwk" tabindex="0" type="button"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge dark-mode-icon css-6flbmm" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="DarkModeIcon"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/hash-table/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-cd840d73727c2e366b63.js"],"app":["/app-08df93537b7dfc1b6aa5.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-3c26d4b7e3608ed0ece4.js"],"component---src-pages-404-js":["/component---src-pages-404-js-67e5e074dc44aed4cec5.js"],"component---src-pages-about-js":["/component---src-pages-about-js-76722c62de2a2d859ee0.js"],"component---src-pages-index-js":["/component---src-pages-index-js-bc882cd03f70c89c8148.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-ef83b594aa693e649d30.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-fea460fedd50cffb10cd.js"]};/*]]>*/</script><script src="/polyfill-cd840d73727c2e366b63.js" nomodule=""></script><script src="/component---src-templates-blog-template-js-ef83b594aa693e649d30.js" async=""></script><script src="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-97a8d3c35e8d1fa14a1b.js" async=""></script><script src="/app-08df93537b7dfc1b6aa5.js" async=""></script><script src="/framework-0c9ef8497ca6780b4a3f.js" async=""></script><script src="/webpack-runtime-ed04c4f53aa1c5db1755.js" async=""></script></body></html>
