@@ -52,10 +52,10 @@ module.exports = {
       },
 
       {
-        date: '2020.06 ~ 2021.8',
-        activity: '알고리즘 휴학 & 코드포스 블루 달성',
+        date: '2020.01 ~ 2021.10',
+        activity: '군 복무 & Solved.ac 골드 1 달성',
         links: {
-          post: 'https://solved.ac/profile/hsw0194',
+          post: 'https://www.acmicpc.net/user/hsw0194',
         },
       },
       {
