@@ -139,6 +139,43 @@
 클라이언트에서 FIN 패킷 전송 후 ACK 패킷을 기다리는 FIN_WAIT1과 서버의 ACK 패킷을 받은 후 FIN 패킷을 기다리는 FIN_WAIT2 에러 발생으로 인해 Time out이 되면 스스로 연결을 종료한다.
 그러나, CLOSE_WAIT은 Application이 close()를 적절하게 처리하지 못하면 CLOSE_WAIT 상태로 계속 기다리게 되어 Socket Hang Up 에러가 발생할 수 있다.</p>
 </blockquote>
+<h3 id="tcp-상태-다이어그램" style="position:relative;"><a href="#tcp-%EC%83%81%ED%83%9C-%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8" aria-label="tcp 상태 다이어그램 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TCP 상태 다이어그램</h3>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 101.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJElEQVQ4y22UVw4CMQxEc/97UD7gENyAPxAICZbe29KL0bM0yJRIUbKJPTMum2Rf4/l8vvf3+922260Nh0Pr9Xp2PB5ttVpZnud2u938nnm5XOx8PrtPikACw2Gz2dh6vbbD4eBnrIvFwp0ZrBA8Hg//Zg/JX0CcUQYoE3aMtRfpdDq10+n0joZ9ElCcGoAA3O12rd/vO5EAUYbKH0D7MxQGBrvdziaTiecRcAHKTt/KZUKFAAgDJePx2MNhkhsN9oPBwNrttoPjqxxfr1ebz+eWuJjNZg6y3+9tuVx6RTGEYDQaWafT8TMm9yjBh6JRKCLgnGjegITEQTRiogoAFOCEQkjIKxFwxko7feSQHMSBOhRjCCiAkEKICICw+e5hrzI5xAhjAGJOyVer1bJms2mNRuMjp7HdNJMOUUOfAajWAZgwqCQKyavuYnvFkdQ/qNMgZ1SMQqFczuSWsLmDjCpDpOltgwPJp10UMknHmT1OkYgoKB73FIMi4cvKXSJUgFQxVVXsqMGY9TtMUkEa8EcEwB4yzgDiFBURFoYoIi1M3QMuYtpO/j8hwxhfEMDoOZqbaFRlhNAF+BKBejYRtxobBr11KJB6FS2Sca83ESIAvSixn3DIssyrq39USlCB2vgi6R1Qgch5igbxSQKEIsEOAXtI+OafJgV6zlAHGf7pX6NqTwoqlYoVCgUrlUpWrVZdCcogrtfrVi6XfRaLRavVavYCDkkC0QwH7JEAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/14d915aaafcbca805f0c03c7697ec75e/c5bb3/10.png"
+        srcset="/static/14d915aaafcbca805f0c03c7697ec75e/e9ff0/10.png 180w,
+/static/14d915aaafcbca805f0c03c7697ec75e/f21e7/10.png 360w,
+/static/14d915aaafcbca805f0c03c7697ec75e/c5bb3/10.png 680w"
+        sizes="(max-width: 680px) 100vw, 680px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<ul>
+<li>CLOSED, LISTEN, SYN-SENT, SYN-RECEIVED, ESTABLISHED, FIN-WAIT-1, FIN-WAIT-2, TIME-WAIT, CLOSING, CLOSE-WAIT, LAST-ACK 등 상태가 존재한다.</li>
+<li>CLOSED : 연결이 존재하지 않을 때</li>
+<li>LISTEN : 서버에서 SYN이 오는 것을 기다리는 상태.</li>
+<li>SYN-SENT: SYN을 보내고 ACK을 기다리는 상태(클라이언트)</li>
+<li>SYN-RCVD: SYN을 받고 SYN+ACK을 보낸상태(서버)</li>
+<li>ESTABLISHED: ACK을 받게 되면 서버 클라이언트 각각 이 상태로 들어섬</li>
+<li>FIN-WAIT-1: FIN을 클라이언트 쪽에서 보냈을 떄 ACK을 기다리는 상태</li>
+<li>FIN-WAIT-2: 첫번째 FIN에 대한 ACK을 받고 다음 FIN이 날라 올 때까지 기다리는 상태</li>
+<li>CLOSE-WAIT: 첫번째 FIN을 받고 ACK을 보낸 뒤 보낼 데이터들을 보내고 ACK을 받는 상태</li>
+<li>LAST-ACK: 전송이 완료되고 서버쪽에서는 FIN을 보내고 ACK을 기다리는 상태</li>
+<li>TIME-WAIT: FIN이 오고 ACK을 보내준 뒤 일정 시간동안 기다림</li>
+<li>CLOSING: 클라이언트 쪽은 TIME-WAIT이 종료 된 후, 서버쪽은 ACK이 도착한 후 종료된 상태를 의미한다.</li>
+</ul>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
@@ -532,43 +569,6 @@
 </ul>
 </li>
 </ul>
-<h3 id="tcp-상태-다이어그램" style="position:relative;"><a href="#tcp-%EC%83%81%ED%83%9C-%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8" aria-label="tcp 상태 다이어그램 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TCP 상태 다이어그램</h3>
-<p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 680px; "
-    >
-      <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 101.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACJElEQVQ4y22UVw4CMQxEc/97UD7gENyAPxAICZbe29KL0bM0yJRIUbKJPTMum2Rf4/l8vvf3+922260Nh0Pr9Xp2PB5ttVpZnud2u938nnm5XOx8PrtPikACw2Gz2dh6vbbD4eBnrIvFwp0ZrBA8Hg//Zg/JX0CcUQYoE3aMtRfpdDq10+n0joZ9ElCcGoAA3O12rd/vO5EAUYbKH0D7MxQGBrvdziaTiecRcAHKTt/KZUKFAAgDJePx2MNhkhsN9oPBwNrttoPjqxxfr1ebz+eWuJjNZg6y3+9tuVx6RTGEYDQaWafT8TMm9yjBh6JRKCLgnGjegITEQTRiogoAFOCEQkjIKxFwxko7feSQHMSBOhRjCCiAkEKICICw+e5hrzI5xAhjAGJOyVer1bJms2mNRuMjp7HdNJMOUUOfAajWAZgwqCQKyavuYnvFkdQ/qNMgZ1SMQqFczuSWsLmDjCpDpOltgwPJp10UMknHmT1OkYgoKB73FIMi4cvKXSJUgFQxVVXsqMGY9TtMUkEa8EcEwB4yzgDiFBURFoYoIi1M3QMuYtpO/j8hwxhfEMDoOZqbaFRlhNAF+BKBejYRtxobBr11KJB6FS2Sca83ESIAvSixn3DIssyrq39USlCB2vgi6R1Qgch5igbxSQKEIsEOAXtI+OafJgV6zlAHGf7pX6NqTwoqlYoVCgUrlUpWrVZdCcogrtfrVi6XfRaLRavVavYCDkkC0QwH7JEAAAAASUVORK5CYII='); background-size: cover; display: block;"
-  ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="Untitled"
-        title="Untitled"
-        src="/static/14d915aaafcbca805f0c03c7697ec75e/c5bb3/10.png"
-        srcset="/static/14d915aaafcbca805f0c03c7697ec75e/e9ff0/10.png 180w,
-/static/14d915aaafcbca805f0c03c7697ec75e/f21e7/10.png 360w,
-/static/14d915aaafcbca805f0c03c7697ec75e/c5bb3/10.png 680w"
-        sizes="(max-width: 680px) 100vw, 680px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
-    </span></p>
-<ul>
-<li>CLOSED, LISTEN, SYN-SENT, SYN-RECEIVED, ESTABLISHED, FIN-WAIT-1, FIN-WAIT-2, TIME-WAIT, CLOSING, CLOSE-WAIT, LAST-ACK 등 상태가 존재한다.</li>
-<li>CLOSED : 연결이 존재하지 않을 때</li>
-<li>LISTEN : 서버에서 SYN이 오는 것을 기다리는 상태.</li>
-<li>SYN-SENT: SYN을 보내고 ACK을 기다리는 상태(클라이언트)</li>
-<li>SYN-RCVD: SYN을 받고 SYN+ACK을 보낸상태(서버)</li>
-<li>ESTABLISHED: ACK을 받게 되면 서버 클라이언트 각각 이 상태로 들어섬</li>
-<li>FIN-WAIT-1: FIN을 클라이언트 쪽에서 보냈을 떄 ACK을 기다리는 상태</li>
-<li>FIN-WAIT-2: 첫번째 FIN에 대한 ACK을 받고 다음 FIN이 날라 올 때까지 기다리는 상태</li>
-<li>CLOSE-WAIT: 첫번째 FIN을 받고 ACK을 보낸 뒤 보낼 데이터들을 보내고 ACK을 받는 상태</li>
-<li>LAST-ACK: 전송이 완료되고 서버쪽에서는 FIN을 보내고 ACK을 기다리는 상태</li>
-<li>TIME-WAIT: FIN이 오고 ACK을 보내준 뒤 일정 시간동안 기다림</li>
-<li>CLOSING: 클라이언트 쪽은 TIME-WAIT이 종료 된 후, 서버쪽은 ACK이 도착한 후 종료된 상태를 의미한다.</li>
-</ul>
 <h2 id="udp" style="position:relative;"><a href="#udp" aria-label="udp permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UDP</h2>
 <p><strong>비연결형</strong> 서비스를 지원하는 전송계층 프로토콜이다. 사전에 연결 설정을 하지 않은 <strong>데이터그램 방식</strong>으로 데이터를 전달한다.
 별도의 <strong>연결을 수립하지 않고</strong> 보내기 때문에, 각각의 패킷은 서로 다른 경로를 통해서 전송될 수 있고 각각은 독립적이고 그렇기에 패킷에 <strong>순서를 부여하진 않는다</strong>.</p>
@@ -619,6 +619,7 @@
 <li><a href="#tcp-%EC%97%B0%EA%B2%B0-%EA%B3%BC%EC%A0%95">TCP 연결 과정</a></li>
 <li><a href="#2-way-handshake%EC%9C%BC%EB%A1%9C-%EB%B6%80%EC%A1%B1%ED%95%9C%EA%B0%80">2 way handshake으로 부족한가?</a></li>
 <li><a href="#tcp-%EC%97%B0%EA%B2%B0-%ED%95%B4%EC%A0%9C-%EA%B3%BC%EC%A0%95">TCP 연결 해제 과정</a></li>
+<li><a href="#tcp-%EC%83%81%ED%83%9C-%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8">TCP 상태 다이어그램</a></li>
 </ul>
 </li>
 <li>
@@ -627,7 +628,6 @@
 <li><a href="#%ED%9D%90%EB%A6%84-%EC%A0%9C%EC%96%B4">흐름 제어</a></li>
 <li><a href="#%ED%98%BC%EC%9E%A1-%EC%A0%9C%EC%96%B4">혼잡 제어</a></li>
 <li><a href="#%EC%98%A4%EB%A5%98-%EC%A0%9C%EC%96%B4">오류 제어</a></li>
-<li><a href="#tcp-%EC%83%81%ED%83%9C-%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8">TCP 상태 다이어그램</a></li>
 </ul>
 </li>
 <li>
