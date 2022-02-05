@@ -21,6 +21,7 @@ module.exports = {
       github: `https://github.com/BecomeWeasel`,
       linkedIn: `https://www.linkedin.com/in/sungwoo-hwang/`,
       email: `hsw0194@gmail.com`,
+      resume: `https://sungwooh.notion.site/3d156c4da23a48159c570a30de87b6d3`,
     },
   },
 
@@ -59,11 +60,11 @@ module.exports = {
         },
       },
       {
-        date:'2021.10 ~',
-        activity : 'Google Developer Student Clubs',
-        links :{
-          post: 'https://gdsc.community.dev/hanyang-university/'
-        }
+        date: '2021.10 ~',
+        activity: 'Google Developer Student Clubs',
+        links: {
+          post: 'https://gdsc.community.dev/hanyang-university/',
+        },
       },
     ],
 
