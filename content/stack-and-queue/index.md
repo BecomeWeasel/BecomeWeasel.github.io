@@ -1,7 +1,7 @@
 ---
 emoji: 📓
 title: Stack과 Queue
-date: '2022-02-05 00:00:00'
+date: '2022-02-01 00:00:00'
 author: weasel
 tags: 자료구조 stack queue
 categories: 자료구조

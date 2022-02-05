@@ -1,7 +1,7 @@
 ---
 emoji: 📓
 title: Array와 Linked List
-date: '2022-02-04 00:00:00'
+date: '2022-01-24 00:00:00'
 author: weasel
 tags: 자료구조 array linked_list
 categories: 자료구조
