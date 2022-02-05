@@ -1,0 +1,561 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.58c7447b9282ecfbd3c6.css" data-identity="gatsby-global-css">@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-8d7d79679b70dbe27172b6460e7a7910.woff2) format("woff2"),url(/static/montserrat-latin-100-ec38980a9e0119a379e2a9b3dbb1901a.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-e279051046ba1286706adc886cf1c96b.woff2) format("woff2"),url(/static/montserrat-latin-100italic-3b325a3173c8207435cd1b76e19bf501.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-9d266fbbfa6cab7009bd56003b1eeb67.woff2) format("woff2"),url(/static/montserrat-latin-200-2d8ba08717110d27122e54c34b8a5798.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-6e5b3756583bb2263eb062eae992735e.woff2) format("woff2"),url(/static/montserrat-latin-200italic-a0d6f343e4b536c582926255367a57da.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-00b3e893aab5a8fd632d6342eb72551a.woff2) format("woff2"),url(/static/montserrat-latin-300-ea303695ceab35f17e7d062f30e0173b.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-56f34ea368f6aedf89583d444bbcb227.woff2) format("woff2"),url(/static/montserrat-latin-300italic-54b0bf2c8c4c12ffafd803be2466a790.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-b71748ae4f80ec8c014def4c5fa8688b.woff2) format("woff2"),url(/static/montserrat-latin-400-0659a9f4e90db5cf51b50d005bff1e41.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-6eed6b4cbb809c6efc7aa7ddad6dbe3e.woff2) format("woff2"),url(/static/montserrat-latin-400italic-7583622cfde30ae49086d18447ab28e7.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-091b209546e16313fd4f4fc36090c757.woff2) format("woff2"),url(/static/montserrat-latin-500-edd311588712a96bbf435fad264fff62.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-c90ced68b46050061d1a41842d6dfb43.woff2) format("woff2"),url(/static/montserrat-latin-500italic-5146cbfe02b1deea5dffea27a5f2f998.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-0480d2f8a71f38db8633b84d8722e0c2.woff2) format("woff2"),url(/static/montserrat-latin-600-b77863a375260a05dd13f86a1cee598f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-cf46ffb11f3a60d7df0567f8851a1d00.woff2) format("woff2"),url(/static/montserrat-latin-600italic-c4fcfeeb057724724097167e57bd7801.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-7dbcc8a5ea2289d83f657c25b4be6193.woff2) format("woff2"),url(/static/montserrat-latin-700-99271a835e1cae8c76ef8bba99a8cc4e.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-c41ad6bdb4bd504a843d546d0a47958d.woff2) format("woff2"),url(/static/montserrat-latin-700italic-6779372f04095051c62ed36bc1dcc142.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-db9a3e0ba7eaea32e5f55328ace6cf23.woff2) format("woff2"),url(/static/montserrat-latin-800-4e3c615967a2360f5db87d2f0fd2456f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-bf45bfa14805969eda318973947bc42b.woff2) format("woff2"),url(/static/montserrat-latin-800italic-fe82abb0bcede51bf724254878e0c374.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-e66c7edc609e24bacbb705175669d814.woff2) format("woff2"),url(/static/montserrat-latin-900-8211f418baeb8ec880b80ba3c682f957.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-4454c775e48152c1a72510ceed3603e2.woff2) format("woff2"),url(/static/montserrat-latin-900italic-efcaa0f6a82ee0640b83a0916e6e8d68.woff) format("woff")}.search-input-wrapper{align-items:center;display:none;margin-top:3px;width:180px}@media(min-width:768px){.search-input-wrapper{display:flex}}.search-icon{color:var(--primary-text-color);margin-right:2px}.search-input{height:100%;width:100%}.search-input .MuiAutocomplete-inputRoot{padding-right:0!important}.search-input .MuiInputBase-input{color:var(--primary-text-color)!important;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;font-weight:500;padding-bottom:2px!important}.search-input .MuiInput-underline:before{border-bottom-width:1px}.search-input .MuiInput-underline:after,.search-input .MuiInput-underline:before{border-bottom-color:var(--primary-text-color)}.page-header-wrapper{display:flex;height:60px;justify-content:center;width:100%}.page-header-wrapper .page-header{align-items:center;display:flex;justify-content:space-between;max-width:720px;width:100%}.page-header-wrapper .page-header .link{color:var(--primary-text-color);font-size:17px;font-weight:700}@media(min-width:768px){.page-header-wrapper .page-header .link{font-size:20px;font-weight:700}}.page-header-wrapper .page-header .trailing-section{align-items:center;display:flex}.page-header-wrapper .page-header .trailing-section .link{margin-right:10px}@media(min-width:768px){.page-header-wrapper .page-header .trailing-section .link{margin-right:20px}}.page-footer-wrapper{align-items:center;display:flex;height:62px;justify-content:center;margin-top:auto;width:100%}.page-footer-wrapper .page-footer{max-width:720px;text-align:center;width:100%}.page-footer-wrapper .page-footer .link{color:var(--primary-text-color);font-size:20px;font-weight:700;margin-right:20px}.page-footer-wrapper .page-footer a{color:#3a95ff}.dark-mode-button-wrapper{align-items:center;bottom:20px;display:flex;justify-content:center;position:fixed;right:20px}.dark-mode-button{-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);background-color:#363f47!important;border-radius:50px;box-shadow:0 5px 25px rgba(0,0,0,.12);cursor:pointer;height:50px;width:50px;z-index:3}.dark-mode-icon{color:#fff}a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{border:0;font-size:100%;font:inherit;margin:0;padding:0;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}a{outline:none;text-decoration:none}html{--background-color:#fff;--primary-text-color:#000;--secondary-text-color:#9e9e9e;--content-text-color:#37352f;--button-background-color:#f3f3f4;--button-text-color:#363f47;--tab-text-color:#6e6d7a;--tab-hover-text-color:#0d0c22;--tab-selected-background-color:rgba(13,12,34,.05);--bio-link-icon-color:rgba(0,0,0,.54);--about-link-icon-color:#a8a8a8;--chip-background-color:#f3f3f4;--link-text-color:rgba(55,53,47,.7);--post-card-border-color:rgba(0,0,0,.12);--markdown-table-even-cell-background-color:#f6f8fa;--markdown-table-border-color:#dfe2e5;--markdown-blockquote-border-color:#dfe2e5;--markdown-border-color:#e1e4e8}html[data-theme=dark]{--background-color:#232326;--primary-text-color:#e6e6e6;--secondary-text-color:#768390;--content-text-color:#e6e6e6;--button-background-color:#444c56;--button-text-color:#363f47;--tab-text-color:#768390;--tab-hover-text-color:#acbac7;--tab-selected-background-color:#373e47;--chip-background-color:#323a42;--bio-link-icon-color:#e6e6e6;--about-link-icon-color:#a8a8a8;--link-text-color:#90b0ec;--post-card-border-color:#363f47;--markdown-table-even-cell-background-color:#2d333b;--markdown-table-border-color:#444c56;--markdown-blockquote-border-color:#4f5864;--markdown-border-color:#e1e4e8}*{-webkit-appearance:none;appearance:none;box-sizing:border-box}html{font-size:14px;height:100%;overflow-y:scroll;width:100%}body{background-color:var(--background-color)!important}a{color:var(--link-text-color)}.page-wrapper{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--primary-text-color);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;justify-content:center;min-height:100vh;padding-left:15px;padding-right:15px;word-break:keep-all}.page-wrapper,.page-wrapper .page-content{align-items:center;display:flex;flex-direction:column;width:100%}.page-wrapper .page-content{max-width:720px}.icon{color:var(--about-link-icon-color);font-size:20px}.social-links .icon{color:var(--bio-link-icon-color);font-size:30px}@keyframes blinking-cursor{0%{opacity:0}50%{opacity:1}to{opacity:0}}.bio{color:var(--primary-text-color);display:flex;flex-direction:column;justify-content:space-between;margin-bottom:120px;margin-top:120px;width:100%}@media(min-width:768px){.bio{align-items:center;flex-direction:row}}.bio .introduction{display:flex;flex-direction:column;word-break:keep-all}.bio .introduction .react-rotating-text-cursor{animation:blinking-cursor .8s cubic-bezier(.68,.01,.01,.99) 0s infinite}.bio .introduction strong{display:inline-block;font-weight:600}.bio .introduction.korean{font-size:32px;font-weight:100;line-height:1.2}.bio .introduction.korean .title .react-rotating-text-cursor{font-size:35px;line-height:35px}@media(min-width:768px){.bio .introduction.korean{font-size:40px}.bio .introduction.korean .title .react-rotating-text-cursor{font-size:45px;line-height:45px}}.bio .introduction.english{font-family:montserrat;font-size:25px;line-height:1.2}@media(min-width:768px){.bio .introduction.english{font-size:45px}}.bio .introduction.english .name{font-size:35px;font-weight:600}.bio .introduction.english .job{font-size:35px}.bio .introduction.english .description{font-size:20px;font-weight:200;margin-top:8px}.bio .introduction.english .social-links{display:flex;margin-top:20px}.bio .thumbnail{display:none;width:250px}@media(min-width:768px){.bio .thumbnail{display:block}}.section-header-wrapper{display:flex;justify-content:center;margin-bottom:32px;width:100%}.section-header-wrapper .section-header{border-bottom:4px solid var(--primary-text-color);color:var(--primary-text-color);font-size:30px;font-weight:700;padding-bottom:5px}.timestamp-section{align-items:center;display:flex;flex-direction:column;justify-content:center;margin-bottom:50px;width:100%;word-break:keep-all}.timestamp-section .body{padding:0 10px;width:100%}.timestamp-section .body .timestamp{border-left:2px solid #bdbdbd;display:flex;font-size:18px;font-weight:400;justify-items:center;margin-left:5px;padding:10px 0;width:100%}.timestamp-section .body .timestamp:first-child{padding-top:7px}.timestamp-section .body .timestamp:last-child{padding-bottom:7px}.timestamp-section .body .timestamp:before{align-self:center;background-color:var(--background-color);border:2px solid #828282;border-radius:10px;content:"";height:10px;left:-1px;position:relative;transform:translatex(-50%);width:10px}.timestamp-section .body .timestamp .date{align-self:center;color:#828282;margin-left:5px;margin-right:5px;min-width:115px;width:115px}@media(min-width:768px){.timestamp-section .body .timestamp .date{min-width:200px;width:200px}}.timestamp-section .body .timestamp .activity{line-height:23px;width:100%}.project-section{align-items:center;justify-content:center}.project-section,.project-section .project{display:flex;flex-direction:column;width:100%}.project-section .project{margin-bottom:30px;padding:15px}.project-section .project .head{font-size:20px;font-weight:700;line-height:30px;margin-bottom:10px}.project-section .project .body{display:flex;flex-direction:column;width:100%}.project-section .project .body .thumbnail{margin-bottom:10px;width:100%}.project-section .project .body .tech-stack{display:flex;margin-bottom:10px}.project-section .project .body .tech-stack .tech{background-color:var(--chip-background-color);border-radius:10px;font-size:15px;font-weight:500;margin-right:5px;padding:5px 7px}.project-section .project .body .description{font-size:16px;font-weight:400;line-height:1.4}@media(min-width:768px){.project-section .project .body{flex-direction:column}.project-section .project .body .content{margin-top:0}}.post-header{border-bottom:1px solid var(--post-card-border-color);display:flex;flex-direction:column;justify-content:center;margin-bottom:40px;margin-top:20px;padding-bottom:10px;width:100%;word-break:keep-all}.post-header .emoji{font-size:78px;margin-bottom:20px}.post-header .categories{margin-bottom:5px}.post-header .categories .category{color:var(--primary-text-color);font-weight:600;margin-right:4px}.post-header .categories .category:hover{text-decoration:underline}.post-header .title{color:var(--primary-text-color);font-size:32px;font-weight:600;line-height:1.3;margin-bottom:6px}.post-header .info{color:var(--secondary-text-color);display:flex;flex-wrap:wrap;font-size:16px;font-weight:500;line-height:1.5;width:100%}.post-header .info .author{margin-right:4px}.post-header .info strong{color:var(--primary-text-color);font-weight:600}.post-navigator{column-gap:1.4%;display:grid;grid-template-columns:49.3% 49.3%;width:100%}.post-navigator .post-card{border:1px solid var(--post-card-border-color);border-radius:6px;color:var(--primary-text-color);cursor:pointer;display:flex;flex-direction:column;padding:15px;transition:transform .2s;width:100%}.post-navigator .post-card:hover .title{text-decoration:underline}.post-navigator .post-card.prev{margin-right:auto}.post-navigator .post-card.next{margin-left:auto}.post-navigator .post-card .direction{color:gray;font-size:14px;font-weight:500;margin-bottom:5px}.post-navigator .post-card .title{font-size:16px;font-weight:600;line-height:1.4;margin-bottom:7px}.markdown .octicon{fill:currentColor;display:inline-block;vertical-align:text-bottom}.markdown .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}.markdown .anchor:focus{outline:none}.markdown h1 .octicon-link,.markdown h2 .octicon-link,.markdown h3 .octicon-link,.markdown h4 .octicon-link,.markdown h5 .octicon-link,.markdown h6 .octicon-link{color:#1b1f23;vertical-align:middle;visibility:hidden}.markdown h1:hover .anchor,.markdown h2:hover .anchor,.markdown h3:hover .anchor,.markdown h4:hover .anchor,.markdown h5:hover .anchor,.markdown h6:hover .anchor{text-decoration:none}.markdown h1:hover .anchor .octicon-link,.markdown h2:hover .anchor .octicon-link,.markdown h3:hover .anchor .octicon-link,.markdown h4:hover .anchor .octicon-link,.markdown h5:hover .anchor .octicon-link,.markdown h6:hover .anchor .octicon-link{visibility:visible}.markdown h1:hover .anchor .octicon-link:before,.markdown h2:hover .anchor .octicon-link:before,.markdown h3:hover .anchor .octicon-link:before,.markdown h4:hover .anchor .octicon-link:before,.markdown h5:hover .anchor .octicon-link:before,.markdown h6:hover .anchor .octicon-link:before{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' aria-hidden='true' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z'/%3E%3C/svg%3E");content:" ";display:inline-block;height:16px;width:16px}.markdown{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;word-wrap:break-word;color:var(--content-text-color);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;font-weight:500;line-height:1.5}.markdown details{display:block}.markdown summary{display:list-item}.markdown a{background-color:initial}.markdown a:active,.markdown a:hover{outline-width:0}.markdown strong{font-weight:inherit;font-weight:bolder}.markdown h1{margin:.67em 0}.markdown img{border-style:none}.markdown code,.markdown kbd,.markdown pre{font-family:monospace,monospace;font-size:1em}.markdown hr{box-sizing:initial;overflow:visible}.markdown input{font:inherit;margin:0;overflow:visible}.markdown [type=checkbox]{box-sizing:border-box;padding:0}.markdown *{box-sizing:border-box}.markdown input{font-family:inherit;font-size:inherit;line-height:inherit}.markdown a{border-bottom:.05em solid;border-bottom-color:var(--link-text-color);border-left-color:var(--link-text-color);border-right-color:var(--link-text-color);border-top-color:var(--link-text-color);color:var(--link-text-color);text-decoration:none}.markdown a.anchor{border-bottom:none}.markdown strong{font-weight:700}.markdown hr{background:transparent;border-bottom:1px solid var(--markdown-blockquote-border-color);height:0;margin:15px 0;overflow:hidden}.markdown hr:after,.markdown hr:before{content:"";display:table}.markdown hr:after{clear:both}.markdown table{border-collapse:collapse;border-spacing:0}.markdown td,.markdown th{padding:0}.markdown details summary{cursor:pointer}.markdown h1,.markdown h2,.markdown h3,.markdown h4,.markdown h5,.markdown h6{margin-bottom:0;margin-top:0}.markdown h1{font-size:32px}.markdown h1,.markdown h2{font-weight:600}.markdown h2{font-size:24px}.markdown h3{font-size:20px}.markdown h3,.markdown h4{font-weight:600}.markdown h4{font-size:16px}.markdown h5{font-size:14px}.markdown h5,.markdown h6{font-weight:600}.markdown h6{font-size:12px}.markdown p{margin-bottom:10px;margin-top:0}.markdown blockquote{margin:0}.markdown ol,.markdown ul{margin-bottom:0;margin-top:0;padding-left:0}.markdown ol ol,.markdown ul ol{list-style-type:lower-roman}.markdown ol ol ol,.markdown ol ul ol,.markdown ul ol ol,.markdown ul ul ol{list-style-type:lower-alpha}.markdown dd{margin-left:0}.markdown code,.markdown pre{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px}.markdown code.language-text{border-radius:3px;font-size:85%;padding:.2em .4em}.markdown :not(pre)>code.language-text{background:hsla(44,6%,50%,.15);color:#eb5757;overflow-wrap:break-word}.markdown pre{margin-bottom:0;margin-top:0}.markdown input::-webkit-inner-spin-button,.markdown input::-webkit-outer-spin-button{-webkit-appearance:none;appearance:none;margin:0}.markdown :checked+.radio-label{border-color:#0366d6;position:relative;z-index:1}.markdown .border{border:1px solid var(--markdown-border-color)!important}.markdown .border-0{border:0!important}.markdown .border-bottom{border-bottom:1px solid var(--markdown-border-color)!important}.markdown .rounded-1{border-radius:3px!important}.markdown .bg-white{background-color:transparent!important}.markdown .bg-gray-light{background-color:#fafbfc!important}.markdown .text-gray-light{color:#6a737d!important}.markdown .pl-3,.markdown .px-3{padding-left:16px!important}.markdown .px-3{padding-right:16px!important}.markdown .f6{font-size:12px!important}.markdown .lh-condensed{line-height:1.25!important}.markdown .text-bold{font-weight:600!important}.markdown .pl-c{color:#6a737d}.markdown .pl-c1,.markdown .pl-s .pl-v{color:#005cc5}.markdown .pl-e,.markdown .pl-en{color:#6f42c1}.markdown .pl-s .pl-s1,.markdown .pl-smi{color:#24292e}.markdown .pl-ent{color:#22863a}.markdown .pl-k{color:#d73a49}.markdown .pl-pds,.markdown .pl-s,.markdown .pl-s .pl-pse .pl-s1,.markdown .pl-sr,.markdown .pl-sr .pl-cce,.markdown .pl-sr .pl-sra,.markdown .pl-sr .pl-sre{color:#032f62}.markdown .pl-smw,.markdown .pl-v{color:#e36209}.markdown .pl-bu{color:#b31d28}.markdown .pl-ii{background-color:#b31d28;color:#fafbfc}.markdown .pl-c2{background-color:#d73a49;color:#fafbfc}.markdown .pl-c2:before{content:"^M"}.markdown .pl-sr .pl-cce{color:#22863a;font-weight:700}.markdown .pl-ml{color:#735c0f}.markdown .pl-mh,.markdown .pl-mh .pl-en,.markdown .pl-ms{color:#005cc5;font-weight:700}.markdown .pl-mi{color:#24292e;font-style:italic}.markdown .pl-mb{color:#24292e;font-weight:700}.markdown .pl-md{background-color:#ffeef0;color:#b31d28}.markdown .pl-mi1{background-color:#f0fff4;color:#22863a}.markdown .pl-mc{background-color:#ffebda;color:#e36209}.markdown .pl-mi2{background-color:#005cc5;color:#f6f8fa}.markdown .pl-mdr{color:#6f42c1;font-weight:700}.markdown .pl-ba{color:#586069}.markdown .pl-sg{color:#959da5}.markdown .pl-corl{color:#032f62;text-decoration:underline}.markdown .mb-0{margin-bottom:0!important}.markdown .my-2{margin-bottom:8px!important;margin-top:8px!important}.markdown .pl-0{padding-left:0!important}.markdown .py-0{padding-bottom:0!important;padding-top:0!important}.markdown .pl-1{padding-left:4px!important}.markdown .pl-2{padding-left:8px!important}.markdown .py-2{padding-bottom:8px!important;padding-top:8px!important}.markdown .pl-3{padding-left:16px!important}.markdown .pl-4{padding-left:24px!important}.markdown .pl-5{padding-left:32px!important}.markdown .pl-6{padding-left:40px!important}.markdown .pl-7{padding-left:48px!important}.markdown .pl-8{padding-left:64px!important}.markdown .pl-9{padding-left:80px!important}.markdown .pl-10{padding-left:96px!important}.markdown .pl-11{padding-left:112px!important}.markdown .pl-12{padding-left:128px!important}.markdown hr{border-bottom-color:#eee}.markdown kbd{background-color:#fafbfc;border:1px solid #d1d5da;border-radius:3px;box-shadow:inset 0 -1px 0 #d1d5da;color:#444d56;display:inline-block;font:11px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;line-height:10px;padding:3px 5px;vertical-align:middle}.markdown:after,.markdown:before{content:"";display:table}.markdown:after{clear:both}.markdown>:first-child{margin-top:0!important}.markdown>:last-child{margin-bottom:0!important}.markdown a:not([href]){color:inherit;text-decoration:none}.markdown blockquote,.markdown details,.markdown dl,.markdown ol,.markdown p,.markdown pre,.markdown table,.markdown ul{margin-bottom:16px;margin-top:0}.markdown hr{background-color:var(--markdown-border-color);border:0;height:.25em;margin:24px 0;padding:0}.markdown blockquote{border-left:.25em solid var(--markdown-blockquote-border-color);color:#6a737d;padding:0 1em}.markdown blockquote>:first-child{margin-top:0}.markdown blockquote>:last-child{margin-bottom:0}.markdown h1,.markdown h2,.markdown h3,.markdown h4,.markdown h5,.markdown h6{font-weight:600;line-height:1.25;margin-bottom:16px;margin-top:24px}.markdown h1{font-size:2em}.markdown h2{font-size:1.5em}.markdown h3{font-size:1.25em}.markdown h4{font-size:1em}.markdown h5{font-size:.875em}.markdown h6{color:#6a737d;font-size:.85em}.markdown ol,.markdown ul{padding-left:2em}.markdown ol ol,.markdown ol ul,.markdown ul ol,.markdown ul ul{margin-bottom:0;margin-top:0}.markdown ol{list-style-type:decimal}.markdown ul{list-style-type:disc}.markdown li{word-wrap:break-all;display:list-item;text-align:-webkit-match-parent}.markdown li>p{margin-top:16px}.markdown li+li{margin-top:.25em}.markdown dl{padding:0}.markdown dl dt{font-size:1em;font-style:italic;font-weight:600;margin-top:16px;padding:0}.markdown dl dd{margin-bottom:16px;padding:0 16px}.markdown table{display:block;overflow:auto;width:100%}.markdown table th{font-weight:600}.markdown table td,.markdown table th{border:1px solid var(--markdown-table-border-color);padding:6px 13px}.markdown table tr{border-top:1px solid var(--markdown-table-border-color)}.markdown table tr:nth-child(2n){background-color:var(--markdown-table-even-cell-background-color)}.markdown img{background-color:transparent;box-sizing:initial;display:block;margin:0 auto;max-width:100%}.markdown img[align=right]{padding-left:20px}.markdown img[align=left]{padding-right:20px}.markdown code{background-color:rgba(27,31,35,.05);border-radius:3px;font-size:85%;margin:0;padding:.2em .4em}.markdown pre{word-wrap:normal}.markdown pre>code{background:transparent;border:0;font-size:100%;margin:0;padding:0;white-space:pre;word-break:normal}.markdown .highlight{margin-bottom:16px}.markdown .highlight pre{margin-bottom:0;word-break:normal}.markdown .highlight pre,.markdown pre{background-color:#f6f8fa;border-radius:3px;font-size:85%;line-height:1.45;overflow:auto;padding:16px}.markdown pre code{word-wrap:normal;background-color:initial;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0}.markdown .commit-tease-sha{color:#444d56;display:inline-block;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:90%}.markdown .full-commit .btn-outline:not(:disabled):hover{border-color:#005cc5;color:#005cc5}.markdown .blob-wrapper{overflow-x:auto;overflow-y:hidden}.markdown .blob-wrapper-embedded{max-height:240px;overflow-y:auto}.markdown .blob-num{color:rgba(27,31,35,.3);cursor:pointer;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px;line-height:20px;min-width:50px;padding-left:10px;padding-right:10px;text-align:right;-webkit-user-select:none;-ms-user-select:none;user-select:none;vertical-align:top;white-space:nowrap;width:1%}.markdown .blob-num:hover{color:rgba(27,31,35,.6)}.markdown .blob-num:before{content:attr(data-line-number)}.markdown .blob-code{line-height:20px;padding-left:10px;padding-right:10px;position:relative;vertical-align:top}.markdown .blob-code-inner{word-wrap:normal;color:#24292e;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px;overflow:visible;white-space:pre}.markdown .pl-token.active,.markdown .pl-token:hover{background:#ffea7f;cursor:pointer}.markdown .tab-size[data-tab-size="1"]{-moz-tab-size:1;-o-tab-size:1;tab-size:1}.markdown .tab-size[data-tab-size="2"]{-moz-tab-size:2;-o-tab-size:2;tab-size:2}.markdown .tab-size[data-tab-size="3"]{-moz-tab-size:3;-o-tab-size:3;tab-size:3}.markdown .tab-size[data-tab-size="4"]{-moz-tab-size:4;-o-tab-size:4;tab-size:4}.markdown .tab-size[data-tab-size="5"]{-moz-tab-size:5;-o-tab-size:5;tab-size:5}.markdown .tab-size[data-tab-size="6"]{-moz-tab-size:6;-o-tab-size:6;tab-size:6}.markdown .tab-size[data-tab-size="7"]{-moz-tab-size:7;-o-tab-size:7;tab-size:7}.markdown .tab-size[data-tab-size="8"]{-moz-tab-size:8;-o-tab-size:8;tab-size:8}.markdown .tab-size[data-tab-size="9"]{-moz-tab-size:9;-o-tab-size:9;tab-size:9}.markdown .tab-size[data-tab-size="10"]{-moz-tab-size:10;-o-tab-size:10;tab-size:10}.markdown .tab-size[data-tab-size="11"]{-moz-tab-size:11;-o-tab-size:11;tab-size:11}.markdown .tab-size[data-tab-size="12"]{-moz-tab-size:12;-o-tab-size:12;tab-size:12}.markdown .task-list-item{list-style-type:none}.markdown .task-list-item+.task-list-item{margin-top:3px}.markdown .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown .table-of-contents{align-items:flex-start;display:flex;flex-direction:column;justify-content:center;position:fixed;right:0;top:75px;width:340px}@media(max-width:1300px){.markdown .table-of-contents{display:none}}.markdown .table-of-contents ul{cursor:pointer;list-style-type:none}.markdown .table-of-contents ul li a{border-bottom:none;color:var(--secondary-text-color);font-size:14px;height:30px;padding:6px 2px;width:100%}.markdown .table-of-contents ul p{margin:0}.markdown .gatsby-resp-image-wrapper{display:flex!important;justify-content:center!important;max-height:560px!important;width:100%!important}.markdown .gatsby-resp-image-wrapper img{height:auto!important;max-height:560px!important;max-width:100%!important;position:relative!important;width:auto!important}.markdown .gatsby-resp-image-wrapper+em{color:#6a737d;display:block;font-size:15px;font-style:italic;text-align:center}code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}.post-content{margin-bottom:20px;width:100%}.category-page-header-wrapper,.post-content{display:flex;flex-direction:column;justify-content:center}.category-page-header-wrapper{align-items:center;margin-bottom:30px;margin-top:30px}.category-page-header-wrapper .category-page-title{border-bottom:3px solid var(--primary-text-color);font-size:40px;font-weight:700;margin-bottom:15px;padding-bottom:7px;text-align:center;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}.category-page-header-wrapper .category-page-subtitle{font-size:20px;font-weight:500;padding-bottom:10px;text-align:center}.post-card-wrapper{display:flex;justify-content:center;min-height:150px;width:100%}.post-card-wrapper .post-card{border:1px solid var(--post-card-border-color);border-radius:6px;color:var(--primary-text-color);cursor:pointer;display:flex;flex-direction:column;height:100%;margin-bottom:15px;max-width:720px;padding:15px;transition:transform .2s;width:100%}.post-card-wrapper .post-card:hover .title{text-decoration:underline}@media(min-width:768px){.post-card-wrapper .post-card{margin-bottom:0}}.post-card-wrapper .post-card .title{font-size:18px;font-weight:600;line-height:1.4;margin-bottom:7px}.post-card-wrapper .post-card .description{-webkit-line-clamp:3;-webkit-box-orient:vertical;color:var(--primary-text-color);display:-webkit-box;font-size:13px;line-height:20px;margin-bottom:10px;overflow:hidden;text-overflow:ellipsis}.post-card-wrapper .post-card .info{color:var(--about-link-icon-color);display:flex;font-size:14px;justify-content:space-between;margin-top:auto}.post-card-wrapper .post-card .info .categories{display:flex}.post-card-wrapper .post-card .info .categories .category{margin-left:4px}.post-card-wrapper .post-card .info .categories .category:hover{text-decoration:underline}.post-card-column-wrapper{display:flex;justify-content:center;width:100%}.post-card-column-wrapper .post-card-column{align-items:center;display:flex;flex-direction:column}.post-card-column-wrapper .post-card-column .post-card-wrapper{margin-bottom:10px}.post-card-column-wrapper .post-card-column .more-post-card-button{background-color:var(--button-background-color);font-size:15px;font-weight:500;height:40px}.post-tabs-wrapper{align-self:flex-start;display:flex;flex-direction:column;justify-content:center;top:0;width:100%}.post-tabs-wrapper .post-tabs{display:flex;height:40px;justify-content:center;margin-bottom:12px;max-width:760px;width:100%}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTab-root{color:var(--tab-text-color);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:17px;font-weight:500;height:40px;min-height:auto;min-width:auto;padding:10px 12px;transition:all .2s ease}.post-tabs-wrapper .post-tabs .mui-tabs .Mui-selected,.post-tabs-wrapper .post-tabs .mui-tabs .MuiTab-root :hover{color:var(--tab-hover-text-color);transition:all .2s ease}.post-tabs-wrapper .post-tabs .mui-tabs .Mui-selected{background-color:var(--tab-selected-background-color);border-radius:8px;font-weight:600}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTabScrollButton-root{height:40px;width:20px}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTabs-scrollable{height:40px}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTabs-indicator{display:none}</style><meta name="generator" content="Gatsby 3.14.6"/><style data-emotion="css-global o6gwfi">html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:rgba(0, 0, 0, 0.87);font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;background-color:#fff;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#fff;}</style><style data-emotion="css-global 1prfaxn">@-webkit-keyframes mui-auto-fill{from{display:block;}}@keyframes mui-auto-fill{from{display:block;}}@-webkit-keyframes mui-auto-fill-cancel{from{display:block;}}@keyframes mui-auto-fill-cancel{from{display:block;}}</style><style data-emotion="css 1l6di18 feqhe6 11tfndm mnn31 vubbuv 1yxmbwk 6flbmm">.css-1l6di18.Mui-focused .MuiAutocomplete-clearIndicator{visibility:visible;}@media (pointer: fine){.css-1l6di18:hover .MuiAutocomplete-clearIndicator{visibility:visible;}}.css-1l6di18 .MuiAutocomplete-tag{margin:3px;max-width:calc(100% - 6px);}.css-1l6di18 .MuiAutocomplete-inputRoot{-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}.MuiAutocomplete-hasPopupIcon.css-1l6di18 .MuiAutocomplete-inputRoot,.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiAutocomplete-inputRoot{padding-right:30px;}.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiAutocomplete-inputRoot{padding-right:56px;}.css-1l6di18 .MuiAutocomplete-inputRoot .MuiAutocomplete-input{width:0;min-width:30px;}.css-1l6di18 .MuiInput-root{padding-bottom:1px;}.css-1l6di18 .MuiInput-root .MuiInput-input{padding:4px 4px 4px 0px;}.css-1l6di18 .MuiInput-root.MuiInputBase-sizeSmall .MuiInput-input{padding:2px 4px 3px 0;}.css-1l6di18 .MuiOutlinedInput-root{padding:9px;}.MuiAutocomplete-hasPopupIcon.css-1l6di18 .MuiOutlinedInput-root,.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiOutlinedInput-root{padding-right:39px;}.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiOutlinedInput-root{padding-right:65px;}.css-1l6di18 .MuiOutlinedInput-root .MuiAutocomplete-input{padding:7.5px 4px 7.5px 6px;}.css-1l6di18 .MuiOutlinedInput-root .MuiAutocomplete-endAdornment{right:9px;}.css-1l6di18 .MuiOutlinedInput-root.MuiInputBase-sizeSmall{padding:6px;}.css-1l6di18 .MuiOutlinedInput-root.MuiInputBase-sizeSmall .MuiAutocomplete-input{padding:2.5px 4px 2.5px 6px;}.css-1l6di18 .MuiFilledInput-root{padding-top:19px;padding-left:8px;}.MuiAutocomplete-hasPopupIcon.css-1l6di18 .MuiFilledInput-root,.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiFilledInput-root{padding-right:39px;}.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiFilledInput-root{padding-right:65px;}.css-1l6di18 .MuiFilledInput-root .MuiFilledInput-input{padding:7px 4px;}.css-1l6di18 .MuiFilledInput-root .MuiAutocomplete-endAdornment{right:9px;}.css-1l6di18 .MuiFilledInput-root.MuiInputBase-sizeSmall{padding-bottom:1px;}.css-1l6di18 .MuiFilledInput-root.MuiInputBase-sizeSmall .MuiFilledInput-input{padding:2.5px 4px;}.css-1l6di18 .MuiInputBase-hiddenLabel{padding-top:8px;}.css-1l6di18 .MuiAutocomplete-input{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;text-overflow:ellipsis;opacity:1;}.css-feqhe6{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;position:relative;min-width:0;padding:0;margin:0;border:0;vertical-align:top;width:100%;}.css-11tfndm{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:1rem;line-height:1.4375em;letter-spacing:0.00938em;color:rgba(0, 0, 0, 0.87);box-sizing:border-box;position:relative;cursor:text;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;position:relative;}.css-11tfndm.Mui-disabled{color:rgba(0, 0, 0, 0.38);cursor:default;}label+.css-11tfndm{margin-top:16px;}.css-11tfndm:after{border-bottom:2px solid #1976d2;left:0;bottom:0;content:"";position:absolute;right:0;-webkit-transform:scaleX(0);-moz-transform:scaleX(0);-ms-transform:scaleX(0);transform:scaleX(0);-webkit-transition:-webkit-transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;transition:transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;pointer-events:none;}.css-11tfndm.Mui-focused:after{-webkit-transform:scaleX(1);-moz-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1);}.css-11tfndm.Mui-error:after{border-bottom-color:#d32f2f;-webkit-transform:scaleX(1);-moz-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1);}.css-11tfndm:before{border-bottom:1px solid rgba(0, 0, 0, 0.42);left:0;bottom:0;content:"\00a0";position:absolute;right:0;-webkit-transition:border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;pointer-events:none;}.css-11tfndm:hover:not(.Mui-disabled):before{border-bottom:2px solid rgba(0, 0, 0, 0.87);}@media (hover: none){.css-11tfndm:hover:not(.Mui-disabled):before{border-bottom:1px solid rgba(0, 0, 0, 0.42);}}.css-11tfndm.Mui-disabled:before{border-bottom-style:dotted;}.css-mnn31{font:inherit;letter-spacing:inherit;color:currentColor;padding:4px 0 5px;border:0;box-sizing:content-box;background:none;height:1.4375em;margin:0;-webkit-tap-highlight-color:transparent;display:block;min-width:0;width:100%;-webkit-animation-name:mui-auto-fill-cancel;animation-name:mui-auto-fill-cancel;-webkit-animation-duration:10ms;animation-duration:10ms;}.css-mnn31::-webkit-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31::-moz-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31:-ms-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31::-ms-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31:focus{outline:0;}.css-mnn31:invalid{box-shadow:none;}.css-mnn31::-webkit-search-decoration{-webkit-appearance:none;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31::-webkit-input-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31::-moz-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:-ms-input-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31::-ms-input-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus::-webkit-input-placeholder{opacity:0.42;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus::-moz-placeholder{opacity:0.42;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus:-ms-input-placeholder{opacity:0.42;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus::-ms-input-placeholder{opacity:0.42;}.css-mnn31.Mui-disabled{opacity:1;-webkit-text-fill-color:rgba(0, 0, 0, 0.38);}.css-mnn31:-webkit-autofill{-webkit-animation-duration:5000s;animation-duration:5000s;-webkit-animation-name:mui-auto-fill;animation-name:mui-auto-fill;}.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}.css-1yxmbwk{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-1yxmbwk::-moz-focus-inner{border-style:none;}.css-1yxmbwk.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1yxmbwk{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1yxmbwk:hover{background-color:rgba(0, 0, 0, 0.04);}@media (hover: none){.css-1yxmbwk:hover{background-color:transparent;}}.css-1yxmbwk.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}.css-6flbmm{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:2.1875rem;}</style><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><script>
+  
+  function gaOptout(){document.cookie=disableStr+'=true; expires=Thu, 31 Dec 2099 23:59:59 UTC;path=/',window[disableStr]=!0}var gaProperty='G-NE46C2SFP9',disableStr='ga-disable-'+gaProperty;document.cookie.indexOf(disableStr+'=true')>-1&&(window[disableStr]=!0);
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'G-NE46C2SFP9', 'auto', {});
+      ga('set', 'anonymizeIp', true);
+      
+      
+      
+      
+      }</script><link rel="icon" href="/favicon-32x32.png?v=ad9e124e5060ab5ddbaf24744e1cfc72" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><title data-react-helmet="true">Mutex와 Semaphore</title><meta data-react-helmet="true" name="viewport" content="initial-scale=1, width=device-width"/><meta data-react-helmet="true" property="og:title" content="Mutex와 Semaphore"/><meta data-react-helmet="true" property="og:site_title" content="Mutex와 Semaphore"/><meta data-react-helmet="true" name="description" content="난 운영체제가 제일 재밌고 좋다. 최고👍 세마포어와 뮤텍스를 본격적으로 얘기하기에 앞서서 두 방법이 나오게 된 문제상황인 Race Condition과 Critical-Section을 먼저 소개한다. Race condition 두 개 이상의 프로세스가 공유 데이터에 대해서 동시에 접근하고 조작하려하는 상황을 의미한다. 즉 Race라는 뜻 그대로 하나의 자원을 놓고 서로 경쟁하려는 상태이다. 이 공유된 데이터의 마지막 값은 어느 프로세스가 마지막으로 끝내는지에 따라 달려있다. 만약 interleaved execution(서로 번갈가면서 명령어 수행시) 데이터의 무결성이 침해받는다. → 불확실성 이것을 예방하기 위해서, 동시에 진행되는 프로세스는 반드시 동기화가 되어야 한다. Critical-Section 이러한 문제를 임계구역(Critical-Section) 문제라고 한다. 임계구역이란 동일한 자원에 대해서 접근하는 영역을 의미한다.
+해결하기 위해서는, 한 프로세스가 임계구역에 진입해…"/><meta data-react-helmet="true" property="og:description" content="난 운영체제가 제일 재밌고 좋다. 최고👍 세마포어와 뮤텍스를 본격적으로 얘기하기에 앞서서 두 방법이 나오게 된 문제상황인 Race Condition과 Critical-Section을 먼저 소개한다. Race condition 두 개 이상의 프로세스가 공유 데이터에 대해서 동시에 접근하고 조작하려하는 상황을 의미한다. 즉 Race라는 뜻 그대로 하나의 자원을 놓고 서로 경쟁하려는 상태이다. 이 공유된 데이터의 마지막 값은 어느 프로세스가 마지막으로 끝내는지에 따라 달려있다. 만약 interleaved execution(서로 번갈가면서 명령어 수행시) 데이터의 무결성이 침해받는다. → 불확실성 이것을 예방하기 위해서, 동시에 진행되는 프로세스는 반드시 동기화가 되어야 한다. Critical-Section 이러한 문제를 임계구역(Critical-Section) 문제라고 한다. 임계구역이란 동일한 자원에 대해서 접근하는 영역을 의미한다.
+해결하기 위해서는, 한 프로세스가 임계구역에 진입해…"/><meta data-react-helmet="true" property="og:author" content="황성우"/><meta data-react-helmet="true" property="og:image" content="/og-image.png"/><meta data-react-helmet="true" property="og:type" content="website"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc4.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxK.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc4.woff2"/><style>@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc-.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxM.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc-.woff) format("woff")}</style><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link as="script" rel="preload" href="/webpack-runtime-c48767bf8929c8339e1c.js"/><link as="script" rel="preload" href="/framework-0844db7521903bfd3aff.js"/><link as="script" rel="preload" href="/app-ec7df1f79da26ab0b74a.js"/><link as="script" rel="preload" href="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-d98b774c0c4dd083401f.js"/><link as="script" rel="preload" href="/component---src-templates-blog-template-js-58afbd34cca0a2914727.js"/><link as="fetch" rel="preload" href="/page-data/mutex-and-semaphore/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1073350324.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1956554647.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2938748437.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="page-wrapper"><header class="page-header-wrapper"><div class="page-header"><div class="front-section"><a class="link" href="/">becomeweasel.me</a></div><div class="trailing-section"><a class="link" href="/about">about</a><a class="link" href="/posts">posts</a><div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1l6di18" role="combobox" aria-expanded="false"><div class="search-input-wrapper"><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root search-input css-feqhe6"><div class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-11tfndm"><input type="text" aria-invalid="false" autoComplete="off" value="" class="MuiInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mnn31" aria-autocomplete="list" autoCapitalize="none" spellcheck="false"/><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium search-icon css-vubbuv" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="SearchOutlinedIcon"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></div></div></div></div></div></div></header><main class="page-content"><header class="post-header"><div class="emoji">📓</div><div class="info"><div class="categories"><a class="category" href="/posts/운영체제">운영체제</a></div></div><h1 class="title">Mutex와 Semaphore</h1><div class="info"><div class="author">posted by <strong>weasel</strong>,</div> <!-- -->February 05, 2022</div></header><div class="post-content"><div class="markdown"><blockquote>
+<p>난 운영체제가 제일 재밌고 좋다. 최고👍</p>
+</blockquote>
+<p>세마포어와 뮤텍스를 본격적으로 얘기하기에 앞서서 두 방법이 나오게 된 문제상황인 <strong>Race Condition</strong>과 <strong>Critical-Section</strong>을 먼저 소개한다.</p>
+<h2 id="race-condition" style="position:relative;"><a href="#race-condition" aria-label="race condition permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Race condition</h2>
+<p><strong>두 개 이상의 프로세스가 공유 데이터에 대해서 동시에 접근하고 조작하려하는 상황</strong>을 의미한다. 즉 Race라는 뜻 그대로 하나의 자원을 놓고 서로 경쟁하려는 상태이다.</p>
+<p>이 공유된 데이터의 마지막 값은 어느 프로세스가 마지막으로 끝내는지에 따라 달려있다. 만약 interleaved execution(서로 번갈가면서 명령어 수행시) 데이터의 무결성이 침해받는다. → <strong>불확실성</strong></p>
+<p>이것을 예방하기 위해서, 동시에 진행되는 프로세스는 반드시 동기화가 되어야 한다.</p>
+<h2 id="critical-section" style="position:relative;"><a href="#critical-section" aria-label="critical section permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Critical-Section</h2>
+<p>이러한 문제를 <strong>임계구역</strong>(Critical-Section) 문제라고 한다. 임계구역이란 동일한 자원에 대해서 접근하는 영역을 의미한다.
+해결하기 위해서는, 한 프로세스가 <strong>임계구역에 진입해 작업을 진행할때</strong>, <strong>다른 프로세스들은 임계구역에 진입하는 것을 허락하지 않는것이다.</strong></p>
+<p>동기화를 해결하는 방법은 세가지 필수적인 조건을 맞춰야 한다.</p>
+<ol>
+<li><strong>상호배제(Mutual Exclusion)</strong>
+<ul>
+<li>어떠한 프로세스 혹은 스레드가 <strong>임계구역에서 작업을 진행하면</strong>, 다른 프로세스 혹은 스레드는 <strong>임계구역에 진입할 수 없다.</strong></li>
+</ul>
+</li>
+<li><strong>진행(Progess)</strong>
+<ul>
+<li>무기한으로 연기되는것을 막기 위해서 필요하다.</li>
+<li>만약, 다른 프로세스가 임계구역에서 작업을 하고 있지 않다면, <strong>다른 진입을 원하는 프로세스의 진입은 지체되어서는 안된다.</strong></li>
+</ul>
+</li>
+<li><strong>한계가 있는 대기 (Bounded Waiting)</strong>
+<ul>
+<li>과도한 방지를 막기 위해서 필요하다.</li>
+<li>프로세스가 임계구역에 들어가기 위해서 요청하고 <strong>대기하는 시간은 한정</strong>되어 있어야 한다. <strong>즉, 무기한적으로 대기되는것을 막기 위해서 필요하다.</strong></li>
+</ul>
+</li>
+</ol>
+<h2 id="문제에-대한-개괄적인-해결방식" style="position:relative;"><a href="#%EB%AC%B8%EC%A0%9C%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B0%9C%EA%B4%84%EC%A0%81%EC%9D%B8-%ED%95%B4%EA%B2%B0%EB%B0%A9%EC%8B%9D" aria-label="문제에 대한 개괄적인 해결방식 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>문제에 대한 개괄적인 해결방식</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 57.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB0ElEQVQoz32S6W7bMBCE/f4PFSC/WhRw6/po0LhVJVsUScmxLZ8Sr68gnbhummaBARfc5XD2GGh9pCwdorJIaclzy3J58eOplMUYg7U2IfrOeaKFEHhtg6ZZURQlQihKodIpZcNyKZL/9LRmWQqU0kipqOuGw+FwJXyNwYU3XBO6vsd5j3WO3hiMsfQRveHc9en+PRtE1S/KYynWOrZtS7trCcHjvXtGSN9GUmN6+r5P5Z/PZ7quS773PhKGay8SofPs9y0/szVlZckXhqU406xW7HY7hKiYzWYJRVEwmUwYjUbkeU5d15eSr4Tep9KinX4J2g8j2s/fOXz8glF1Uth1F2VRVVR3Op3SRxH7/f4NQmOTL3XHPDvy8HhEqA2lFOlRKaqkaDweJ1Xz+Zwsy5hOpwyHwzdKtg7vPN9+PDB6/EqhF1QbidwofPBpSO8OJU74ljA2/XA4kmU5VSU5Hk8pHmNRfYz/b2X+WZt4ujjRm4WNO2xdJAypJXGSf968rNvtYtcdRQF5ERACtAalA0qCUg1a36H1PavmnkVxh9KfWK0cVQVCBDYbrqQRg83aJ8IsC0gZMOYZPWmaxmyxdosxO7pujzEnbMoh5Vn7N+FvF3qePy3S2L4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/e34592d878891622f468691992212a08/37523/1.png"
+        srcset="/static/e34592d878891622f468691992212a08/e9ff0/1.png 180w,
+/static/e34592d878891622f468691992212a08/f21e7/1.png 360w,
+/static/e34592d878891622f468691992212a08/37523/1.png 720w,
+/static/e34592d878891622f468691992212a08/ee455/1.png 863w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>두 개의 프로세스만 있다고 가정했을때, 임계구역에 진입가능했는지 체크하고, 임계구역을 빠져나올때는 진입가능성을 열어준다.
+이 때 프로세스들은 동기화를 위한 데이터를 공유해야 한다.</p>
+<h2 id="뮤텍스" style="position:relative;"><a href="#%EB%AE%A4%ED%85%8D%EC%8A%A4" aria-label="뮤텍스 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>뮤텍스</h2>
+<p>CS를 가진 스레드 혹은 프로세스들의 실행시간(Running Time)이 서로 겹치지 않고 각각 단독으로 실행될 수 있게끔 하는 기술이다.<br>
+일반적으로 한 프로세스에 의해 소유될 수 있는 <strong>Key 객체</strong>를 기반으로 작동되며, <strong>이 객체를 소유한 스레드 혹은 프로세스만이 공유자원에 접근할 수 있다.</strong></p>
+<p>뮤텍스를 구현하는 방식에는 세가지 정도가 있는데, 모두 각각의 장단점이 존재한다.</p>
+<h3 id="swap-turn" style="position:relative;"><a href="#swap-turn" aria-label="swap turn permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Swap turn</h3>
+<ul>
+<li>
+<p>첫번째 해결방식, <strong>Swap turn</strong></p>
+<div class="gatsby-highlight" data-language="c"><pre class="language-c"><code class="language-c"><span class="token comment">// P0</span>
+<span class="token operator">*</span><span class="token operator">*</span><span class="token keyword">do</span> <span class="token punctuation">{</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>turn <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">;</span> <span class="token comment">/* My turn? */</span>
+critical section
+turn <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">/* Now it’s your turn */</span>
+remainder section
+<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">*</span><span class="token operator">*</span>
+
+<span class="token comment">// P1</span>
+<span class="token operator">*</span><span class="token operator">*</span><span class="token keyword">do</span> <span class="token punctuation">{</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>turn <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">;</span> <span class="token comment">/* My turn? */</span>
+critical section
+turn <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">/* Now it’s your turn */</span>
+remainder section
+<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">*</span><span class="token operator">*</span></code></pre></div>
+<ul>
+<li>공유 변수 <code class="language-text">turn</code> 을 두고, 서로 입장 가능한지 while로 체크한다.</li>
+<li><strong>상호배제는 만족하지만, 진행도는 만족하지 못한다.</strong></li>
+<li>두 프로세스는 무조건 <strong>in-turn 방식</strong>(왔다갔다)으로만 진입할 수 있다.
+<ul>
+<li>만약 P0→P1 순서대로 들어갔다고 해보자. 이때 P1이 추가적인 진입을 원하더라도 P0의 차례이기 때문에 P1은 진입 할 수 없고, 진행도를 만족하지 못한다.</li>
+</ul>
+</li>
+<li>즉, P1이 CS에 더 자주 접근해야하는 시스템이라고 해보자. 그럴때는 P0에 의존적이다. 두번 연속으로 CS 진입이 불가능하기 때문이다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="dekkers-algorithm" style="position:relative;"><a href="#dekkers-algorithm" aria-label="dekkers algorithm permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dekker’s Algorithm</h3>
+<ul>
+<li>
+<p>두번째 해결방식,<strong>데커 알고리즘</strong></p>
+<div class="gatsby-highlight" data-language="c"><pre class="language-c"><code class="language-c">boolean flag<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+초기에는 flag<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>flag<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>flase <span class="token comment">// 아무도 CS안에 있지 않다.</span>
+<span class="token comment">// Pi</span>
+<span class="token keyword">do</span> <span class="token punctuation">{</span>
+flag<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> true<span class="token punctuation">;</span> <span class="token comment">/* Pretend I am in */</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>flag<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">;</span> <span class="token comment">/* Is he also in? then wait*/</span>
+critical section
+flag <span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> false<span class="token punctuation">;</span> <span class="token comment">/* I am out now*/</span>
+remainder section
+<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<ul>
+<li>만약 <code class="language-text">flag[i]==true</code> 이면, Pi는 CS에 진입할 수 있다.</li>
+<li>첫번째 Swap turn 방식의 문제점인, 연속적인 진입이 불가능한 점을 해결한다.</li>
+<li><strong>상호배제는 만족하지만, 진행도는 만족하지 못한다.</strong></li>
+<li>만약 <code class="language-text">flag[i]=true</code> 일때 컨텍스트 스위칭이 일어나면, Pj가 생각하기에 Pi가 들어가있다고 생각할것이다. 실제로는 그렇지 않은데.
+<ul>
+<li>그러면 둘다 CS에 진입하지 못하고 기다려야 한다. 다음 컨텍스트 스위칭이 일어날때(선점식일때)까지 기다려야 한다.</li>
+<li><code class="language-text">flag[i]=true</code> 로 바꾸는 저 부분이 유저 코드이기 때문에 중간에 인터럽트의 방해를 받을 수 있는 <strong>non-atomic</strong>이기 때문이다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="petersons-algorithm" style="position:relative;"><a href="#petersons-algorithm" aria-label="petersons algorithm permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Peterson’s algorithm</h3>
+<ul>
+<li>
+<p>세번째 해결방식 (피터슨 알고리즘)</p>
+<div class="gatsby-highlight" data-language="c"><pre class="language-c"><code class="language-c"><span class="token keyword">do</span> <span class="token punctuation">{</span>
+flag <span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span> true<span class="token punctuation">;</span> <span class="token comment">/* My intention is to enter …. */</span>
+turn <span class="token operator">=</span> j<span class="token punctuation">;</span> <span class="token comment">/* Set to his turn */</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>flag <span class="token punctuation">[</span>j<span class="token punctuation">]</span> and turn <span class="token operator">==</span> j<span class="token punctuation">)</span> <span class="token punctuation">;</span> <span class="token comment">/* wait only if …*/</span>
+critical section
+flag <span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> false<span class="token punctuation">;</span>
+remainder section
+<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<ul>
+<li>1번과 2번의 공유 변수를 조합한 방식이다.</li>
+<li><code class="language-text">flag[j]</code> 변수를 활용해서, swap-turn은 해결했다. 또 <code class="language-text">turn</code> 문제를 이용해서 <strong>무조건 둘 중 하나는 CS에 들어갈 수 있음을 보장한다.</strong></li>
+<li>상호배제,진행도,한정된 대기시간이라는 두 프로세스간의 해결책에서의 조건을 모두 만족한다.</li>
+<li>여러 프로세스로 확장가능하다. 하지만, while loop에서 CPU는 계속 체크해줘야 하는 <strong>busy waiting 문제가 여전히 남아있다. CPU cycle을 낭비하고 있는것이다.</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="hw-지원" style="position:relative;"><a href="#hw-%EC%A7%80%EC%9B%90" aria-label="hw 지원 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HW 지원</h3>
+<p>이렇게 해결책에도 여전히 문제점이 남아있기 때문에, 많은 시스템들은 하드웨어의 지원을 받는다.</p>
+<ul>
+<li>I/O가 없을때 CS 진입 후 선점적인 스케쥴링을 방지.</li>
+<li>유니프로세서 시스템에선 인터럽트를 꺼버린다. 왜냐면 timeout이 있기 때문에. 하지만 대부분의 멀티프로세서 관점에서는 불리하다.</li>
+<li>현대의 대부분의 시스템들은 <strong>원자적인(atomic) 하드웨어 명령어</strong>를 지원받는다.
+<ul>
+<li>
+<p>TAS(test and set)</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 67.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC+0lEQVQ4y32T228bVRDG/S8jIKGNikJKGxFD4rRBNKngqQ+gBgiFJ0BqhXCIa68ve0myvuz6st71ei9ee9d27Nj7Q+s8YJDKSJ/Od+ac+eZcZlL+YAC+D7YNfQdcFwyDZc+ma1oMBgMMo4tt9/E9n17Pwbbr9KwCnU4eXT8nCDQSi+OY1CgMmQcBnq5hqVW8Vhu/3qBXb6DrLSRJQRRlNL2JcnlJtdagWhURpd9xHBnLEplM7H8EEzJfLAjCENv18IcjvOEQx/cZR2MaWpN2p8toNKLd6eB6PrWqhiTXMAybKLrB94c4rrcSTS2XC4iX/J/dzGbEa3uGwd0zqOo1Vs/CtExMy7oTXA+czmIG4fTu+Gv+hM9md3y5hNvFu5OnXO8Cz8/jBwL99muu898xdXPM+jlGTg7Xe7tat/sXGGaWrpVdzaNxielNZYXZXGQUFgmjAamrqw0EYROh8hETbQdK91gUN6G4gZX/kGJpk0JhA0XZoiBskMt9QLlyjyBIE8dPmc8PgSOs3kPKlT+SK3+J1tjF9w6oNx5xnrvPX2+3qOm76K3PEApb/Prbe4zHR3heBqOzhyRtI8ufoKqfcnFxH8NI4zhpRDGbfMoTDGMP1/0CrfGIN6/fp6ruoKo7XF1tA8e47j5BkCEMD+kauytU1W0ulQdojYfAMxxnj4r4ZyJ4xHJ5AjxfZRcKD9D1XXz/CZObb1jGz4GviZdfMZ8/o22eoGrH1FrHVK6PqTVPULQXCFIGRcmSCqPHzGcZHOcxwXCPKPqcMEwzCtM43j495wDb2cf1k/EA087gDjJ4gwP63iF+cMAoekq1/jHF0htSpfIpxdIpBeElQvEl+cK3iNIZsvIKWflphbL4imL5ZyriL0jyGbL8I4pyhih9T7lyiiT9QPb8BZqm/rsOFwswTRfPC2m1rBXvdGx03aBW1SmVZLrd/srfbJpE0S1x/J86TDpgHbNZ0koulmWu4HkOrtvHtnt0Om0cx2Y6HTOZRNzeJh20WIuP+RsMd+3AQY22YAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/b98a69e1d99ba00cf8c45e516717a33c/37523/2.png"
+        srcset="/static/b98a69e1d99ba00cf8c45e516717a33c/e9ff0/2.png 180w,
+/static/b98a69e1d99ba00cf8c45e516717a33c/f21e7/2.png 360w,
+/static/b98a69e1d99ba00cf8c45e516717a33c/37523/2.png 720w,
+/static/b98a69e1d99ba00cf8c45e516717a33c/774b6/2.png 738w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+</li>
+<li>
+<p>CAS(compare and swap)</p>
+<ul>
+<li>
+<p>원자적으로 두 변수를 바꾼다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 61.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB3klEQVQoz4WTeW+bQBDF/f2/Vf5olSh2D2MbzBFYHA5jF2PAB8fyq3YT0jhR2yeN9pjZp5k3s5M8z4miiDDcEIYhtu1griys9RrfD3AcB9f1GDEMA3+D8k2klMheotaqqjAMA8NYYFlrAiFomobz+ayDRzJ13m5TROCztkwWC4Pj8ah9k8vloonKstKB/4OKP5YnbH+PK3bY/o5HI6Gsry+EivlwOLBNt6RpSrpNgF4VoE1lXldHdruUNI3I84z9LiOKU/K8oOsHejlKMTC51aDHcX6RpJIogqLQt2zCK9NpxpevIXPjhOfl7Pd7Tqf6naYvkkxGbVQmCtEzPDwMzKYDrjMQioGVCcsl3N113N9LZjNIkhcaKQdtI/HkrXOKWBWbZnTfFrRLh3Y2p3cF12bgcmmoTx3pds96HeD7sZbofYd1hh/HIUkGTKvHcXuWK0nbdnRdS9ePuo7xkrquybJM2+cMX9eiOCBEwPPzhjiJESKkadpX/+3M2baNaZpYlqUb+4lQzVzbtjeP1ODHccxms8HzXH7++K7vFHzf12ULIQiC4A/hxx8w6qEzPlYYiyWe94T7JHiYzpnP52+kZVnqjhdFQdd1n0u+3UN17piZBx6XB/zoRHWW//yGvwEQSpfZ0JlYhwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/b3a0f263463a0498a2491fa71f69ca14/37523/3.png"
+        srcset="/static/b3a0f263463a0498a2491fa71f69ca14/e9ff0/3.png 180w,
+/static/b3a0f263463a0498a2491fa71f69ca14/f21e7/3.png 360w,
+/static/b3a0f263463a0498a2491fa71f69ca14/37523/3.png 720w,
+/static/b3a0f263463a0498a2491fa71f69ca14/35751/3.png 873w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+</li>
+<li>
+<p>key=true일때 lock이 false면, 진입해버린다. key=true인데 lock이 true면 계속 기다린다.</p>
+</li>
+<li>
+<p>이때 key는 lock과 달리 지역변수라 컨텍스트스위칭에 안전하다.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="세마포어" style="position:relative;"><a href="#%EC%84%B8%EB%A7%88%ED%8F%AC%EC%96%B4" aria-label="세마포어 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>세마포어</h2>
+<p>뮤텍스와 비슷하게 동기화 기법이지만, 뮤텍스는 동시접근을 막으려는 측면이 강하고,<br>
+세마포어는 <strong>접근 순서 동기화</strong>에 조금 더 관련이 있다.</p>
+<p>근본적으로 <code class="language-text">wait()</code> 와 <code class="language-text">signal()</code> 을 이용해서 제어를 하는 방식으로 세마포어를 여러개를 둠으로써 CS에 접근 가능한 task의 개수를 조절한다.<br>
+개수가 1개이면 binary semaphore로 mutex 처럼 작동을 한다.</p>
+<div class="gatsby-highlight" data-language="c"><pre class="language-c"><code class="language-c"><span class="token function">P</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token comment">// atmoic 해야함</span>
+func <span class="token punctuation">{</span>
+	<span class="token keyword">while</span> S<span class="token operator">&lt;=</span><span class="token number">0</span> <span class="token keyword">do</span> nothing<span class="token punctuation">;</span>
+	S<span class="token operator">--</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">V</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token comment">// atomic 해야함</span>
+func <span class="token punctuation">{</span>
+	S<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 28.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA8klEQVQY05WR22rDMBBE/f+/1ZeGUpK3ErepSUh8kyU5sZXo4uoUiVL6kFI6y8LA7g4zbDEMgrZtEKIjeE9CjJH/IqaKkaIs32mFQY0Bt3wNI3jvsdZhrcU5l9vefnBr807iy7IkxYxiVJ7deuJ1PSP3F5jOfISA0pqmaWnbjkEIhBioTzV9L6jrmv3+QNN2nE4158vl22mxGIdYVXSrA/NmB1UFzjEZg1YaqRTjeEZJlfk0z7/HTpFn43ja1Dw8HthWkmPf0QvJ1VzRWmenSVAOA1Iq5tnkw3udHZbbLZv1M2/lC8HfcNYSfPj7CXfEksNPbRnPk3oxbngAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/d253d94bae58c4ff2c38529d9f7293bb/37523/4.png"
+        srcset="/static/d253d94bae58c4ff2c38529d9f7293bb/e9ff0/4.png 180w,
+/static/d253d94bae58c4ff2c38529d9f7293bb/f21e7/4.png 360w,
+/static/d253d94bae58c4ff2c38529d9f7293bb/37523/4.png 720w,
+/static/d253d94bae58c4ff2c38529d9f7293bb/baaa6/4.png 813w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>이렇게 구현하면 세마포어를 이용한 뮤텍스가 된다.물론 busy waiting 문제가 여전히 발생을 한다.<br>
+즉, <strong>특정 프로세스가 CS를 많이 차지하면 다른 프로세스는 P에서 계속 기다려야 한다.</strong></p>
+<p>이런 방식은 여전히 싱글프로세서 시스템에서 자원의 낭비라는 관점에서 치명적이다.</p>
+<h3 id="blockwakeup-방식" style="position:relative;"><a href="#blockwakeup-%EB%B0%A9%EC%8B%9D" aria-label="blockwakeup 방식 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Block/Wakeup 방식</h3>
+<p>Block/Wakeup 방식은 busy waiting의 방식처럼 계속 기다리는 것이 아니라,<br>
+기다려야 할때만 대기줄에 줄만 세워놓고 block을 당하게 한다. 그 후 자리가 생기면, 즉 순서가 돌아오면 block 당한것들부터 차례로 깨운다.</p>
+<div class="gatsby-highlight" data-language="c"><pre class="language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+<span class="token keyword">int</span> value<span class="token punctuation">;</span> <span class="token comment">/* semaphore */</span>
+<span class="token keyword">struct</span> <span class="token class-name">process</span> <span class="token operator">*</span>L<span class="token punctuation">;</span> <span class="token comment">/*process wait queue*/</span>
+<span class="token punctuation">}</span> semaphore<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">P</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	S<span class="token punctuation">.</span>value<span class="token operator">--</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>S<span class="token punctuation">.</span>value<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		add this into S<span class="token punctuation">.</span>L
+		<span class="token function">block</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">V</span><span class="token punctuation">(</span>S<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	S<span class="token punctuation">.</span>value<span class="token operator">++</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> S<span class="token punctuation">.</span>value<span class="token operator">&lt;=</span><span class="token number">0</span> <span class="token punctuation">{</span>
+		remove P from S<span class="token punctuation">.</span>L
+		<span class="token function">wakeup</span><span class="token punctuation">(</span>P<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>이런식으로 세마포어에 링크드 리스트를 구현해서 세마포어를 완성한다.<br>
+process wait queue는 링크드 리스트로 프로세스의 PCB에 대한 정보를 가지고 있다.</p>
+<ul>
+<li><code class="language-text">block()</code> : 커널이 현재 프로세스를 중지시키고, 그 프로세스의 PCB를 세마포어 안에 있는 대기 큐에 넣는다.</li>
+<li><code class="language-text">wakeup(p)</code> : block되었던 프로세스 P의 작업을 다시 하게 한다.</li>
+</ul>
+<p>이 때 <strong><code class="language-text">S.value</code> 의 절댓값은 현재 block 되어 있는 프로세스의 개수와 동일하다.</strong></p>
+<p>이전의 busy waiting과 block wakeup 방식을 비교해보자.</p>
+<ul>
+<li>CS 파트가 작으면
+<ul>
+<li>기다리는데 드는 시간보다, <strong>block-wakeup하는데 드는 오버헤드가 더 클 수 있음.</strong></li>
+</ul>
+</li>
+<li>CS 파트가 길면
+<ul>
+<li>busy waiting이 길어지기 때문에 <strong>block-wakeup이 더 좋을수 있다.</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="임계영역이-유저-공유-데이터에서만-생길까" style="position:relative;"><a href="#%EC%9E%84%EA%B3%84%EC%98%81%EC%97%AD%EC%9D%B4-%EC%9C%A0%EC%A0%80-%EA%B3%B5%EC%9C%A0-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%97%90%EC%84%9C%EB%A7%8C-%EC%83%9D%EA%B8%B8%EA%B9%8C" aria-label="임계영역이 유저 공유 데이터에서만 생길까 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>임계영역이 유저 공유 데이터에서만 생길까?</h3>
+<ol>
+<li>
+<p><strong>인터럽트 핸들러와 커널</strong></p>
+<p><code class="language-text">count</code> 라는 커널 변수가 있다고 해보자. count 의 값을 올리는 과정은 load하고,increase하고,store를 하는 것인데,</p>
+<p>중간에 인터럽트가 와서 인터럽트 핸들러 내에서 count 값을 올리면, 그 뒤의 count 결과는 보장할 수 없다.</p>
+</li>
+<li>
+<p><strong>커널이 시스템 콜을 수행중일때, 컨텍스트 스위칭이 일어나면</strong></p>
+<p>두 프로세스간은 공유되는 데이터가 없다하더라도, 시스템 콜을 수행할때 커널 데이터는 공유될 수 있다.</p>
+<p>아래와 같은 상황일때 count의 값을 보장 할 수 있는가?</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 59.44444444444444%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVQoz5WS607bQBCF8/5PVBFouQpKArQVlDaB2IkTJ3bs+Bp717v2V+2SAELtjx7paGbk2dmzZ9zruo62bVG6RXWg2w6DNC+ZLlZMZj6eH1KUFeW2YlvVNhaGZYVsFGbGnj1zOC8rJs6cYDKhLreYkVI2xEnGMoiJNinRJiOKUzZpbuu1YZzavv0wAztQNIoiyyH0aYWwH/YN/wOrsKxqm0RJzm8vYLXe4LgLKiGtUt22tF1nY5TmhFGC686Z+yHOPMBbrvHDmCBKXhSGcUqjNH4Q8zie4q0iRg8jvKeJuRItG9pGoRvFcjRh7ng40wWj5xnuIsDxjM9Lxu7i7cnvkWYpjz++0xSFkQdKgdZ0WpN4C5J1TFpsrZd/ffI+MZs2mM1mXA+G9rl7tjvThdJIpRGysdS63Z3tbI9VWBuv3m1pnyulqGqxo7S2dLtLP6p6H3vLMLaGf8R8FTG8H3P38xnn1xO3V3cIKf+53ZdoPeyQQlLVNUIIaquopqpeajOkCUKkv3ztMZRS2l6tNW37xtelZFVDUgjCZEuc1SSlIN1Ksm1DVAjiQrBOK+K8ZpPX5JWy9ce/tec+DBh/u2R4dsj1SZ/r0z4350cMTvt8PT5gcNJneHrIzdkRdxefuTo+4Pb8yNaXXz5xe/GZ6cMQ536Aez/gD+yxl6oNNLNUAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/72e7a7593800021049865c3eace7b54b/37523/5.png"
+        srcset="/static/72e7a7593800021049865c3eace7b54b/e9ff0/5.png 180w,
+/static/72e7a7593800021049865c3eace7b54b/f21e7/5.png 360w,
+/static/72e7a7593800021049865c3eace7b54b/37523/5.png 720w,
+/static/72e7a7593800021049865c3eace7b54b/0eb6d/5.png 913w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p><strong>이 문제에서 중요한 점은 프로세스간의 데이터 공유가 아니더라도 임계영역문제가 커널 단에서 분명히 발생할 수 있다는 점이다.</strong></p>
+<p>유닉스에서는 이를 방지하기 위해서 <strong>커널이 작업을 수행하고 있다면(시스템 콜 처리) 선점식 스케쥴링이 일어나지 않는다.</strong></p>
+</li>
+<li>
+<p><strong>멀티프로세서 시스템</strong></p>
+<ul>
+<li>만약 두개의 CPU에서 한쪽은 count를 내리고, 한쪽은 카운트를 내린다고 해보자. 어느 값을 저장해야 하는가?
+<ul>
+<li>각각의 CPU 이기 때문에 인터럽트로 통제할 수 없다.</li>
+</ul>
+</li>
+<li>이럴때는 커널 자체가 하나의 큰 CS가 된다
+<ul>
+<li>커널 자체 접근을 한 CPU만 할 수 있게 하거나</li>
+<li>커널내의 공유 변수들을 따로 세마포어로 둔다. 그러면, 큰 CS가 여러개의 나뉘어진 CS가 된다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="이진-세마포어-vs-카운팅-세마포어-비교" style="position:relative;"><a href="#%EC%9D%B4%EC%A7%84-%EC%84%B8%EB%A7%88%ED%8F%AC%EC%96%B4-vs-%EC%B9%B4%EC%9A%B4%ED%8C%85-%EC%84%B8%EB%A7%88%ED%8F%AC%EC%96%B4-%EB%B9%84%EA%B5%90" aria-label="이진 세마포어 vs 카운팅 세마포어 비교 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>이진 세마포어 vs 카운팅 세마포어 비교</h3>
+<ul>
+<li>이진 세마포어
+<ul>
+<li>정수값이 0과 1를 오가는 세마포어다. lock과 비슷하게 0은 사용중이고 1은 자유로운 상태이다.</li>
+<li>같은 시간 안에 오직 한개의 프로세스나 스레드가 CS에 접근하는 것을 허용한다.</li>
+<li>CS안에 두개의 프로세스나 스레드가 동시접근이 불가능하기 때문에 상호배제는 만족한다.</li>
+<li>단지 정수적인 lock에 불과하니, 제한된 대기를 보장할수는 없다.즉, 기아가 발생할 수 있다.</li>
+</ul>
+</li>
+<li>카운팅 세마포어
+<ul>
+<li>카운터라는 여러개의 값을 가질 수 있는 세마포어다.</li>
+<li>값의 범위는 0에서부터 N까지며, N은 CS로 입장을 허용하는 프로세스 혹은 스레드의 개수이다.</li>
+<li>한번에 둘 이상이 CS에 접근가능하기 때문에 상호배제를 보장하지는 않는다.</li>
+<li>기아현상을 피하기 위해서 큐를 구성하고 있는데, 이 큐가 있기 때문에 언젠가는 접근할 수 있다. 즉 제한된 대기 상태를 보장한다.</li>
+<li>특정하고 1보다 큰 개수의 한정된 자원을 배분할때 사용 될 수 있다.
+<ul>
+<li>쓰레드 풀 (Thread Pool)</li>
+<li><a href="https://www.holaxprogramming.com/2013/01/10/devops-how-to-manage-dbcp/">DBCP(Database Connection Pool)의 사례</a></li>
+<li><a href="https://linked2ev.github.io/spring/2019/08/14/Spring-3-%EC%BB%A4%EB%84%A5%EC%85%98-%ED%92%80%EC%9D%B4%EB%9E%80/">스프링에서의 사례</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="세마포어와-뮤텍스-차이점은" style="position:relative;"><a href="#%EC%84%B8%EB%A7%88%ED%8F%AC%EC%96%B4%EC%99%80-%EB%AE%A4%ED%85%8D%EC%8A%A4-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%80" aria-label="세마포어와 뮤텍스 차이점은 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>세마포어와 뮤텍스 차이점은?</h2>
+<ul>
+<li>세마포어는 뮤텍스가 될 수 있지만 뮤텍스는 세마포어가 될 수 없다.</li>
+<li>예를 들어 Casting을 한다고 보면 (뮤텍스)세마포어 –> 가능하지만 (세마포어)뮤텍스 –> 불가능하다.</li>
+<li>세마포어는 <strong>소유할 수 없</strong>는 반면 뮤텍스는 <strong>소유할 수 있</strong>고 소유자가 이에 책임을 진다.</li>
+<li>뮤텍스는 <strong>1개만</strong> 동기화가 되지만 세마포어는 <strong>하나 이상</strong>을 동기화 할 수 있다.  → 즉 임계영역에 접근가능한 수가 원천적으로 1개이냐 , 그 이상이냐의 차이다.</li>
+</ul>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">변기가 하나뿐인 화장실에서는
+앞의 사람이 볼일을 마치고 나가야 다음 사람이 들어갈 수 있다.
+이렇게 한번에 오직 하나만 처리할 수 있는 대상에 사용하는 것이 뮤텍스이다.
+
+변기가 세개인 화장실에서는 동시에 세 사람이 볼일을 볼 수 있고
+이 세 사람 중 아무나 한명이 나오면 다음 사람이 볼일을 볼 수 있다.
+이렇게 동시에 제한된 수의 여러 처리가 가능하면 세마포어이다.
+
+만약 변기 세개짜리 화장실의 각 변기에 대해 뮤텍스를 사용한다면
+대기중인 사람은 각 변기 앞에 줄을 서는 것이고
+이렇게 되면 옆 칸이 비어도 들어가지 못하게 된다.
+
+만약 변기 세개를 묶어서 뮤텍스를 사용한다면
+변기 수에 관계없이 무조건 한명만 사용할 수 있게 된다.
+
+이 예에서 변기는 동기화 대상, 사람은 그 동기화 대상에 접근하는 쓰레드를 나타낸다.
+
+뮤텍스와 세마포어의 목적은 특정 동기화 대상이 이미 특정 쓰레드에 의해 사용중일 경우
+다른 쓰레드가 해당 동기화 대상에 접근하는 것을 제한하는 것으로 동일하지만
+관리하는 동기화 대상이 몇개 인가에 따라 차이가 생기게 되는 것이다.</code></pre></div>
+<h3 id="뮤텍스-vs-이진-세마포어" style="position:relative;"><a href="#%EB%AE%A4%ED%85%8D%EC%8A%A4-vs-%EC%9D%B4%EC%A7%84-%EC%84%B8%EB%A7%88%ED%8F%AC%EC%96%B4" aria-label="뮤텍스 vs 이진 세마포어 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>뮤텍스 vs 이진 세마포어</h3>
+<ul>
+<li><strong>뮤텍스</strong>
+<ul>
+<li>근본적으로 <strong>공유하는 자원에 대한 보호</strong>의 목적으로 쓰인다.</li>
+<li>뮤텍스는 <strong>lock을 잠근 task가 보유</strong>하는 관점이다.</li>
+<li>그렇기에 오직 <strong>그 task만이 해제</strong>할 수 있다. lock을 보유하지 않은 task가 접근할시 에러가 발생한다.</li>
+<li>일반적으로 이진 세마포어보다 더 가볍고 단순하기에 CS에 대한 보호의 용도로 더 많이 사용된다.</li>
+</ul>
+</li>
+<li><strong>이진 세마포어</strong>
+<ul>
+<li><strong>신호를 주는(Signalling) 메커니즘</strong>에 더 가깝다. “나는 끝났으니, 이제 너의 작업을 해도 된다”</li>
+<li>wait를 <strong>호출한 프로세스나 스레드가 아니여도 해제</strong>할 수 있다.</li>
+<li>물론 이것을 이용해서도 공유 자원을 보호하는데 사용할수는 있지만, <strong>task의 순서 동기화</strong>의 측면이 더 강하다.</li>
+<li>일반적으로 뮤텍스에 비해 오버헤드가 크다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="스핀락과-busy-waiting의-사용처" style="position:relative;"><a href="#%EC%8A%A4%ED%95%80%EB%9D%BD%EA%B3%BC-busy-waiting%EC%9D%98-%EC%82%AC%EC%9A%A9%EC%B2%98" aria-label="스핀락과 busy waiting의 사용처 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>스핀락과 busy waiting의 사용처</h2>
+<div class="gatsby-highlight" data-language="c"><pre class="language-c"><code class="language-c"><span class="token keyword">do</span><span class="token punctuation">{</span>
+	<span class="token function">acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	CS
+	<span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">while</span><span class="token punctuation">(</span>true<span class="token punctuation">)</span>
+
+func <span class="token function">acquire</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>availbale<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token comment">//busy waiting}</span>
+	<span class="token punctuation">}</span>
+	available<span class="token operator">=</span>false<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>위의 방식은 <code class="language-text">available</code> 이라는 변수를 둠으로써 락이 걸려있지 않다면 가져온뒤 CS로 진입하고 그렇지 않으면 계속 시도하는 방식을 쓰고 있다.</p>
+<p>이럴때 acquire과 release는 atomic해야한다. 이런 방식의 가장 큰 문제점은 busy waiting을 해야한다는 점이다. 한 프로세스가 CS에 접근하고 다른 프로세스가 acquire 함수를 호출하면, 계속 acquire 안에서 계속적으로 루프를 돌아야 한다. 이런 방식의 구현을 스핀락(spinlock)이라고 하는데 다른 프로레스가 락이 풀리기를 기다리면서 계속 “돌고있기” 때문이다.</p>
+<p>이러한 연속적인 루프는 싱글프로세서 시스템에서 명백한 문제인데, busy waiting 방식에서 다른 CPU가 더 잘 사용할 수 있는 자원을 대기하는데만 사용하고 있기 때문이다. <strong>내가 기다리고 있다는 건 다시 말하면 나혼자만 CPU를 할당받고, 다른 프로세스(락을 풀어줄수 있는)는 돌아가고 있지 않기 때문에 기다릴 이유가 없는것이다.</strong></p>
+<p>그러면 스핀락을 사용하는 busy-waiting 방식은 전혀 쓸모가 없는것일까?<br>
+<strong>그렇지 않다.</strong><br>
+이에 관해서 Operating System Concepts(공룡책)의 설명을 보자.</p>
+<blockquote>
+<p>Spinlocks do have an advantage, however, in that no context switch is required when a process must wait on a lock, and a
+context switch may take considerable time. In certain circumstances on multicore systems, spinlocks are in fact the preferable choice for locking. If a lock is
+to be held for a short duration, one thread can “spin” on one processing core while another thread performs its critical section on another core. On modern multicore computing systems, spinlocks are widely used in many operating systems.</p>
+</blockquote>
+<p>야매로 번역을 해보자면,</p>
+<blockquote>
+<p>하지만, <strong>스핀락도 장점이 있다.</strong> 락이 빨리 풀릴거라고 예상되는 시스템에서 스핀락은 아주 유용하다.<br>
+<strong>컨텍스트 스위칭을 하는 비용보다 스핀락으로 busy waiting을 하는게 더 이득일 수 있기 때문이다.</strong><br>
+이러한 장점때문에 멀티프로세서 시스템에서 한 쓰레드는 락에 대해서 계속 스핀하고, 다른 쓰레드는 다른 프로세서에서 임계영역에 대한 접근을 할 수 있다.</p>
+</blockquote>
+<p>이게 무슨말이냐면, 원래 락이 빨리 풀리는 시스템에서는, <strong>다른 프로세서에 있는 스레드가 락을 해제한다면, 내 프로세서에서는 컨텍스트 스위칭을 할 필요없이 바로 스핀락 하다가 들어가버리면 되기 때문이다.</strong></p>
+<p>만약, 내가 지금 <strong>spin 한다고 해서 바로 컨텍스트 스위칭을 해버린다면, 다른 프로세서가 락을 풀어도 내 프로세서는 다시 프로세스로 스케쥴링될때까지 기다리고, 컨텍스트 스위칭을 한 후  접근해야하기 때문이다.</strong><br>
+즉, 원래 락이 빨리 풀리는 시스템에선 컨텍스트 스위칭의 비용이 spin lock의 대기시간의 비용보다 더 비쌀수 있기 때문이다.</p>
+<div class="table-of-contents">
+<ul>
+<li>
+<p><a href="#race-condition">Race condition</a></p>
+</li>
+<li>
+<p><a href="#critical-section">Critical-Section</a></p>
+</li>
+<li>
+<p><a href="#%EB%AC%B8%EC%A0%9C%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B0%9C%EA%B4%84%EC%A0%81%EC%9D%B8-%ED%95%B4%EA%B2%B0%EB%B0%A9%EC%8B%9D">문제에 대한 개괄적인 해결방식</a></p>
+</li>
+<li>
+<p><a href="#%EB%AE%A4%ED%85%8D%EC%8A%A4">뮤텍스</a></p>
+<ul>
+<li><a href="#swap-turn">Swap turn</a></li>
+<li><a href="#dekkers-algorithm">Dekker’s Algorithm</a></li>
+<li><a href="#petersons-algorithm">Peterson’s algorithm</a></li>
+<li><a href="#hw-%EC%A7%80%EC%9B%90">HW 지원</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%EC%84%B8%EB%A7%88%ED%8F%AC%EC%96%B4">세마포어</a></p>
+<ul>
+<li><a href="#blockwakeup-%EB%B0%A9%EC%8B%9D">Block/Wakeup 방식</a></li>
+<li><a href="#%EC%9E%84%EA%B3%84%EC%98%81%EC%97%AD%EC%9D%B4-%EC%9C%A0%EC%A0%80-%EA%B3%B5%EC%9C%A0-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%97%90%EC%84%9C%EB%A7%8C-%EC%83%9D%EA%B8%B8%EA%B9%8C">임계영역이 유저 공유 데이터에서만 생길까?</a></li>
+<li><a href="#%EC%9D%B4%EC%A7%84-%EC%84%B8%EB%A7%88%ED%8F%AC%EC%96%B4-vs-%EC%B9%B4%EC%9A%B4%ED%8C%85-%EC%84%B8%EB%A7%88%ED%8F%AC%EC%96%B4-%EB%B9%84%EA%B5%90">이진 세마포어 vs 카운팅 세마포어 비교</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%EC%84%B8%EB%A7%88%ED%8F%AC%EC%96%B4%EC%99%80-%EB%AE%A4%ED%85%8D%EC%8A%A4-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%80">세마포어와 뮤텍스 차이점은?</a></p>
+<ul>
+<li><a href="#%EB%AE%A4%ED%85%8D%EC%8A%A4-vs-%EC%9D%B4%EC%A7%84-%EC%84%B8%EB%A7%88%ED%8F%AC%EC%96%B4">뮤텍스 vs 이진 세마포어</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#%EC%8A%A4%ED%95%80%EB%9D%BD%EA%B3%BC-busy-waiting%EC%9D%98-%EC%82%AC%EC%9A%A9%EC%B2%98">스핀락과 busy waiting의 사용처</a></p>
+</li>
+</ul>
+</div></div></div><div class="post-navigator"><div class="post-navigator-card-wrapper"><a class="post-card prev" href="/tcp-and-udp/"><div class="direction">이전 글</div><div class="title">TCP와 UDP</div></a></div><div class="post-navigator-card-wrapper"></div></div><div class="utterances"></div></main><footer class="page-footer-wrapper"><p class="page-footer">© <!-- -->2022<!-- --> <a href="https://github.com/BecomeWeasel">황성우</a> powered by<a href="https://github.com/zoomKoding/zoomkoding-gatsby-blog"> zoomkoding-gatsby-blog</a></p></footer><div class="dark-mode-button-wrapper"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium dark-mode-button css-1yxmbwk" tabindex="0" type="button"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge dark-mode-icon css-6flbmm" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="DarkModeIcon"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/mutex-and-semaphore/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b59c105ecff302a7ff41.js"],"app":["/app-ec7df1f79da26ab0b74a.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-1609a5c63343c5b466f4.js"],"component---src-pages-404-js":["/component---src-pages-404-js-6076882eaa290de4961c.js"],"component---src-pages-about-js":["/component---src-pages-about-js-9e01623d2a93f73a37dd.js"],"component---src-pages-index-js":["/component---src-pages-index-js-f6123af5be2f61005263.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-58afbd34cca0a2914727.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-e25a4807bff633ea1857.js"]};/*]]>*/</script><script src="/polyfill-b59c105ecff302a7ff41.js" nomodule=""></script><script src="/component---src-templates-blog-template-js-58afbd34cca0a2914727.js" async=""></script><script src="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-d98b774c0c4dd083401f.js" async=""></script><script src="/app-ec7df1f79da26ab0b74a.js" async=""></script><script src="/framework-0844db7521903bfd3aff.js" async=""></script><script src="/webpack-runtime-c48767bf8929c8339e1c.js" async=""></script></body></html>
