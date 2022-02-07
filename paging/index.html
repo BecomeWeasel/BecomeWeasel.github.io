@@ -1,0 +1,493 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.58c7447b9282ecfbd3c6.css" data-identity="gatsby-global-css">@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-8d7d79679b70dbe27172b6460e7a7910.woff2) format("woff2"),url(/static/montserrat-latin-100-ec38980a9e0119a379e2a9b3dbb1901a.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-e279051046ba1286706adc886cf1c96b.woff2) format("woff2"),url(/static/montserrat-latin-100italic-3b325a3173c8207435cd1b76e19bf501.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-9d266fbbfa6cab7009bd56003b1eeb67.woff2) format("woff2"),url(/static/montserrat-latin-200-2d8ba08717110d27122e54c34b8a5798.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-6e5b3756583bb2263eb062eae992735e.woff2) format("woff2"),url(/static/montserrat-latin-200italic-a0d6f343e4b536c582926255367a57da.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-00b3e893aab5a8fd632d6342eb72551a.woff2) format("woff2"),url(/static/montserrat-latin-300-ea303695ceab35f17e7d062f30e0173b.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-56f34ea368f6aedf89583d444bbcb227.woff2) format("woff2"),url(/static/montserrat-latin-300italic-54b0bf2c8c4c12ffafd803be2466a790.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-b71748ae4f80ec8c014def4c5fa8688b.woff2) format("woff2"),url(/static/montserrat-latin-400-0659a9f4e90db5cf51b50d005bff1e41.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-6eed6b4cbb809c6efc7aa7ddad6dbe3e.woff2) format("woff2"),url(/static/montserrat-latin-400italic-7583622cfde30ae49086d18447ab28e7.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-091b209546e16313fd4f4fc36090c757.woff2) format("woff2"),url(/static/montserrat-latin-500-edd311588712a96bbf435fad264fff62.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-c90ced68b46050061d1a41842d6dfb43.woff2) format("woff2"),url(/static/montserrat-latin-500italic-5146cbfe02b1deea5dffea27a5f2f998.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-0480d2f8a71f38db8633b84d8722e0c2.woff2) format("woff2"),url(/static/montserrat-latin-600-b77863a375260a05dd13f86a1cee598f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-cf46ffb11f3a60d7df0567f8851a1d00.woff2) format("woff2"),url(/static/montserrat-latin-600italic-c4fcfeeb057724724097167e57bd7801.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-7dbcc8a5ea2289d83f657c25b4be6193.woff2) format("woff2"),url(/static/montserrat-latin-700-99271a835e1cae8c76ef8bba99a8cc4e.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-c41ad6bdb4bd504a843d546d0a47958d.woff2) format("woff2"),url(/static/montserrat-latin-700italic-6779372f04095051c62ed36bc1dcc142.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-db9a3e0ba7eaea32e5f55328ace6cf23.woff2) format("woff2"),url(/static/montserrat-latin-800-4e3c615967a2360f5db87d2f0fd2456f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-bf45bfa14805969eda318973947bc42b.woff2) format("woff2"),url(/static/montserrat-latin-800italic-fe82abb0bcede51bf724254878e0c374.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-e66c7edc609e24bacbb705175669d814.woff2) format("woff2"),url(/static/montserrat-latin-900-8211f418baeb8ec880b80ba3c682f957.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-4454c775e48152c1a72510ceed3603e2.woff2) format("woff2"),url(/static/montserrat-latin-900italic-efcaa0f6a82ee0640b83a0916e6e8d68.woff) format("woff")}.search-input-wrapper{align-items:center;display:none;margin-top:3px;width:180px}@media(min-width:768px){.search-input-wrapper{display:flex}}.search-icon{color:var(--primary-text-color);margin-right:2px}.search-input{height:100%;width:100%}.search-input .MuiAutocomplete-inputRoot{padding-right:0!important}.search-input .MuiInputBase-input{color:var(--primary-text-color)!important;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;font-weight:500;padding-bottom:2px!important}.search-input .MuiInput-underline:before{border-bottom-width:1px}.search-input .MuiInput-underline:after,.search-input .MuiInput-underline:before{border-bottom-color:var(--primary-text-color)}.page-header-wrapper{display:flex;height:60px;justify-content:center;width:100%}.page-header-wrapper .page-header{align-items:center;display:flex;justify-content:space-between;max-width:720px;width:100%}.page-header-wrapper .page-header .link{color:var(--primary-text-color);font-size:17px;font-weight:700}@media(min-width:768px){.page-header-wrapper .page-header .link{font-size:20px;font-weight:700}}.page-header-wrapper .page-header .trailing-section{align-items:center;display:flex}.page-header-wrapper .page-header .trailing-section .link{margin-right:10px}@media(min-width:768px){.page-header-wrapper .page-header .trailing-section .link{margin-right:20px}}.page-footer-wrapper{align-items:center;display:flex;height:62px;justify-content:center;margin-top:auto;width:100%}.page-footer-wrapper .page-footer{max-width:720px;text-align:center;width:100%}.page-footer-wrapper .page-footer .link{color:var(--primary-text-color);font-size:20px;font-weight:700;margin-right:20px}.page-footer-wrapper .page-footer a{color:#3a95ff}.dark-mode-button-wrapper{align-items:center;bottom:20px;display:flex;justify-content:center;position:fixed;right:20px}.dark-mode-button{-webkit-backdrop-filter:blur(30px);backdrop-filter:blur(30px);background-color:#363f47!important;border-radius:50px;box-shadow:0 5px 25px rgba(0,0,0,.12);cursor:pointer;height:50px;width:50px;z-index:3}.dark-mode-icon{color:#fff}a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{border:0;font-size:100%;font:inherit;margin:0;padding:0;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}a{outline:none;text-decoration:none}html{--background-color:#fff;--primary-text-color:#000;--secondary-text-color:#9e9e9e;--content-text-color:#37352f;--button-background-color:#f3f3f4;--button-text-color:#363f47;--tab-text-color:#6e6d7a;--tab-hover-text-color:#0d0c22;--tab-selected-background-color:rgba(13,12,34,.05);--bio-link-icon-color:rgba(0,0,0,.54);--about-link-icon-color:#a8a8a8;--chip-background-color:#f3f3f4;--link-text-color:rgba(55,53,47,.7);--post-card-border-color:rgba(0,0,0,.12);--markdown-table-even-cell-background-color:#f6f8fa;--markdown-table-border-color:#dfe2e5;--markdown-blockquote-border-color:#dfe2e5;--markdown-border-color:#e1e4e8}html[data-theme=dark]{--background-color:#232326;--primary-text-color:#e6e6e6;--secondary-text-color:#768390;--content-text-color:#e6e6e6;--button-background-color:#444c56;--button-text-color:#363f47;--tab-text-color:#768390;--tab-hover-text-color:#acbac7;--tab-selected-background-color:#373e47;--chip-background-color:#323a42;--bio-link-icon-color:#e6e6e6;--about-link-icon-color:#a8a8a8;--link-text-color:#90b0ec;--post-card-border-color:#363f47;--markdown-table-even-cell-background-color:#2d333b;--markdown-table-border-color:#444c56;--markdown-blockquote-border-color:#4f5864;--markdown-border-color:#e1e4e8}*{-webkit-appearance:none;appearance:none;box-sizing:border-box}html{font-size:14px;height:100%;overflow-y:scroll;width:100%}body{background-color:var(--background-color)!important}a{color:var(--link-text-color)}.page-wrapper{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:var(--primary-text-color);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;justify-content:center;min-height:100vh;padding-left:15px;padding-right:15px;word-break:keep-all}.page-wrapper,.page-wrapper .page-content{align-items:center;display:flex;flex-direction:column;width:100%}.page-wrapper .page-content{max-width:720px}.icon{color:var(--about-link-icon-color);font-size:20px}.social-links .icon{color:var(--bio-link-icon-color);font-size:30px}@keyframes blinking-cursor{0%{opacity:0}50%{opacity:1}to{opacity:0}}.bio{color:var(--primary-text-color);display:flex;flex-direction:column;justify-content:space-between;margin-bottom:120px;margin-top:120px;width:100%}@media(min-width:768px){.bio{align-items:center;flex-direction:row}}.bio .introduction{display:flex;flex-direction:column;word-break:keep-all}.bio .introduction .react-rotating-text-cursor{animation:blinking-cursor .8s cubic-bezier(.68,.01,.01,.99) 0s infinite}.bio .introduction strong{display:inline-block;font-weight:600}.bio .introduction.korean{font-size:32px;font-weight:100;line-height:1.2}.bio .introduction.korean .title .react-rotating-text-cursor{font-size:35px;line-height:35px}@media(min-width:768px){.bio .introduction.korean{font-size:40px}.bio .introduction.korean .title .react-rotating-text-cursor{font-size:45px;line-height:45px}}.bio .introduction.english{font-family:montserrat;font-size:25px;line-height:1.2}@media(min-width:768px){.bio .introduction.english{font-size:45px}}.bio .introduction.english .name{font-size:35px;font-weight:600}.bio .introduction.english .job{font-size:35px}.bio .introduction.english .description{font-size:20px;font-weight:200;margin-top:8px}.bio .introduction.english .social-links{display:flex;margin-top:20px}.bio .thumbnail{display:none;width:250px}@media(min-width:768px){.bio .thumbnail{display:block}}.section-header-wrapper{display:flex;justify-content:center;margin-bottom:32px;width:100%}.section-header-wrapper .section-header{border-bottom:4px solid var(--primary-text-color);color:var(--primary-text-color);font-size:30px;font-weight:700;padding-bottom:5px}.timestamp-section{align-items:center;display:flex;flex-direction:column;justify-content:center;margin-bottom:50px;width:100%;word-break:keep-all}.timestamp-section .body{padding:0 10px;width:100%}.timestamp-section .body .timestamp{border-left:2px solid #bdbdbd;display:flex;font-size:18px;font-weight:400;justify-items:center;margin-left:5px;padding:10px 0;width:100%}.timestamp-section .body .timestamp:first-child{padding-top:7px}.timestamp-section .body .timestamp:last-child{padding-bottom:7px}.timestamp-section .body .timestamp:before{align-self:center;background-color:var(--background-color);border:2px solid #828282;border-radius:10px;content:"";height:10px;left:-1px;position:relative;transform:translatex(-50%);width:10px}.timestamp-section .body .timestamp .date{align-self:center;color:#828282;margin-left:5px;margin-right:5px;min-width:115px;width:115px}@media(min-width:768px){.timestamp-section .body .timestamp .date{min-width:200px;width:200px}}.timestamp-section .body .timestamp .activity{line-height:23px;width:100%}.project-section{align-items:center;justify-content:center}.project-section,.project-section .project{display:flex;flex-direction:column;width:100%}.project-section .project{margin-bottom:30px;padding:15px}.project-section .project .head{font-size:20px;font-weight:700;line-height:30px;margin-bottom:10px}.project-section .project .body{display:flex;flex-direction:column;width:100%}.project-section .project .body .thumbnail{margin-bottom:10px;width:100%}.project-section .project .body .tech-stack{display:flex;margin-bottom:10px}.project-section .project .body .tech-stack .tech{background-color:var(--chip-background-color);border-radius:10px;font-size:15px;font-weight:500;margin-right:5px;padding:5px 7px}.project-section .project .body .description{font-size:16px;font-weight:400;line-height:1.4}@media(min-width:768px){.project-section .project .body{flex-direction:column}.project-section .project .body .content{margin-top:0}}.post-header{border-bottom:1px solid var(--post-card-border-color);display:flex;flex-direction:column;justify-content:center;margin-bottom:40px;margin-top:20px;padding-bottom:10px;width:100%;word-break:keep-all}.post-header .emoji{font-size:78px;margin-bottom:20px}.post-header .categories{margin-bottom:5px}.post-header .categories .category{color:var(--primary-text-color);font-weight:600;margin-right:4px}.post-header .categories .category:hover{text-decoration:underline}.post-header .title{color:var(--primary-text-color);font-size:32px;font-weight:600;line-height:1.3;margin-bottom:6px}.post-header .info{color:var(--secondary-text-color);display:flex;flex-wrap:wrap;font-size:16px;font-weight:500;line-height:1.5;width:100%}.post-header .info .author{margin-right:4px}.post-header .info strong{color:var(--primary-text-color);font-weight:600}.post-navigator{column-gap:1.4%;display:grid;grid-template-columns:49.3% 49.3%;width:100%}.post-navigator .post-card{border:1px solid var(--post-card-border-color);border-radius:6px;color:var(--primary-text-color);cursor:pointer;display:flex;flex-direction:column;padding:15px;transition:transform .2s;width:100%}.post-navigator .post-card:hover .title{text-decoration:underline}.post-navigator .post-card.prev{margin-right:auto}.post-navigator .post-card.next{margin-left:auto}.post-navigator .post-card .direction{color:gray;font-size:14px;font-weight:500;margin-bottom:5px}.post-navigator .post-card .title{font-size:16px;font-weight:600;line-height:1.4;margin-bottom:7px}.markdown .octicon{fill:currentColor;display:inline-block;vertical-align:text-bottom}.markdown .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}.markdown .anchor:focus{outline:none}.markdown h1 .octicon-link,.markdown h2 .octicon-link,.markdown h3 .octicon-link,.markdown h4 .octicon-link,.markdown h5 .octicon-link,.markdown h6 .octicon-link{color:#1b1f23;vertical-align:middle;visibility:hidden}.markdown h1:hover .anchor,.markdown h2:hover .anchor,.markdown h3:hover .anchor,.markdown h4:hover .anchor,.markdown h5:hover .anchor,.markdown h6:hover .anchor{text-decoration:none}.markdown h1:hover .anchor .octicon-link,.markdown h2:hover .anchor .octicon-link,.markdown h3:hover .anchor .octicon-link,.markdown h4:hover .anchor .octicon-link,.markdown h5:hover .anchor .octicon-link,.markdown h6:hover .anchor .octicon-link{visibility:visible}.markdown h1:hover .anchor .octicon-link:before,.markdown h2:hover .anchor .octicon-link:before,.markdown h3:hover .anchor .octicon-link:before,.markdown h4:hover .anchor .octicon-link:before,.markdown h5:hover .anchor .octicon-link:before,.markdown h6:hover .anchor .octicon-link:before{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' aria-hidden='true' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z'/%3E%3C/svg%3E");content:" ";display:inline-block;height:16px;width:16px}.markdown{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;word-wrap:break-word;color:var(--content-text-color);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;font-weight:500;line-height:1.5}.markdown details{display:block}.markdown summary{display:list-item}.markdown a{background-color:initial}.markdown a:active,.markdown a:hover{outline-width:0}.markdown strong{font-weight:inherit;font-weight:bolder}.markdown h1{margin:.67em 0}.markdown img{border-style:none}.markdown code,.markdown kbd,.markdown pre{font-family:monospace,monospace;font-size:1em}.markdown hr{box-sizing:initial;overflow:visible}.markdown input{font:inherit;margin:0;overflow:visible}.markdown [type=checkbox]{box-sizing:border-box;padding:0}.markdown *{box-sizing:border-box}.markdown input{font-family:inherit;font-size:inherit;line-height:inherit}.markdown a{border-bottom:.05em solid;border-bottom-color:var(--link-text-color);border-left-color:var(--link-text-color);border-right-color:var(--link-text-color);border-top-color:var(--link-text-color);color:var(--link-text-color);text-decoration:none}.markdown a.anchor{border-bottom:none}.markdown strong{font-weight:700}.markdown hr{background:transparent;border-bottom:1px solid var(--markdown-blockquote-border-color);height:0;margin:15px 0;overflow:hidden}.markdown hr:after,.markdown hr:before{content:"";display:table}.markdown hr:after{clear:both}.markdown table{border-collapse:collapse;border-spacing:0}.markdown td,.markdown th{padding:0}.markdown details summary{cursor:pointer}.markdown h1,.markdown h2,.markdown h3,.markdown h4,.markdown h5,.markdown h6{margin-bottom:0;margin-top:0}.markdown h1{font-size:32px}.markdown h1,.markdown h2{font-weight:600}.markdown h2{font-size:24px}.markdown h3{font-size:20px}.markdown h3,.markdown h4{font-weight:600}.markdown h4{font-size:16px}.markdown h5{font-size:14px}.markdown h5,.markdown h6{font-weight:600}.markdown h6{font-size:12px}.markdown p{margin-bottom:10px;margin-top:0}.markdown blockquote{margin:0}.markdown ol,.markdown ul{margin-bottom:0;margin-top:0;padding-left:0}.markdown ol ol,.markdown ul ol{list-style-type:lower-roman}.markdown ol ol ol,.markdown ol ul ol,.markdown ul ol ol,.markdown ul ul ol{list-style-type:lower-alpha}.markdown dd{margin-left:0}.markdown code,.markdown pre{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px}.markdown code.language-text{border-radius:3px;font-size:85%;padding:.2em .4em}.markdown :not(pre)>code.language-text{background:hsla(44,6%,50%,.15);color:#eb5757;overflow-wrap:break-word}.markdown pre{margin-bottom:0;margin-top:0}.markdown input::-webkit-inner-spin-button,.markdown input::-webkit-outer-spin-button{-webkit-appearance:none;appearance:none;margin:0}.markdown :checked+.radio-label{border-color:#0366d6;position:relative;z-index:1}.markdown .border{border:1px solid var(--markdown-border-color)!important}.markdown .border-0{border:0!important}.markdown .border-bottom{border-bottom:1px solid var(--markdown-border-color)!important}.markdown .rounded-1{border-radius:3px!important}.markdown .bg-white{background-color:transparent!important}.markdown .bg-gray-light{background-color:#fafbfc!important}.markdown .text-gray-light{color:#6a737d!important}.markdown .pl-3,.markdown .px-3{padding-left:16px!important}.markdown .px-3{padding-right:16px!important}.markdown .f6{font-size:12px!important}.markdown .lh-condensed{line-height:1.25!important}.markdown .text-bold{font-weight:600!important}.markdown .pl-c{color:#6a737d}.markdown .pl-c1,.markdown .pl-s .pl-v{color:#005cc5}.markdown .pl-e,.markdown .pl-en{color:#6f42c1}.markdown .pl-s .pl-s1,.markdown .pl-smi{color:#24292e}.markdown .pl-ent{color:#22863a}.markdown .pl-k{color:#d73a49}.markdown .pl-pds,.markdown .pl-s,.markdown .pl-s .pl-pse .pl-s1,.markdown .pl-sr,.markdown .pl-sr .pl-cce,.markdown .pl-sr .pl-sra,.markdown .pl-sr .pl-sre{color:#032f62}.markdown .pl-smw,.markdown .pl-v{color:#e36209}.markdown .pl-bu{color:#b31d28}.markdown .pl-ii{background-color:#b31d28;color:#fafbfc}.markdown .pl-c2{background-color:#d73a49;color:#fafbfc}.markdown .pl-c2:before{content:"^M"}.markdown .pl-sr .pl-cce{color:#22863a;font-weight:700}.markdown .pl-ml{color:#735c0f}.markdown .pl-mh,.markdown .pl-mh .pl-en,.markdown .pl-ms{color:#005cc5;font-weight:700}.markdown .pl-mi{color:#24292e;font-style:italic}.markdown .pl-mb{color:#24292e;font-weight:700}.markdown .pl-md{background-color:#ffeef0;color:#b31d28}.markdown .pl-mi1{background-color:#f0fff4;color:#22863a}.markdown .pl-mc{background-color:#ffebda;color:#e36209}.markdown .pl-mi2{background-color:#005cc5;color:#f6f8fa}.markdown .pl-mdr{color:#6f42c1;font-weight:700}.markdown .pl-ba{color:#586069}.markdown .pl-sg{color:#959da5}.markdown .pl-corl{color:#032f62;text-decoration:underline}.markdown .mb-0{margin-bottom:0!important}.markdown .my-2{margin-bottom:8px!important;margin-top:8px!important}.markdown .pl-0{padding-left:0!important}.markdown .py-0{padding-bottom:0!important;padding-top:0!important}.markdown .pl-1{padding-left:4px!important}.markdown .pl-2{padding-left:8px!important}.markdown .py-2{padding-bottom:8px!important;padding-top:8px!important}.markdown .pl-3{padding-left:16px!important}.markdown .pl-4{padding-left:24px!important}.markdown .pl-5{padding-left:32px!important}.markdown .pl-6{padding-left:40px!important}.markdown .pl-7{padding-left:48px!important}.markdown .pl-8{padding-left:64px!important}.markdown .pl-9{padding-left:80px!important}.markdown .pl-10{padding-left:96px!important}.markdown .pl-11{padding-left:112px!important}.markdown .pl-12{padding-left:128px!important}.markdown hr{border-bottom-color:#eee}.markdown kbd{background-color:#fafbfc;border:1px solid #d1d5da;border-radius:3px;box-shadow:inset 0 -1px 0 #d1d5da;color:#444d56;display:inline-block;font:11px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;line-height:10px;padding:3px 5px;vertical-align:middle}.markdown:after,.markdown:before{content:"";display:table}.markdown:after{clear:both}.markdown>:first-child{margin-top:0!important}.markdown>:last-child{margin-bottom:0!important}.markdown a:not([href]){color:inherit;text-decoration:none}.markdown blockquote,.markdown details,.markdown dl,.markdown ol,.markdown p,.markdown pre,.markdown table,.markdown ul{margin-bottom:16px;margin-top:0}.markdown hr{background-color:var(--markdown-border-color);border:0;height:.25em;margin:24px 0;padding:0}.markdown blockquote{border-left:.25em solid var(--markdown-blockquote-border-color);color:#6a737d;padding:0 1em}.markdown blockquote>:first-child{margin-top:0}.markdown blockquote>:last-child{margin-bottom:0}.markdown h1,.markdown h2,.markdown h3,.markdown h4,.markdown h5,.markdown h6{font-weight:600;line-height:1.25;margin-bottom:16px;margin-top:24px}.markdown h1{font-size:2em}.markdown h2{font-size:1.5em}.markdown h3{font-size:1.25em}.markdown h4{font-size:1em}.markdown h5{font-size:.875em}.markdown h6{color:#6a737d;font-size:.85em}.markdown ol,.markdown ul{padding-left:2em}.markdown ol ol,.markdown ol ul,.markdown ul ol,.markdown ul ul{margin-bottom:0;margin-top:0}.markdown ol{list-style-type:decimal}.markdown ul{list-style-type:disc}.markdown li{word-wrap:break-all;display:list-item;text-align:-webkit-match-parent}.markdown li>p{margin-top:16px}.markdown li+li{margin-top:.25em}.markdown dl{padding:0}.markdown dl dt{font-size:1em;font-style:italic;font-weight:600;margin-top:16px;padding:0}.markdown dl dd{margin-bottom:16px;padding:0 16px}.markdown table{display:block;overflow:auto;width:100%}.markdown table th{font-weight:600}.markdown table td,.markdown table th{border:1px solid var(--markdown-table-border-color);padding:6px 13px}.markdown table tr{border-top:1px solid var(--markdown-table-border-color)}.markdown table tr:nth-child(2n){background-color:var(--markdown-table-even-cell-background-color)}.markdown img{background-color:transparent;box-sizing:initial;display:block;margin:0 auto;max-width:100%}.markdown img[align=right]{padding-left:20px}.markdown img[align=left]{padding-right:20px}.markdown code{background-color:rgba(27,31,35,.05);border-radius:3px;font-size:85%;margin:0;padding:.2em .4em}.markdown pre{word-wrap:normal}.markdown pre>code{background:transparent;border:0;font-size:100%;margin:0;padding:0;white-space:pre;word-break:normal}.markdown .highlight{margin-bottom:16px}.markdown .highlight pre{margin-bottom:0;word-break:normal}.markdown .highlight pre,.markdown pre{background-color:#f6f8fa;border-radius:3px;font-size:85%;line-height:1.45;overflow:auto;padding:16px}.markdown pre code{word-wrap:normal;background-color:initial;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0}.markdown .commit-tease-sha{color:#444d56;display:inline-block;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:90%}.markdown .full-commit .btn-outline:not(:disabled):hover{border-color:#005cc5;color:#005cc5}.markdown .blob-wrapper{overflow-x:auto;overflow-y:hidden}.markdown .blob-wrapper-embedded{max-height:240px;overflow-y:auto}.markdown .blob-num{color:rgba(27,31,35,.3);cursor:pointer;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px;line-height:20px;min-width:50px;padding-left:10px;padding-right:10px;text-align:right;-webkit-user-select:none;-ms-user-select:none;user-select:none;vertical-align:top;white-space:nowrap;width:1%}.markdown .blob-num:hover{color:rgba(27,31,35,.6)}.markdown .blob-num:before{content:attr(data-line-number)}.markdown .blob-code{line-height:20px;padding-left:10px;padding-right:10px;position:relative;vertical-align:top}.markdown .blob-code-inner{word-wrap:normal;color:#24292e;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:12px;overflow:visible;white-space:pre}.markdown .pl-token.active,.markdown .pl-token:hover{background:#ffea7f;cursor:pointer}.markdown .tab-size[data-tab-size="1"]{-moz-tab-size:1;-o-tab-size:1;tab-size:1}.markdown .tab-size[data-tab-size="2"]{-moz-tab-size:2;-o-tab-size:2;tab-size:2}.markdown .tab-size[data-tab-size="3"]{-moz-tab-size:3;-o-tab-size:3;tab-size:3}.markdown .tab-size[data-tab-size="4"]{-moz-tab-size:4;-o-tab-size:4;tab-size:4}.markdown .tab-size[data-tab-size="5"]{-moz-tab-size:5;-o-tab-size:5;tab-size:5}.markdown .tab-size[data-tab-size="6"]{-moz-tab-size:6;-o-tab-size:6;tab-size:6}.markdown .tab-size[data-tab-size="7"]{-moz-tab-size:7;-o-tab-size:7;tab-size:7}.markdown .tab-size[data-tab-size="8"]{-moz-tab-size:8;-o-tab-size:8;tab-size:8}.markdown .tab-size[data-tab-size="9"]{-moz-tab-size:9;-o-tab-size:9;tab-size:9}.markdown .tab-size[data-tab-size="10"]{-moz-tab-size:10;-o-tab-size:10;tab-size:10}.markdown .tab-size[data-tab-size="11"]{-moz-tab-size:11;-o-tab-size:11;tab-size:11}.markdown .tab-size[data-tab-size="12"]{-moz-tab-size:12;-o-tab-size:12;tab-size:12}.markdown .task-list-item{list-style-type:none}.markdown .task-list-item+.task-list-item{margin-top:3px}.markdown .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown .table-of-contents{align-items:flex-start;display:flex;flex-direction:column;justify-content:center;position:fixed;right:0;top:75px;width:340px}@media(max-width:1300px){.markdown .table-of-contents{display:none}}.markdown .table-of-contents ul{cursor:pointer;list-style-type:none}.markdown .table-of-contents ul li a{border-bottom:none;color:var(--secondary-text-color);font-size:14px;height:30px;padding:6px 2px;width:100%}.markdown .table-of-contents ul p{margin:0}.markdown .gatsby-resp-image-wrapper{display:flex!important;justify-content:center!important;max-height:560px!important;width:100%!important}.markdown .gatsby-resp-image-wrapper img{height:auto!important;max-height:560px!important;max-width:100%!important;position:relative!important;width:auto!important}.markdown .gatsby-resp-image-wrapper+em{color:#6a737d;display:block;font-size:15px;font-style:italic;text-align:center}code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}.post-content{margin-bottom:20px;width:100%}.category-page-header-wrapper,.post-content{display:flex;flex-direction:column;justify-content:center}.category-page-header-wrapper{align-items:center;margin-bottom:30px;margin-top:30px}.category-page-header-wrapper .category-page-title{border-bottom:3px solid var(--primary-text-color);font-size:40px;font-weight:700;margin-bottom:15px;padding-bottom:7px;text-align:center;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}.category-page-header-wrapper .category-page-subtitle{font-size:20px;font-weight:500;padding-bottom:10px;text-align:center}.post-card-wrapper{display:flex;justify-content:center;min-height:150px;width:100%}.post-card-wrapper .post-card{border:1px solid var(--post-card-border-color);border-radius:6px;color:var(--primary-text-color);cursor:pointer;display:flex;flex-direction:column;height:100%;margin-bottom:15px;max-width:720px;padding:15px;transition:transform .2s;width:100%}.post-card-wrapper .post-card:hover .title{text-decoration:underline}@media(min-width:768px){.post-card-wrapper .post-card{margin-bottom:0}}.post-card-wrapper .post-card .title{font-size:18px;font-weight:600;line-height:1.4;margin-bottom:7px}.post-card-wrapper .post-card .description{-webkit-line-clamp:3;-webkit-box-orient:vertical;color:var(--primary-text-color);display:-webkit-box;font-size:13px;line-height:20px;margin-bottom:10px;overflow:hidden;text-overflow:ellipsis}.post-card-wrapper .post-card .info{color:var(--about-link-icon-color);display:flex;font-size:14px;justify-content:space-between;margin-top:auto}.post-card-wrapper .post-card .info .categories{display:flex}.post-card-wrapper .post-card .info .categories .category{margin-left:4px}.post-card-wrapper .post-card .info .categories .category:hover{text-decoration:underline}.post-card-column-wrapper{display:flex;justify-content:center;width:100%}.post-card-column-wrapper .post-card-column{align-items:center;display:flex;flex-direction:column}.post-card-column-wrapper .post-card-column .post-card-wrapper{margin-bottom:10px}.post-card-column-wrapper .post-card-column .more-post-card-button{background-color:var(--button-background-color);font-size:15px;font-weight:500;height:40px}.post-tabs-wrapper{align-self:flex-start;display:flex;flex-direction:column;justify-content:center;top:0;width:100%}.post-tabs-wrapper .post-tabs{display:flex;height:40px;justify-content:center;margin-bottom:12px;max-width:760px;width:100%}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTab-root{color:var(--tab-text-color);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:17px;font-weight:500;height:40px;min-height:auto;min-width:auto;padding:10px 12px;transition:all .2s ease}.post-tabs-wrapper .post-tabs .mui-tabs .Mui-selected,.post-tabs-wrapper .post-tabs .mui-tabs .MuiTab-root :hover{color:var(--tab-hover-text-color);transition:all .2s ease}.post-tabs-wrapper .post-tabs .mui-tabs .Mui-selected{background-color:var(--tab-selected-background-color);border-radius:8px;font-weight:600}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTabScrollButton-root{height:40px;width:20px}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTabs-scrollable{height:40px}.post-tabs-wrapper .post-tabs .mui-tabs .MuiTabs-indicator{display:none}</style><meta name="generator" content="Gatsby 3.14.6"/><style data-emotion="css-global o6gwfi">html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:rgba(0, 0, 0, 0.87);font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;background-color:#fff;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#fff;}</style><style data-emotion="css-global 1prfaxn">@-webkit-keyframes mui-auto-fill{from{display:block;}}@keyframes mui-auto-fill{from{display:block;}}@-webkit-keyframes mui-auto-fill-cancel{from{display:block;}}@keyframes mui-auto-fill-cancel{from{display:block;}}</style><style data-emotion="css 1l6di18 feqhe6 11tfndm mnn31 vubbuv 1yxmbwk 6flbmm">.css-1l6di18.Mui-focused .MuiAutocomplete-clearIndicator{visibility:visible;}@media (pointer: fine){.css-1l6di18:hover .MuiAutocomplete-clearIndicator{visibility:visible;}}.css-1l6di18 .MuiAutocomplete-tag{margin:3px;max-width:calc(100% - 6px);}.css-1l6di18 .MuiAutocomplete-inputRoot{-webkit-box-flex-wrap:wrap;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}.MuiAutocomplete-hasPopupIcon.css-1l6di18 .MuiAutocomplete-inputRoot,.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiAutocomplete-inputRoot{padding-right:30px;}.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiAutocomplete-inputRoot{padding-right:56px;}.css-1l6di18 .MuiAutocomplete-inputRoot .MuiAutocomplete-input{width:0;min-width:30px;}.css-1l6di18 .MuiInput-root{padding-bottom:1px;}.css-1l6di18 .MuiInput-root .MuiInput-input{padding:4px 4px 4px 0px;}.css-1l6di18 .MuiInput-root.MuiInputBase-sizeSmall .MuiInput-input{padding:2px 4px 3px 0;}.css-1l6di18 .MuiOutlinedInput-root{padding:9px;}.MuiAutocomplete-hasPopupIcon.css-1l6di18 .MuiOutlinedInput-root,.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiOutlinedInput-root{padding-right:39px;}.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiOutlinedInput-root{padding-right:65px;}.css-1l6di18 .MuiOutlinedInput-root .MuiAutocomplete-input{padding:7.5px 4px 7.5px 6px;}.css-1l6di18 .MuiOutlinedInput-root .MuiAutocomplete-endAdornment{right:9px;}.css-1l6di18 .MuiOutlinedInput-root.MuiInputBase-sizeSmall{padding:6px;}.css-1l6di18 .MuiOutlinedInput-root.MuiInputBase-sizeSmall .MuiAutocomplete-input{padding:2.5px 4px 2.5px 6px;}.css-1l6di18 .MuiFilledInput-root{padding-top:19px;padding-left:8px;}.MuiAutocomplete-hasPopupIcon.css-1l6di18 .MuiFilledInput-root,.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiFilledInput-root{padding-right:39px;}.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-1l6di18 .MuiFilledInput-root{padding-right:65px;}.css-1l6di18 .MuiFilledInput-root .MuiFilledInput-input{padding:7px 4px;}.css-1l6di18 .MuiFilledInput-root .MuiAutocomplete-endAdornment{right:9px;}.css-1l6di18 .MuiFilledInput-root.MuiInputBase-sizeSmall{padding-bottom:1px;}.css-1l6di18 .MuiFilledInput-root.MuiInputBase-sizeSmall .MuiFilledInput-input{padding:2.5px 4px;}.css-1l6di18 .MuiInputBase-hiddenLabel{padding-top:8px;}.css-1l6di18 .MuiAutocomplete-input{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;text-overflow:ellipsis;opacity:1;}.css-feqhe6{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;position:relative;min-width:0;padding:0;margin:0;border:0;vertical-align:top;width:100%;}.css-11tfndm{font-family:"Roboto","Helvetica","Arial",sans-serif;font-weight:400;font-size:1rem;line-height:1.4375em;letter-spacing:0.00938em;color:rgba(0, 0, 0, 0.87);box-sizing:border-box;position:relative;cursor:text;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;position:relative;}.css-11tfndm.Mui-disabled{color:rgba(0, 0, 0, 0.38);cursor:default;}label+.css-11tfndm{margin-top:16px;}.css-11tfndm:after{border-bottom:2px solid #1976d2;left:0;bottom:0;content:"";position:absolute;right:0;-webkit-transform:scaleX(0);-moz-transform:scaleX(0);-ms-transform:scaleX(0);transform:scaleX(0);-webkit-transition:-webkit-transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;transition:transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;pointer-events:none;}.css-11tfndm.Mui-focused:after{-webkit-transform:scaleX(1);-moz-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1);}.css-11tfndm.Mui-error:after{border-bottom-color:#d32f2f;-webkit-transform:scaleX(1);-moz-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1);}.css-11tfndm:before{border-bottom:1px solid rgba(0, 0, 0, 0.42);left:0;bottom:0;content:"\00a0";position:absolute;right:0;-webkit-transition:border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;pointer-events:none;}.css-11tfndm:hover:not(.Mui-disabled):before{border-bottom:2px solid rgba(0, 0, 0, 0.87);}@media (hover: none){.css-11tfndm:hover:not(.Mui-disabled):before{border-bottom:1px solid rgba(0, 0, 0, 0.42);}}.css-11tfndm.Mui-disabled:before{border-bottom-style:dotted;}.css-mnn31{font:inherit;letter-spacing:inherit;color:currentColor;padding:4px 0 5px;border:0;box-sizing:content-box;background:none;height:1.4375em;margin:0;-webkit-tap-highlight-color:transparent;display:block;min-width:0;width:100%;-webkit-animation-name:mui-auto-fill-cancel;animation-name:mui-auto-fill-cancel;-webkit-animation-duration:10ms;animation-duration:10ms;}.css-mnn31::-webkit-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31::-moz-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31:-ms-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31::-ms-input-placeholder{color:currentColor;opacity:0.42;-webkit-transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-mnn31:focus{outline:0;}.css-mnn31:invalid{box-shadow:none;}.css-mnn31::-webkit-search-decoration{-webkit-appearance:none;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31::-webkit-input-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31::-moz-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:-ms-input-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31::-ms-input-placeholder{opacity:0!important;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus::-webkit-input-placeholder{opacity:0.42;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus::-moz-placeholder{opacity:0.42;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus:-ms-input-placeholder{opacity:0.42;}label[data-shrink=false]+.MuiInputBase-formControl .css-mnn31:focus::-ms-input-placeholder{opacity:0.42;}.css-mnn31.Mui-disabled{opacity:1;-webkit-text-fill-color:rgba(0, 0, 0, 0.38);}.css-mnn31:-webkit-autofill{-webkit-animation-duration:5000s;animation-duration:5000s;-webkit-animation-name:mui-auto-fill;animation-name:mui-auto-fill;}.css-vubbuv{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:1.5rem;}.css-1yxmbwk{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;box-sizing:border-box;-webkit-tap-highlight-color:transparent;background-color:transparent;outline:0;border:0;margin:0;border-radius:0;padding:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;-moz-appearance:none;-webkit-appearance:none;-webkit-text-decoration:none;text-decoration:none;color:inherit;text-align:center;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;font-size:1.5rem;padding:8px;border-radius:50%;overflow:visible;color:rgba(0, 0, 0, 0.54);-webkit-transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;}.css-1yxmbwk::-moz-focus-inner{border-style:none;}.css-1yxmbwk.Mui-disabled{pointer-events:none;cursor:default;}@media print{.css-1yxmbwk{-webkit-print-color-adjust:exact;color-adjust:exact;}}.css-1yxmbwk:hover{background-color:rgba(0, 0, 0, 0.04);}@media (hover: none){.css-1yxmbwk:hover{background-color:transparent;}}.css-1yxmbwk.Mui-disabled{background-color:transparent;color:rgba(0, 0, 0, 0.26);}.css-6flbmm{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:1em;height:1em;display:inline-block;fill:currentColor;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;font-size:2.1875rem;}</style><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><script>
+  
+  function gaOptout(){document.cookie=disableStr+'=true; expires=Thu, 31 Dec 2099 23:59:59 UTC;path=/',window[disableStr]=!0}var gaProperty='G-NE46C2SFP9',disableStr='ga-disable-'+gaProperty;document.cookie.indexOf(disableStr+'=true')>-1&&(window[disableStr]=!0);
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'G-NE46C2SFP9', 'auto', {});
+      ga('set', 'anonymizeIp', true);
+      
+      
+      
+      
+      }</script><link rel="icon" href="/favicon-32x32.png?v=ad9e124e5060ab5ddbaf24744e1cfc72" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=ad9e124e5060ab5ddbaf24744e1cfc72"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><title data-react-helmet="true">운영체제의 메모리 훔쳐보기 1편 - 페이징(Paging)</title><meta data-react-helmet="true" name="viewport" content="initial-scale=1, width=device-width"/><meta data-react-helmet="true" property="og:title" content="운영체제의 메모리 훔쳐보기 1편 - 페이징(Paging)"/><meta data-react-helmet="true" property="og:site_title" content="운영체제의 메모리 훔쳐보기 1편 - 페이징(Paging)"/><meta data-react-helmet="true" name="description" content="운영체제의 핵심 부분인 하나인 메모리 관리에 대해서 적겠다. 대략 3편으로 구성되며 페이징,가상메모리,페이지 교체 알고리즘 순이다. MMU CPU는 프로세스를 구동할 때 PC를 참조해서 다음 명령어를 메모리에서 가져온다. 명령어를 참고해 필요한 데이터가 있으면 메모리에서 가져오는데 이때 주소체계가 서로 다르다. 아래의 그림처럼 base와 limit 레지스터 안에 있는 값들을 조합해서 CPU가 사용하는 주소(논리 주소)와 실제 메모리 주소(물리 주소)를 구할 수 있다.
+ 그러면 왜 두 주소를 구분하였을까? 가장 큰 이유는 보안이다. Limit 레지스터를 둠으로써, P1이 P2의 메모리 영역을 참조하는 Memory Illegal Access를 방지하는 Protection의 기능을 수행한다. MMU는 Memory-Management Unit의 약자로 위에서 말한 논리주소를 물리주소로 대응시켜주는 HW 장치이다. MMU 방식에서는 relocation 레지스터가 존재하는데, 프로세스가 메모…"/><meta data-react-helmet="true" property="og:description" content="운영체제의 핵심 부분인 하나인 메모리 관리에 대해서 적겠다. 대략 3편으로 구성되며 페이징,가상메모리,페이지 교체 알고리즘 순이다. MMU CPU는 프로세스를 구동할 때 PC를 참조해서 다음 명령어를 메모리에서 가져온다. 명령어를 참고해 필요한 데이터가 있으면 메모리에서 가져오는데 이때 주소체계가 서로 다르다. 아래의 그림처럼 base와 limit 레지스터 안에 있는 값들을 조합해서 CPU가 사용하는 주소(논리 주소)와 실제 메모리 주소(물리 주소)를 구할 수 있다.
+ 그러면 왜 두 주소를 구분하였을까? 가장 큰 이유는 보안이다. Limit 레지스터를 둠으로써, P1이 P2의 메모리 영역을 참조하는 Memory Illegal Access를 방지하는 Protection의 기능을 수행한다. MMU는 Memory-Management Unit의 약자로 위에서 말한 논리주소를 물리주소로 대응시켜주는 HW 장치이다. MMU 방식에서는 relocation 레지스터가 존재하는데, 프로세스가 메모…"/><meta data-react-helmet="true" property="og:author" content="황성우"/><meta data-react-helmet="true" property="og:image" content="/og-image.png"/><meta data-react-helmet="true" property="og:type" content="website"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc4.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxK.woff2"/><link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc4.woff2"/><style>@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format("woff2")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:300;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmSU5fBBc-.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:400;src:url(/static/webfonts/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxM.woff) format("woff")}@font-face{font-display:swap;font-family:Roboto;font-style:normal;font-weight:500;src:url(/static/webfonts/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc-.woff) format("woff")}</style><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link as="script" rel="preload" href="/webpack-runtime-a048459395523a53ab41.js"/><link as="script" rel="preload" href="/framework-0844db7521903bfd3aff.js"/><link as="script" rel="preload" href="/app-ec7df1f79da26ab0b74a.js"/><link as="script" rel="preload" href="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-d98b774c0c4dd083401f.js"/><link as="script" rel="preload" href="/component---src-templates-blog-template-js-58afbd34cca0a2914727.js"/><link as="fetch" rel="preload" href="/page-data/paging/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1073350324.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1956554647.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2938748437.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="page-wrapper"><header class="page-header-wrapper"><div class="page-header"><div class="front-section"><a class="link" href="/">becomeweasel.me</a></div><div class="trailing-section"><a class="link" href="/about">about</a><a class="link" href="/posts">posts</a><div class="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-1l6di18" role="combobox" aria-expanded="false"><div class="search-input-wrapper"><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root search-input css-feqhe6"><div class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-11tfndm"><input type="text" aria-invalid="false" autoComplete="off" value="" class="MuiInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-mnn31" aria-autocomplete="list" autoCapitalize="none" spellcheck="false"/><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium search-icon css-vubbuv" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="SearchOutlinedIcon"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></div></div></div></div></div></div></header><main class="page-content"><header class="post-header"><div class="emoji">📓</div><div class="info"><div class="categories"><a class="category" href="/posts/운영체제">운영체제</a></div></div><h1 class="title">운영체제의 메모리 훔쳐보기 1편 - 페이징(Paging)</h1><div class="info"><div class="author">posted by <strong>weasel</strong>,</div> <!-- -->January 17, 2022</div></header><div class="post-content"><div class="markdown"><p>운영체제의 핵심 부분인 하나인 메모리 관리에 대해서 적겠다.</p>
+<p>대략 3편으로 구성되며 페이징,가상메모리,페이지 교체 알고리즘 순이다.</p>
+<h2 id="mmu" style="position:relative;"><a href="#mmu" aria-label="mmu permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MMU</h2>
+<p>CPU는 프로세스를 구동할 때 PC를 참조해서 다음 명령어를 메모리에서 가져온다. 명령어를 참고해 필요한 데이터가 있으면 메모리에서 가져오는데 이때 주소체계가 서로 다르다.</p>
+<p>아래의 그림처럼 base와 limit 레지스터 안에 있는 값들을 조합해서 CPU가 사용하는 주소(<strong>논리 주소</strong>)와 실제 메모리 주소(<strong>물리 주소</strong>)를 구할 수 있다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 698px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 63.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABm0lEQVQ4y5VT2W6DMBDM//9QFVVVlV5JlFZV3xoREsDmChQKNuBAYKp1DoX0tjRi2cXD7Hg9SNMUnLtwbAsmE1h6gOPYMJmC5TeYz19hLBawLAumacK27WO8Wq1gGAaWy6UGYwyDzWaDoiggpYAsGmQSOs5EjTRXeE9TCCE0siyDlBJ5nmtQ7hAfagN8Wt0x8jwXk+kMV1fXuLsfw/cD/LYGXdfhFLTquoaqFBh3cf8wwcXFELd3D7Adpuvb7Vajbft7CT2FB0KS7tgOkiQBWULvVVWhLMvP/XRdX+FXRXqSAiIgf4Mg0KSFlDrn+z4Y47p2TvqtQjrJOI41AZlPm9fhGlEUYTZ7xGh0gyRJfyY8L9abeqfI8zVhU9c6Tz+Io+j4/a8KC1noeSOF5GHTNFBKIVpHOjceTzEcXiIMw7+1TP4Rwc5DCZdzyH3bRE6tcs57nv9ISGNDm/NcQJQV3ulZlJD7Q/j3KdPkc8fG3ItxGyiMQ4Ubr8IiFnrw27bV+LNCukYuY7DCNzyHEi+hwJMvwFO5J+xfhFPCD7eM7DDg7OotAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="base_limit"
+        title="base_limit"
+        src="/static/53293237460e0580fd3e06096cae4618/487bb/base_limit.png"
+        srcset="/static/53293237460e0580fd3e06096cae4618/e9ff0/base_limit.png 180w,
+/static/53293237460e0580fd3e06096cae4618/f21e7/base_limit.png 360w,
+/static/53293237460e0580fd3e06096cae4618/487bb/base_limit.png 698w"
+        sizes="(max-width: 698px) 100vw, 698px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>그러면 왜 두 주소를 구분하였을까?</p>
+<p><strong>가장 큰 이유는 보안이다.</strong> Limit 레지스터를 둠으로써, P1이 P2의 메모리 영역을 참조하는 Memory Illegal Access를 방지하는 Protection의 기능을 수행한다.</p>
+<p>MMU는 Memory-Management Unit의 약자로 위에서 말한 <strong>논리주소를 물리주소로 대응</strong>시켜주는 HW 장치이다.</p>
+<p>MMU 방식에서는 <strong>relocation 레지스터</strong>가 존재하는데, 프로세스가 메모리 주소를 만들때마다 relocation 레지스터 안의 값이 더해지고 이를 통해서 메모리에 접근할 수 있게 된다.</p>
+<blockquote>
+<p>base 레지스터와 역할이 동일하다고 생각하면 된다.</p>
+</blockquote>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 67.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABW0lEQVQ4y6WT246CQAyGef+XWq+MMSGREC84JAh4ADkLCojQzd/NsCOL64VNyDB0+rX9Oyj0gV0uF9rv93Q+n+l4PFIURaQMw0CvnsfjQbfbjZqmGVdY3/e85nlOrutSEAQMDsOQFDjmYLDr9UpJkpBhGBwAwBToed4IRKWKCBYm7wFEW6vViispy/Lp7CxQOJFVwNAq9mgzTVPabDZkWeZY4f1+HzUEEK0+AYui4AoOhwNDlsslbbdbDhDCx3HM76fTiRZfCwYhGeIwEN/3f4HIsF6vSdM0yvOCLMvig/iOd3y3bXucpK7rDHYch/2qqpJpmj9TBrCqKj6ADDBMs+s6quuaW0d10BOP6AgGTf9U+N9QRKA8BNmyLJvXcHpdxAo9AYW20Asavr02c3+ADEfrnuuxLFOfAKJCJH0JnGtf3svA3W7HGgrw2wqxyndU9uE+onJIg4G1bUvfQ0rofzCBvQ0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="mmu"
+        title="mmu"
+        src="/static/a464cc4a555c8d81e7c9044675a0c804/37523/mmu.png"
+        srcset="/static/a464cc4a555c8d81e7c9044675a0c804/e9ff0/mmu.png 180w,
+/static/a464cc4a555c8d81e7c9044675a0c804/f21e7/mmu.png 360w,
+/static/a464cc4a555c8d81e7c9044675a0c804/37523/mmu.png 720w,
+/static/a464cc4a555c8d81e7c9044675a0c804/f1901/mmu.png 942w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<h2 id="연속적인-할당contiguous-allocation" style="position:relative;"><a href="#%EC%97%B0%EC%86%8D%EC%A0%81%EC%9D%B8-%ED%95%A0%EB%8B%B9contiguous-allocation" aria-label="연속적인 할당contiguous allocation permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>연속적인 할당(Contiguous Allocation)</h2>
+<p>메모리에 프로그램을 연속적으로 할당하는 방법이다. 간단하게 말해서 아래에서부터 차례차례 채워가는 방식. 메모리를 연속적으로 사용하기 때문에 간단한 MMU만으로 구현할 수 있다.</p>
+<p>일반적으로 커널은 낮은 메모리주소에 배치되고, 유저 프로세스는 높아지는 메모리 주소를 가진다.</p>
+<p>또 커널을 제외한 메모리 영역을 하나로 보는 방식과 여러개의 파티션으로 보는 방식이 있다.</p>
+<p>여러개의 파티션으로 할당하는 방법에서는 다수의 고정된 크기의 파티션으로 나누어져 있고, 2개 이상의 파티션에 할당할때는 합병(merge)해서 할당한다.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 37.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiUlEQVQoz42R2ZKiUBBE+f/fmumZMUJlAgVFEFlEmu3ilU2Ey5loZnvtiqi3zIo6mZrj+nx527De7Pj6tmajm2x1k2/ftxi7I39nnudPrabUhOs6rFY/OBwO6FsdwzAwzT3r9RrbdhCiQqmZz4w2TRN1XVMKQSne8QKbLI+Q8k5dS8Krix+eGF7tYngOD4TM6J93lFIo9ULWOY+mYBx7tH9IQC4i4tQir1yUGlHzi7S0ycSJpssWnZAht9SivHt80A1Ds3jS4kjblWiFkDRdT9sNpGVILhyEvDBNL9quw7AMzOOe9yxZDkaJy9ZaESX28kbbP9ifNtiXn7S9QNvZPkGc0j9HKnmjrFxkHdD2krwslgy9s4cfRrR9gx96BMFHDGdkLSmqFMff4V9NHk35H1kpKEREVp4Qd49JDTRtw97acbAt4iRedK53xjqY2I7NOI1U9wrd0NlZBmmefrSsUPPvBnOREMQn0iJYMhzHgeDmECUOdSv+aGIuV5tchAvyc2gXT5ye6XrJL9elWmhPvz4wAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="multiple"
+        title="multiple"
+        src="/static/daa64d9681c0e3b5e19c2c0a0bb87311/37523/multiple.png"
+        srcset="/static/daa64d9681c0e3b5e19c2c0a0bb87311/e9ff0/multiple.png 180w,
+/static/daa64d9681c0e3b5e19c2c0a0bb87311/f21e7/multiple.png 360w,
+/static/daa64d9681c0e3b5e19c2c0a0bb87311/37523/multiple.png 720w,
+/static/daa64d9681c0e3b5e19c2c0a0bb87311/302a4/multiple.png 1080w,
+/static/daa64d9681c0e3b5e19c2c0a0bb87311/cdef6/multiple.png 1163w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>그런데 그림에서 마지막 단계를 잘보면 P10과 P2 사이의 빈 공간이 보인다.
+이것을 <strong>Hole</strong>이라고 하는데, 단순히 말해서 할당가능한 메모리의 영역이다.</p>
+<p>이 Hole은 크기가 커서 프로세스를 할당받을 정도가 되면 문제가 되지 않지만, 그 크기가 작을때는 <strong>파편화</strong> 문제가 생길 수 있다.</p>
+<h2 id="파편화-fragmentation" style="position:relative;"><a href="#%ED%8C%8C%ED%8E%B8%ED%99%94-fragmentation" aria-label="파편화 fragmentation permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>파편화 (Fragmentation)</h2>
+<p>파편화 혹은 단편화는 메모리 내에서 할당가능한 영역이 존재하지만, 할당이 불가능한 상태를 의미한다. 두가지 종류가 있다.</p>
+<ul>
+<li><strong>내부 파편화</strong>
+<ul>
+<li>
+<p>할당을 하는 단위가 존재할때 생긴다.</p>
+</li>
+<li>
+<p>프로그램이 <strong>필요한 사이즈보다 더 큰 메모리가 할당</strong>되면서 <strong>파티션 내부적</strong>으로 <strong>메모리 공간이 낭비</strong>되는 상황</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 380px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 109.44444444444446%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD5ElEQVQ4y52VfUyVVRzHjzPBP8KARlr/9LLVbG01wkGgVquJLE3MLNcq2ly8ielwpU6trbW5IhWbreCCttYUWHWRF0nuBYLLa/ImIslSiAuXO2wC3tfnwn3u/bTneS6XV/ujZ/vunPM953ye3znnd3YE//Pz+/1L+sLtkdC16jnZWsTp1hJygypWvVOtxUHvdFsJOc3nKe6sDkI1zQGO2yZZdS4ZUfQK4kIi4sKmgBIRxa8hipNmvaLNiJ82En0+TZ3sWwo4Yb/Lo0XvIcq2E1r6JstL3yCs7B2erExl3W/7ib+cTWjpDu4r3cHKizsRv27lJf2B+cC5S56w3SWyZBeicguiPBlRvg1RkRzQdkTlTkT567P+xUTW6T9aAJxFCofTyaFzn5Ne8AlZhYfYE1BmoMwoPBj09p49zId52XxV8s38PZwHnJxk+Onn8N4fiRS5BiliNZ7wh5AeiEIKj8KjlIoXsRrpwUeYCgljMGkLXjVEXxAaBNonJrA8vAaEQBYCvxBMh6zA8sRjDDz7DKNrn1J9n6JlQh03GB83Hzh3D+0T41gjItWBM1Kg7pAQnCtDcKwKm9enaCgmekGEc4BOm43ryduwxsUysmE9I+sTsCTEM/pCHKNximJVT9XGDYw8H01fehryvZbsdHs4+EMzad83kZmvKUMpdc1kFTSTqQu085vYo2tm97cmvvy5fUEezkKFzSnx1hcGXj1cTdJRA5uOVLP1MyO7jteSmltD6qlaNh81kHikmqRjBl78+DJ7z5jueR2F3ekmI9fIuzl1pHxdx/uKcmpJyTGSkmNg9wmj2lb8D07U8fbxGo6dbcQluXF7PEiSxNT01GyESh529f2NeczNgMWG+baLlq6/MDR2U9/Wxy9VJrr7LZjHXAyM2hmwOrjaN0D/8Bi9N/6kqdlER2c7Xq9XA7pcDloqPqX70j66LmWr6qjYR3tZFn/oM2jTp9NZuT/Qd4DO8iyuGE7i9SlnIiP7vMiyPBuh3TaOtTwK6gX+OgGKfhf46gWyKRS/aYXmzahWMFQVq50yvsV76LBPYq16HBoF/oYQqF+G3BSOu20tzisxODoSNL9hOTSEqj8zV7+M168BF52yEqG5NBJqBNMGTR6jYMqgSQrUvUqfUSBXC26VxywCBvPQ43Fzs/NHhru+w9yVh7k7D0uPjtFrBVh6CrD26rD2FjLcnYe5K5+hzjMM9ui16zYDmwtcKp/sLh93Jj3YnD5u33Hxz7gL/+KkY6lHQKgh+2T8Pi/4ZbzTEv3917nWe5VbN2/Q1mqipaUBt8uhLdHn1cbPjXARMGDe6+FZ+DD915x/AWmzg8onJNYUAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/4d25a9bbdf14f1297b598c1f475a84f6/3f520/1.png"
+        srcset="/static/4d25a9bbdf14f1297b598c1f475a84f6/e9ff0/1.png 180w,
+/static/4d25a9bbdf14f1297b598c1f475a84f6/f21e7/1.png 360w,
+/static/4d25a9bbdf14f1297b598c1f475a84f6/3f520/1.png 380w"
+        sizes="(max-width: 380px) 100vw, 380px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+</li>
+</ul>
+</li>
+<li><strong>외부 파편화</strong>
+<ul>
+<li>
+<p>남아있는 메모리가 흩어져 있어서 <strong>총 메모리 양은 할당할 수 있을 정도인데 실제론 할당할 수 없을때</strong></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 380px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 70.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAACaklEQVQ4y42T20tUURSHN/jUvxP0EJmXShsHRBSCsuzFl7IXg3DQsSh8EIsIghQTgop6M5wu44zM0SJpbPCSppaZlzMXx3Gam3rOOJdzvpgzOSRJzIZv77Vg8WOvtX9bWD8OcPxdK1XDFsxOKzWOdk472ih908qEPEduZXUNHZ1ilihzdSLeViHsdYiRRoTzPMJei7BVY1sZN4oyWhZdL1Jw6GEXfc0mBq410H+1jsdX6hhoqae32czyjMco0jTNECxGVGxXnAIhDLSSIyBKCnliyGYU6ZlM/ixCVCx1WlkvO8lqjYmfOcxm1kxnWa4sZ9P9qVC4L/Y/DMFgPE4KUIHkH/bjJa+fDb8PJREran45UeGVA+wk9ojHFBKxXYN4TEXZVpHcc7z4ME8olW85uZdC2Uuj/kUuV5Ip0pn8w4nVcQubI0fZcJXhl87glyoJuk7gdxwjGnDz4+kTPDctJFfmuPvqKw13HDT1SFzodtHY7eJSj8S5LgfueTnf8uZoBQwL0k6BIglUl0BzCNI2wa8tF7RcJiMEY4ODWJ5/obrDSX2XRNO9MS72jFF7W8J8awTnxAIB3xpiZXYIefoR6zP9yNO9yNN9Rrw22YvPu4DnwX0m21qJL07R/myK0us2TFZ7geoOO+U3bLgml3MGQ4Qju/mBHjLk1+9neTk6hS+xY+RL8hbuxQ0834N8/pYnF7sXA4RjeR0RCPiIRraIRsIFYtEwkXAIrz+AnklBJm2Yu6hX3v8JyaSKqqooioKi7JLNZg/eXNfRNJ2sph1KwYe5LZ1OEwwGDUKhTbxemVQq9c/vONzMB439G90vz+rZV6N5AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/e6c3534022ed6a8e9e75a1e42a4d30ac/3f520/2.png"
+        srcset="/static/e6c3534022ed6a8e9e75a1e42a4d30ac/e9ff0/2.png 180w,
+/static/e6c3534022ed6a8e9e75a1e42a4d30ac/f21e7/2.png 360w,
+/static/e6c3534022ed6a8e9e75a1e42a4d30ac/3f520/2.png 380w"
+        sizes="(max-width: 380px) 100vw, 380px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+</li>
+<li>
+<p>내부 파편화와는 다르게 할당을 하는 단위가 존재해도 생기고, 존재하지 않아도 생길 수 있다.</p>
+<ul>
+<li>존재할때는 왜 생길까?
+<ul>
+<li>B프로세스의 다음 메모리 공간을 보자.<br>
+원래는 프로세스가 들어갈 자리인데도 그 프로세스가 끝나고 D가 끝나지 않았다면 C는 들어가지 못한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>즉, 사용가능한 메모리 영역은 있는데, <strong>연속적이지 않은것이다.</strong></p>
+</li>
+<li>
+<p><strong>압축</strong>(compaction) 기법을 통해서 해결 할 수 있는데, <strong>오버헤드가 크다.</strong> (JVM GC의 mark-and-compaction 생각해보자.)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="세그멘테이션-segmentation" style="position:relative;"><a href="#%EC%84%B8%EA%B7%B8%EB%A9%98%ED%85%8C%EC%9D%B4%EC%85%98-segmentation" aria-label="세그멘테이션 segmentation permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>세그멘테이션 (Segmentation)</h2>
+<p>페이징 방법에서는 가상 메모리를 서로 <strong>같은</strong> 크기로 분할했지만, 세그먼테이션 방법에서는 서로 크기가 다른 논리적 단위인 세그먼트로 분할한다.</p>
+<p>세그먼트들의 크기가 각각 다르기 때문에(code를 위한것,데이터를 위한것…) 필요할때마다 빈 공간을 찾아서 해결한다.</p>
+<p>프로세스가 딱 필요한 만큼만 메모리를 배정해주기 때문에 내부파편화 문제는 없지만, <strong>외부 파편화 문제는 존재한다.</strong></p>
+<ul>
+<li>아래 그림을 보자. (a)번 상황에서 Segement 1이 빠지고 S7이 들어오면, S7이 더 작기 때문에 공간에는 맞지만 S2와 S7 사이에 빈공간이 생긴다.<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 602px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 58.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB4UlEQVQozz2T167CMBBE8/8fxAMIIUAIiQeq6BC4lCTUhBK6mKuzKIlk7F2vZ2fGxgnDUNvt1sbr9dLpdLL1brfT+/2W53maTCY2Ho+HfN/XeDy2+H6/a7PZaDqd2iB2giBQs9nUbDbT7XYzsHa7rfl8bg1YZzIZ5fN5Xa9X9Xo9ZbNZVSoVQabVaqlQKCiXy+lwOMjhB6AoiuwAM0xgGsexHVoul8aU/GKxUK1WU7fbtRpm4lKppOPxKAfKg8HADgG83+81HA61Wq0MgHg0GhnQ8/lUp9NRsVhUuVw2RkgHrFqt6nK5/ABd1zUAGFGE3PV6nTZgH0AawBRG+Jj4jS2Qot48hDYgJGgACzwFgBifkktJAFAEIA1gR84AOUBxwohOyMH08/lsMZLIIanf76cSeQkoIsctGyCmI4cNrp2OMEqeATGvAB/xkMbso4gLBJSbTwEBgwUsYZAA4BEFxPV63WpoAGCj0TBfIZPUYxuvxKGIDjzY7/drIMR4yxfH13Sf73aL0/jzfqf1AH8+HzmLv4U8z5fvByabt7Tb7rRee5aPwsiY43XgB/K9wGTG8c3qN5utouikMIx0vz/k4IXrzn5jOjOg+fxP06mrYxjZ34/BDTNQhJfkmMn91i9j+A9nsXKkCM571AAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/b1dbd33cde81c96667abffe610fab2d9/32056/3.png"
+        srcset="/static/b1dbd33cde81c96667abffe610fab2d9/e9ff0/3.png 180w,
+/static/b1dbd33cde81c96667abffe610fab2d9/f21e7/3.png 360w,
+/static/b1dbd33cde81c96667abffe610fab2d9/32056/3.png 602w"
+        sizes="(max-width: 602px) 100vw, 602px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></li>
+<li>비슷한 상황이 S4가 나가고 S5가 들어오는 상황에서도 생기고 3과 6의 상황에서도 생긴다.</li>
+</ul>
+<p>이런 빈 공간이 생기기 때문에 <strong>세그멘테이션은 외부파편화 문제</strong>가 여전히 존재한다.</p>
+<h2 id="페이징-paging" style="position:relative;"><a href="#%ED%8E%98%EC%9D%B4%EC%A7%95-paging" aria-label="페이징 paging permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>페이징 (Paging)</h2>
+<p><strong>논리적 메모리 주소 공간이 물리적인 메모리 공간에서 비연속적으로 배치하게끔 허용</strong>하는 기법을 의미한다.</p>
+<p>물리메모리를 고정된 사이즈의 <strong>프레임(Frame)</strong> 이라는 크기로 나누고, 동일한 사이즈로 논리메모리를 <strong>페이지(Page)</strong> 로 나눈다.</p>
+<p>즉 , 프로세스가 일정량의 페이지를 요구하면, 같은 양의 충분한 프레임을 찾아서 매치시켜준다. 그렇기 때문에 허용가능한 프레임을 추적해야한다.</p>
+<p>또 페이지와 매치되는 프레임을 찾기 위해 <strong>페이지 테이블</strong>을 관리해야 한다.</p>
+<p>하지만 외부 파편화 문제는 해결할 수 있지만(비연속적으로 배치하니) <strong>내부 파편화 문제는 여전히 존재한다.</strong></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 60.55555555555555%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACqElEQVQoz3WT22/iRhTG8zf3vQ/7UqnaSiut2j7sQzfKUtQbDQlRkna33e2WBCUGG0IABwjGFzw2l0C4GBtj/yqbbPvUI535zoxmPp35vpk927bRNA2r0cCQygwUBUuWMSsV7H4f4bjYtsBxHFzXYfiUydxxxL8ohI3neewBBGufSalE+/SUai5Hs1Dg/uyMSdNmuoDpA4zH4Pu7DEP+N/aiOE4L+6JE5eQ3rn4tUC6cUyuc42k6ERBHMfNHCAIIfFgsdoeXS7CNLa4ZMJ0lK/GuQ4iwL8rI55eUTz4gn11wc1okMKyUcBsFzOYhQbjB32yYzTds4w1BGOILQeAKwqSxOGZvvYrYPi6xy3Wk6zuUaxVZuqNaauCZJv2JhTkcoOom5khgDAVdy8YaCwxhoJs9rARHBnFCODC2zK054kpG+qvK9R9XlD9UqL6vsNT7NEWHjqnT6HW5M/q0DY1m/x5V11CNPi1d4942aZh3xHGUXDmGKET8/pZaJov03T7yQYZGJovf6xESE2w81kGAJWZYbtKZwHQE89WCMApY+Wtm8+CTKTsVxd9Fqvk8lVwOJX/EbT6P1+t/kphwA/461T2NONq5HUWwCWC9fjIlfnJZFC9Qjgtc/fwLlaNj6kfHTFoG42lEt+PQbA4olTp0uwNubzVMc5ISjkYrLi9vGI/n/z2bOIoYvXtL6+CA+v4+ajZL502GhaqxDmHozpCkKo1GG13v0Ww2UNUWy9UixWLxI7PZdEeYDGG4xVY79JQ6bUmhV01QZjmepJsMQ8e0zLTWdQNJKqe/5XE05GH6gOu6rDxvR9hqDxm7gr52T7vdon6jUKvJKLUq0nWJ0sc/Ofwpy+GPGd6d5Mi9ecXrr5/z/Tcv+eHFc1599SXffvGMl59/xvvDA/4Br3Bn0n0sxVkAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/da1e41f06c9203707421d30c09cc51a1/37523/4.png"
+        srcset="/static/da1e41f06c9203707421d30c09cc51a1/e9ff0/4.png 180w,
+/static/da1e41f06c9203707421d30c09cc51a1/f21e7/4.png 360w,
+/static/da1e41f06c9203707421d30c09cc51a1/37523/4.png 720w,
+/static/da1e41f06c9203707421d30c09cc51a1/bf433/4.png 971w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>위의 그림처럼 프로세스의 메모리주소를 <strong>같은 크기의 페이지</strong>로 나누고 물리 메모리의 <strong>프레임</strong>과 대응시킨다.</p>
+<p>이 대응이라는 것은 논리주소를 단순히 구성할 순 없고, 일반적으로 <code class="language-text">2^m</code>바이트의 논리 메모리 사이즈와 페이지 사이즈가 <code class="language-text">2^n</code>바이트일때, 아래와 같이 m 비트를 (m-n)비트,n비트로 구성한다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 640px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46.111111111111114%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABp0lEQVQoz12Si27aQBBF+f9/qlqhlNKC38bGdngZCiYBigs23vWuT2RHKCEjrbQzo3vn7KMnRMXhmNMfJoytOX+sJbafMhwneN4E27YxLRvX9RgbJo5lYzkextjEGBlYlo1hWKzSNdfrlR6A0g00kkbXaC3RSiJlhdaKpmm6pZSiqkS311ojZd1Ku7xWinv0LpecTVYycArMsGDklziR4OVYEU0DbMvB9yZM/IAwnHakYRDiOi5xnBBFcdf3/YD1evNOmOdn4mTGcrlit91heT5D0+TXaIQdBDiez3QaMV3McYIQ0/UYjsZYptUNcGyX/JzjeR69FvlrbLwJSf+JbRgR/+gzN+1uUPjtO7PhbxY/BwRPA9I0JUkS4jj+OPL9Hu7Gsq6RWUqznqGOO+r1DPn6l+J6ol4l1NslKkvRp+wB4u7R+1xo43Yruek9ggPi3zOCV6pmT1GskJwQlwWi3lKqHeXt2mnaR7rrHw0b0DSI/Ix8yZCnA3L2jNhniEYh/5+RqwXyeEAo2f2CzzAPhg+NuoaihPIG57zFfq9LCcfTR/7FrDV8A2k+pWerzZ9qAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/a4841b9d90ed38f138412d95f98dc2ee/6af66/5.png"
+        srcset="/static/a4841b9d90ed38f138412d95f98dc2ee/e9ff0/5.png 180w,
+/static/a4841b9d90ed38f138412d95f98dc2ee/f21e7/5.png 360w,
+/static/a4841b9d90ed38f138412d95f98dc2ee/6af66/5.png 640w"
+        sizes="(max-width: 640px) 100vw, 640px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>페이지 오프셋은 <code class="language-text">2^n</code>바이트의 페이지 중에서 현재 몇번째 바이트를 지시하는지 알려주고, m-n비트의 페이지 넘버는 페이지 테이블 내에서 몇번째 프레임을 가리키는데 사용된다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 720px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 67.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABxklEQVQ4y5VT23KbMBD1/39QOn1qp2ndJ2dMihMC2CBwQmKwwUjczOV0dhMxEPelO3NG0kp7OHthMQwD/hdkTdOgrmtem7oZ/Qva9H3P+Lyfnqcgv1IKVVUxYZ7nvF4RErRNg7VNVV4ul9FPSsuyfCf8eDk+PB6P46Umjg8HFKpA13Vo25ZRFAWTkq9QavzAgqRbTzaECNix3W7hOi6nQYjjGKZpQkqJ0+nEqaZpynd91zEhpUsrE2ZZhm/fb7G6W8P3BdbGPeI4YWUUuFrdYbN5QFkUrIoIlZS810aKR0IpFczNAzxfsIr9fo/dbocoimDbNgzDgOM4fEcfoHKQOiLuPhTq1GdN0cUduhZhkuFWpHAPZ1SFGmtHqVEwgRTqM8VpjhlhWVVwrEfYzzG++jn+vKSolMR5Mha623TWUzBLeUqYnc8Q3g7e2wk39gH3+wQYevhCwLIseJ7HpSCjGfxnDWcKVQlcWsRVjxsvh3V8L7xUilNcLpcMCqY0acSo81cpkyUqw4+nFX67BlKpYAWviJIUU6OGEIGOCcMQQRDM3iz0QKu6xE93jS+bX3h82cJ/FTBDG/abgPnswoq8kej6r+pG/AVx1esFOXKkYwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/786432a0051aae7f662255f805a5729f/37523/6.png"
+        srcset="/static/786432a0051aae7f662255f805a5729f/e9ff0/6.png 180w,
+/static/786432a0051aae7f662255f805a5729f/f21e7/6.png 360w,
+/static/786432a0051aae7f662255f805a5729f/37523/6.png 720w,
+/static/786432a0051aae7f662255f805a5729f/7de01/6.png 794w"
+        sizes="(max-width: 720px) 100vw, 720px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>이러한 페이징 방식에서 논리주소 변환은 위의 구조를 가진다.<br>
+잘보면 offset인 d는 주소 변환에는 안쓰이고 바로 물리주소에 대응시켜버린다.<br>
+반대로 p인 페이지 넘버는 page table내부에서 frame number와 매치시키기 위해서 사용되는데 p→f 의 역할을 하드웨어의 지원을 받아서 수행된다.</p>
+<h3 id="페이지-테이블" style="position:relative;"><a href="#%ED%8E%98%EC%9D%B4%EC%A7%80-%ED%85%8C%EC%9D%B4%EB%B8%94" aria-label="페이지 테이블 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>페이지 테이블</h3>
+<p>페이지 번호와 프레임 넘버를 매치시켜주는 구조를 페이지 테이블(Page Table)이라고 하는데 , <strong>메모리 안에 저장된다.</strong></p>
+<p>그렇기때문에 실제로 어떠한 메모리에 접근할때는 <strong>두 번의 메모리 접근</strong>이 필요하다.</p>
+<ol>
+<li>메모리에 있는 페이지 테이블 접근</li>
+<li>변환된 물리적 주소에 가서 메모리 접근</li>
+</ol>
+<p>이 메모리 접근은 꽤 비용이 큰 작업이기 때문에 <strong>TLB</strong>라는 새로운 하드웨어 캐시가 쓰인다.</p>
+<h3 id="tlb" style="position:relative;"><a href="#tlb" aria-label="tlb permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TLB</h3>
+<p>TLB는 Associative Memory라고도 불리는 하드웨어 캐시인데, 논리주소를 물리주소로 변환할때 메모리접근을 줄이기 위해서 사용된다.</p>
+<p>페이지테이블과 유사하게 페이지 번호와 프레임 번호가 대응되게 기록되어 있다.<br>
+다만, <strong>모든 페이지 번호가 TLB 안에 있는 것은 아니다.</strong></p>
+<p>물론 이 레코드들을 다 순차적으로 읽는것은 아니고, <strong>하드웨어의 지원을 받아 병렬적으로 읽기 때문에 매우 빠르다.</strong></p>
+<blockquote>
+<p>이에 관해서 좋은 답변이 있어서 공유한다. <a href="https://cs.stackexchange.com/questions/119744/%3Ehow-does-a-tlb-lookup-compare-all-keys-simultaneously">How does a TLB lookup compare all keys simultaneously?</a></p>
+</blockquote>
+<blockquote>
+<p>요악하자면 단일 CPU 안에서라도 파이프라이닝 기법을 이용해서 병렬적으로 읽는다는 것. (컴퓨터구조 수업을 참고하자.)</p>
+</blockquote>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 435px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 38.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAABkklEQVQoz1WPbW/aQBCE+f//ox/7oaqiNgoRtCppJdoSB0KTKA5gbIhxjH1+u/PZvieyY0V0pdFqd3ZHMwP6MsZwWvbKYzJdcGe7aF3TNFCWFVVtsNce1tLG+rfiKLL//ganYlVdk2YReRGTZkeCo0+chN0s0pBjdCCXb1w7t8iKmKyIyIq00xlgzLugVIpIrFHSoZAOqtwi1RvSfE0snpDltuO6fXtXOEi5JhK7zv0A0zps3gVF7qIJUMZHNc+oak+pd+SFQ5Ks0NpDtaj3qMZHcUDjI1Kfqm76yH1+qUuS0EY/TVFbC7X5i1p8p7TGFL+HpL++Ul6PUC2Wk/5mhnb+EIt97/BiiLm4hC/n6PmC7NMHpDVCbmYo7wbpL5GxTZasiCMblW8owgfk820nKNcz5NUZ2eePNFXNgDTFRBEkKTJJSBwLfT+hmY/h7gdmPkJfX1JMz0mvztCzYQduv3V8dTOmfPyJ8B56hyeRy6rCj3eEiceLcAlit+uhcDkEK/b7R8LI6Xan/EviEoiAujG8AsZxWzbwNLfIAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/1cce148d06dadcc98f64f766b8f297d8/330eb/7.png"
+        srcset="/static/1cce148d06dadcc98f64f766b8f297d8/e9ff0/7.png 180w,
+/static/1cce148d06dadcc98f64f766b8f297d8/f21e7/7.png 360w,
+/static/1cce148d06dadcc98f64f766b8f297d8/330eb/7.png 435w"
+        sizes="(max-width: 435px) 100vw, 435px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>TLB가 도입되면서 (p,d)의 논리주소를 물리적 주소로 변환하는 방법이 변했다.</p>
+<ol>
+<li><strong>TLB를 먼저 확인</strong>해서 p에 해당하는 프레임 번호가 있는지 찾는다.
+<ol>
+<li>있다면, <strong>프레임 넘버 f와 오프셋 d를 가지고 바로 메모리에 접근한다.</strong></li>
+<li>없다면 2번으로 간다.</li>
+</ol>
+</li>
+<li><strong>메모리</strong>에 있는 <strong>페이지 테이블을 확인</strong>한다.</li>
+<li>페이지 테이블에 적힌 <strong>프레임 넘버 f와 오프셋 d를 가지고 메모리에 접근한다.</strong></li>
+<li><strong>가장 최근에 사용된 (p,d)→(f,d) 를 TLB에 저장한다.</strong></li>
+</ol>
+<p>1,4번 때문에 TLB는 논리적→물리적 주소 변환에서 <strong>캐시 역할</strong>을 수행한다고 볼 수 있다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 672px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 74.44444444444443%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsTAAALEwEAmpwYAAACbElEQVQ4y42Ui27aMBSG+/4vs6nbpKpq1fVCS6eNNgmES4FCIEAuQBJCSGKSb7KhbF1baZaOnIv1neP/P/ZRHMf48zlRFLFYLJhOphRFwXa7RQjxbsh/ZVmq+Hcc9fp9riu31BsmZsOkVnvg6alLEAQqyXsx9+cqqQSmWU6SpirSPN8BT8/OedB02p0Ov2o19HqdPBcqY/FOFWEYqiqhRBv5XI5WXI1jHu0lR2PbpmE26T8PVHZn5pAma567T6zCQM0izw4yyKrCIEBIYFmgT5bcOIKKu0VzYo7kArlYjmSzod1q8bPZ5bvW5s7sq9n2l68qlHK86KeAs4yKI9Bnq9fANE25q9xwUmtx0vU51gZ8a7s0rBl2q8lkMEBiVlGkth0FSx5Hc26cXAG1t8AMQ9P4cm9w3Bjzudblkz7EeLZJnSnL6RTbnmBZFoZRp9NsUht6VD4CbtIUezymava4ao04rTW5bI2wvN2WkyyjWr2nen/P0LKIo5AfvYmCvQtcr9ckSaKey61gFYYH3eS7dFX2qjRHuS9Nsfcauh8AZah22X+LViuMkYc2jRgvVkq//wYme6AoSjKxaxHX8zhvT/ja8Wm5EXEYIMQfoHFwOX/r8mazwXddxo06lq6RbTZ4nsdZY8hpb45uOYTLhVr/ApTNfOVsufYKHv4GvoTIc5qaRkvXqBsG09mM657Dt7ZD3fYpRa5gqoiyZOAGPNoLFX0vfA2UI16vua1WOb+4wDRN1knC3Sjg3Irp+LGqqijKw1kuhKDTNDF1HZFlb4FSw7nv47ru/rxCZ2jz2HlmNHUOhingfutC3Uw7zX8DMRps0mGweUoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Untitled"
+        title="Untitled"
+        src="/static/933f463afc5e7f327eec24db9e5f669c/30d16/8.png"
+        srcset="/static/933f463afc5e7f327eec24db9e5f669c/e9ff0/8.png 180w,
+/static/933f463afc5e7f327eec24db9e5f669c/f21e7/8.png 360w,
+/static/933f463afc5e7f327eec24db9e5f669c/30d16/8.png 672w"
+        sizes="(max-width: 672px) 100vw, 672px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<blockquote>
+<p>💡 다만 일반적인 CPU 캐시(L1,L2…)와는 목적 자체가 다르다. TLB는 주소 변환 속도 향상을 위한것이어서 MMU에 의한 주소변환시에 생기고 , CPU 캐시는 데이터를 가져올때 메인 메모리 접근을 줄이기 위하여 메인 메모리 접근시점에 참조된다.
+물론 둘 다 메인 메모리 접근을 줄이기 위함이라는 점은 비슷하다.</p>
+</blockquote>
+<blockquote>
+<p>A cache stores a memory location temporarily while a TLB is like a cache that stores address translation (virtual to physical address)</p>
+</blockquote>
+<p><strong>단 이 TLB도 컨텍스트 스위칭이 일어날때 비워진다.</strong></p>
+<p>그 이유는 새로운 프로세스가 CPU를 할당받게 되면, 다른 메모리 주소공간을 참조할것이기 때문이다.<br>
+이때문에 컨텍스트 스위칭 직후 TLB 미스가 연속적으로 생긴다.</p>
+<h3 id="페이지-사이즈" style="position:relative;"><a href="#%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%9D%B4%EC%A6%88" aria-label="페이지 사이즈 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>페이지 사이즈</h3>
+<p>페이지의 크기에 대해서도 얘기해보자.<br>
+페이지의 크기를 정하면, 페이지 테이블의 크기도 결정되므로 적절한 페이지 크기 선정이 중요하다.</p>
+<p>여기서 말하는 <strong>적절한</strong>의 기준이 뭘까?</p>
+<blockquote>
+<p>만약 모든 프로세스가 4K만 요구하는데 페이지 사이즈가 8K면?</p>
+</blockquote>
+<blockquote>
+<p>모든 페이지에 4K만큼의 내부 파편화가 생기는 것이다.</p>
+</blockquote>
+<ul>
+<li>만약 페이지 사이즈가 크다면?
+<ul>
+<li>페이지 테이블의 크기는 줄어든다.</li>
+<li>한 개의 페이지 테이블안에 들어있는 데이터가 많으니 <strong>공간 지역성</strong>을 잘 만족한다.</li>
+<li>한 번에 많은 양의 데이터를 디스크에서 가져오니 <strong>I/O 작업이 줄어든다.</strong></li>
+<li><strong>내부 파편화</strong> 문제가 증가한다.</li>
+<li>필요하지 않은 데이터가 메모리에 올라올 수 있다.</li>
+</ul>
+</li>
+<li>만약 페이지 사이즈를 작다면?
+<ul>
+<li>내부 파편화 문제가 감소한다.</li>
+<li>필요한 데이터만 메모리에 가져올 수 있다.</li>
+<li><strong>공간 지역성</strong>을 지키기 어려워 페이지 폴트 발생 확률이 늘어난다.</li>
+<li>페이지 테이블 내의 엔트리가 많아지니 페이지 테이블의 크기가 커진다. <strong>오버헤드가 발생한다.</strong></li>
+</ul>
+</li>
+</ul>
+<p>따라서 여러가지 트레이드 오프를 고려해서 페이지의 크기를 정하는 것이 중요한데,<br>
+일반적으로 메모리 크기도 커지고, 프로세스 크기도 커져서 페이지 사이즈의 크기도 커지고 있다.</p>
+<p>리눅스 16.04 기준 아래와 같은 명령어로 페이지 사이즈를 알 수 있는데 4096으로 4K다.</p>
+<div class="gatsby-highlight" data-language="c"><pre class="language-c"><code class="language-c">$ getconf PAGESIZE
+<span class="token operator">></span> <span class="token number">4096</span></code></pre></div>
+<div class="table-of-contents">
+<ul>
+<li>
+<p><a href="#mmu">MMU</a></p>
+</li>
+<li>
+<p><a href="#%EC%97%B0%EC%86%8D%EC%A0%81%EC%9D%B8-%ED%95%A0%EB%8B%B9contiguous-allocation">연속적인 할당(Contiguous Allocation)</a></p>
+</li>
+<li>
+<p><a href="#%ED%8C%8C%ED%8E%B8%ED%99%94-fragmentation">파편화 (Fragmentation)</a></p>
+</li>
+<li>
+<p><a href="#%EC%84%B8%EA%B7%B8%EB%A9%98%ED%85%8C%EC%9D%B4%EC%85%98-segmentation">세그멘테이션 (Segmentation)</a></p>
+</li>
+<li>
+<p><a href="#%ED%8E%98%EC%9D%B4%EC%A7%95-paging">페이징 (Paging)</a></p>
+<ul>
+<li><a href="#%ED%8E%98%EC%9D%B4%EC%A7%80-%ED%85%8C%EC%9D%B4%EB%B8%94">페이지 테이블</a></li>
+<li><a href="#tlb">TLB</a></li>
+<li><a href="#%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%82%AC%EC%9D%B4%EC%A6%88">페이지 사이즈</a></li>
+</ul>
+</li>
+</ul>
+</div></div></div><div class="post-navigator"><div class="post-navigator-card-wrapper"><a class="post-card prev" href="/jvm-change-in-java8/"><div class="direction">이전 글</div><div class="title">JVM의 Java 8에서의 변화</div></a></div><div class="post-navigator-card-wrapper"><a class="post-card next" href="/array-and-linked-list/"><div class="direction">다음 글</div><div class="title">Array와 Linked List</div></a></div></div><div class="utterances"></div></main><footer class="page-footer-wrapper"><p class="page-footer">© <!-- -->2022<!-- --> <a href="https://github.com/BecomeWeasel">황성우</a> powered by<a href="https://github.com/zoomKoding/zoomkoding-gatsby-blog"> zoomkoding-gatsby-blog</a></p></footer><div class="dark-mode-button-wrapper"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium dark-mode-button css-1yxmbwk" tabindex="0" type="button"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge dark-mode-icon css-6flbmm" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="DarkModeIcon"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path></svg></button></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/paging/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b59c105ecff302a7ff41.js"],"app":["/app-ec7df1f79da26ab0b74a.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-1609a5c63343c5b466f4.js"],"component---src-pages-404-js":["/component---src-pages-404-js-6076882eaa290de4961c.js"],"component---src-pages-about-js":["/component---src-pages-about-js-9e01623d2a93f73a37dd.js"],"component---src-pages-index-js":["/component---src-pages-index-js-f6123af5be2f61005263.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-58afbd34cca0a2914727.js"],"component---src-templates-category-template-js":["/component---src-templates-category-template-js-e25a4807bff633ea1857.js"]};/*]]>*/</script><script src="/polyfill-b59c105ecff302a7ff41.js" nomodule=""></script><script src="/component---src-templates-blog-template-js-58afbd34cca0a2914727.js" async=""></script><script src="/f9d3028dbef90a6e9b8db85387d63dd9f4edf538-d98b774c0c4dd083401f.js" async=""></script><script src="/app-ec7df1f79da26ab0b74a.js" async=""></script><script src="/framework-0844db7521903bfd3aff.js" async=""></script><script src="/webpack-runtime-a048459395523a53ab41.js" async=""></script></body></html>
