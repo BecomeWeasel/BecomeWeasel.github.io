@@ -66,6 +66,13 @@ module.exports = {
           post: 'https://gdsc.community.dev/hanyang-university/',
         },
       },
+      {
+        date: '2022.03 ~',
+        activity: 'Metric Studio 인턴쉽',
+        links: {
+          post: 'https://www.metric-studio.com/',
+        },
+      },
     ],
 
     projects: [
