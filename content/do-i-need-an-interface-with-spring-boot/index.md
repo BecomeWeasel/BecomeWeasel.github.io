@@ -19,7 +19,9 @@ Spring boot를 사용하다보면, 종종 `service` (`@Service` annotation을 �
 이 포스트에서, 우리는 왜 그런 것을 하는지와 필요한가에 대해서 알아볼 것이다.
 
 ## 짧은 결론은
-짧은 결론은 꽤나 간단하다. ** `interface`를 만들 필요 없다. ** `service`를 만든다고 하면, class의 자체의 이름을 `TodoService`라고 하고 `autowire`를 통해서 bean들에 주입하면 된다. 예를 들어서 이런 코드가 있다고 해보자.
+짧은 결론은 꽤나 간단하다. **`interface`를 만들 필요가 없다.**  
+`service`를 만든다고 하면, class의 자체의 이름을 `TodoService`라고 하고 `autowire`를 통해서 bean들에 주입하면 된다.  
+예를 들어서 이런 코드가 있다고 해보자.
 
 ```java
 @Service
@@ -42,7 +44,8 @@ public class TodoFacade {
 위에 있는 예시는 `@Autowired`를 이용한 field injection을 사용하던 생성자 주입을 사용하던간에 **작동**할 것이다.
 
 ## 그럼 왜 신경써야할까?
-만약, 우리가 그게 필요하지 않다면... 왜 그런 방식(`inteface`를 이용한 방식)을 종종 쓰곤 할까? 음, 첫 번째 이유는 사실 좀 역사적인것이다. 하지만 그걸 살펴보기 전에 , Spring에서 annotation이 어떻게 작동하는지를 설명해야만 한다.
+만약, 우리가 그게 필요하지 않다면... 왜 그런 방식(`inteface`를 이용한 방식)을 종종 쓰곤 할까?  
+음, 첫 번째 이유는 사실 좀 역사적인것이다. 하지만 그걸 살펴보기 전에 , Spring에서 annotation이 어떻게 작동하는지를 설명해야만 한다.
 
 만약 `@Cacheable`같은 annotation을 사용한다고 하면, cache에서 결과를 얻을것이라고 예상할 수 있다. Spring에서 그것이 작동되는 방식은 bean들을 위한 proxy를 만들고 그 proxy들에 필요한 로직을 추가해주는것이다. 원래 스프링은 JDK dynamic proxies를 사용했다. 이 dynamic proxies는 오직 `interface`들만을 위해서 만들어졌고, 이것이 예전에는 `interface`를 작성해줘야 했던 이유다.
 
@@ -270,7 +273,9 @@ public class TodoFacadeTest {
 ## 결론
 만약 개인적으로 `interface`를 `serivce`에 사용해야 하냐는 질문을 받는다면, 내 대답은 **아니오**다. 유일한 예외는 제어의 역전을 사용하거나 여러개의 구현체를 신경써야 하는 경우다.
 
-만약의 경우를 위해서 `interface`를 만드는 게 좋지 않겠냐고 생각할 수 있다. 개인적으로 여전히 **아니오**다. 첫 번째로, "You aren't going to need it"(YAGNI) 라는 원칙을 믿는다. _필요할지도 몰라_ 라는 이유로 복잡성을 높일 이유는 없는데 , 일반적으로 **필요하지 않기** 때문이다. 두 번째로 필요한 경우라도 전혀 문제 없다. 대부분의 IDE들은 기존의 class에서 method만 추출해서 `interface`를 만들수 있게 해주고, 모든 코드들을 그 `interface`를 사용하게끔 순식간에 만든다.
+만약의 경우를 위해서 `interface`를 만드는 게 좋지 않겠냐고 생각할 수 있다. 개인적으로 여전히 **아니오**다.  
+첫 번째로, "You aren't going to need it"(YAGNI) 라는 원칙을 믿는다. _필요할지도 몰라_ 라는 이유로 복잡성을 높일 이유는 없는데 , 일반적으로 **필요하지 않기** 때문이다.  
+두 번째로 필요한 경우라도 전혀 문제 없다. 대부분의 IDE들은 기존의 class에서 method만 추출해서 `interface`를 만들수 있게 해주고, 모든 코드들을 그 `interface`를 사용하게끔 순식간에 만든다.
 
 ### 참고하면 좋은 자료
 [JDK Dynamic Proxy와 CGLIB의 차이점은 무엇일까?](https://gmoon92.github.io/spring/aop/2019/04/20/jdk-dynamic-proxy-and-cglib.html)
