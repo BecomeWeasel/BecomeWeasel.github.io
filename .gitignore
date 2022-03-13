@@ -26,3 +26,6 @@ public
 
 # hisotry
 .history
+
+# Intellij IDEA file
+.idea
