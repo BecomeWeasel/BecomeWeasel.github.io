@@ -23,9 +23,3 @@ public
 
 # Mac files
 .DS_Store
-
-# hisotry
-.history
-
-# Intellij IDEA file
-.idea

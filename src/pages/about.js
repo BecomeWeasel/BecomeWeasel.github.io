@@ -37,7 +37,6 @@ export const pageQuery = graphql`
             thumbnail
           }
           social {
-            resume
             github
             linkedIn
             email
