@@ -18,7 +18,7 @@ function HomePage({ data }) {
 
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo title="황성우의 우당탕탕 개발기" />
       <Bio author={author} language={language} />
       <PostTabs
         posts={posts}
