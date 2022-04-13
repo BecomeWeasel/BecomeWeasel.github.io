@@ -33,7 +33,8 @@ request의 URL만 보고 어떻게 찾아온다는 것일까? 그리고 _찾아�
 5. `DispatcherServlet`이 `ViewResolver`를 이용하여 결과를 보여줄 View를 가져온다.
 6. View 객체에게 `DispatcherServlet`이 응답 결과 생성을 요청한다.
 
-이 긴 과정 속에서 이 글에서 살펴볼 과정은 2,3번이다. Request flow 순서대로 `HandlerMapping`에 대해서 알아볼 것이다.
+이 긴 과정 속에서 이 글에서 살펴볼 과정은 2,3번이다.  
+Request flow 순서대로 `HandlerMapping`에 대해서 알아볼 것이다.
 
 ### DispatcherServlet
 먼저 `DispatcherServlet`에서 부터 출발해야한다. 상속구조부터 보면,
@@ -46,10 +47,11 @@ public abstract class HttpServletBean extends HttpServlet
 			↓
 public abstract class HttpServlet extends GenericServlet
 ```
-이렇게 상속구조를 통해 `DispatcherServlet`은 결국 `HttpServlet`을 상속함을 알 수 있다. 
+이렇게 상속구조를 통해 `DispatcherServlet`은 결국 `HttpServlet`을 상속함을 알 수 있다.  
 그렇기 때문에 `DispatcherServlet`도 `Servlet`의 생명주기와 비슷하게 흘러감을 알 수 있다. (`init(),doGet(),doPost(),service() 등등`)
 
-실제로 디버깅을 해보면, `doService`가 호출된다. 그 후 `DispatcherServlet`은 `front-controller` 역할을 하기 때문에 `doDispatch`를 호출한다.
+실제로 디버깅을 해보면, `doService`가 호출된다.  
+그 후 `DispatcherServlet`은 `front-controller` 역할을 하기 때문에 `doDispatch`를 호출한다.
 ```java
 protected void doService(HttpServletRequest request, HttpServletResponse response) throws Exception {
 ...
@@ -78,7 +80,8 @@ protected void doDispatch(HttpServletRequest request, HttpServletResponse respon
 ...
 ...
 ```
-`getHandler` 함수는 `DispatcherServlet`의 method로 아래와 같다. 이게 실제로 적절한 handler를 가져오는 방식인데 전혀 감이 안온다. 하나하나 풀이해보자.
+`getHandler` 함수는 `DispatcherServlet`의 method로 아래와 같다.  
+이게 실제로 적절한 handler를 가져오는 방식인데 전혀 감이 안온다. 하나하나 풀이해보자.
 ```java
 @Nullable
 protected HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception {
@@ -107,7 +110,7 @@ for(HandlerMapping mapping : this.handlerMappings){
 
 ```
 
-**`HandlerMapping`들에게 request에 맞는 handler를 가져오게하고,가져왔다면 그 handler를 return**하는것이다.
+**`HandlerMapping`들에게 request에 맞는 handler를 가져오게하고, 가져왔다면 그 handler를 return**하는것이다.
 ```java
   HandlerExecutionChain handler=mapping.getHandler(request);
   if (handler!=null)
@@ -116,11 +119,11 @@ for(HandlerMapping mapping : this.handlerMappings){
 
 핵심 부분은 **`HandlerMapping`에게 request에 맞는 handler를 가져오는** 부분이다. 이게 궁금해서 이 먼 길을 돌아온 것이다.
 
-`DispatcherServlet`부분의 내용을 정리하자면,
-1.`doService`이 호출된다.
-2.`doService`내에서 `doDispatch`가 호출된다.
-3.`doDispatch`내에서 `getHandler`가 호출된다.
-4.`getHandler`내에서 등록된 `HandlerMapping` 중에서 request에 걸맞는 handler를 가져온다.
+`DispatcherServlet`부분의 내용을 정리하자면, 
+1. `doService`이 호출된다.
+2. `doService`내에서 `doDispatch`가 호출된다.
+3. `doDispatch`내에서 `getHandler`가 호출된다.
+4. `getHandler`내에서 등록된 `HandlerMapping` 중에서 request에 걸맞는 handler를 가져온다.
 
 >이제 거의 다왔다.
 
@@ -132,11 +135,13 @@ public interface HandlerMapping {
 	HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception;
 }
 ```
-실제로 handler를 가져오는 `getHandler`는 추상 클래스인 `AbstractHandlerMapping`에 정의되어 있다.
+실제로 handler를 가져오는 `getHandler`는 추상 클래스인 `AbstractHandlerMapping`에 정의되어 있다.  
+
 우리가 흔히 아는 `RequestMappingHandlerMapping,SimpleUrlHandlerMapping` 같은 것들의 부모(_바로 윗단계는 아니지만_)가 `AbstratHandlerMapping`이다.
 
-아래는 `AbstractHandlerMapping`의 `getHandler` 코드이다. 
-`getHandlerInternal`을 통해서 handler을 찾아오고, `HandlerExecutionChain`을 return하는데,우리가 원하는건 handler를 찾아오는 방식이므로 `getHandlerInternal`을 봐야겠다.
+아래는 `AbstractHandlerMapping`의 `getHandler` 코드이다.  
+`getHandlerInternal`을 통해서 handler을 찾아오고, `HandlerExecutionChain`을 return하는데,  
+우리가 원하는건 handler를 찾아오는 방식이므로 `getHandlerInternal`을 봐야겠다.
 > `HandlerExecutionChain`은 간단하게 handler와 handler interceptor들을 모아놓은 것이다.
 >Handler execution chain, consisting of handler object and any handler interceptors. 
 
@@ -175,16 +180,20 @@ protected HandlerMethod getHandlerInternal(HttpServletRequest request) throws Ex
 ...
 }
 ```
-먼저 javadoc을 보면 _주어진 request에 대한 handler method를 찾습니다._ 라고 되어있다. 동작원리의 핵심적인 부분인것이다.
+먼저 javadoc을 보면 _주어진 request에 대한 handler method를 찾습니다._ 라고 되어있다.  
+동작원리의 핵심적인 부분인것이다.
 >Look up a handler method for the given request.
 
-`lookupPath`는 현재 servlet mapping 안에서의 검색경로인데, request 요청을 분석해서 얻을 수 있다. 그리고 **`mappingRegistry`에 대한 ReadLock을 가져오고 있다.**
+`lookupPath`는 현재 servlet mapping 안에서의 검색경로인데, request 요청을 분석해서 얻을 수 있다.  
+그리고 **`mappingRegistry`에 대한 ReadLock을 가져오고 있다.**
 ```java
 String lookupPath = getUrlPathHelper().getLookupPathForRequest(request);
 this.mappingRegistry.acquireReadLock();
 ```
 
-`lookupPath`를 바탕으로 `lookupHandlerMethod`를 통해서 **적절한 `handlerMethod`를 가져온 후 return 한다**, 이 `handlerMethod`가 바로 우리가 직접 Controller 안에 정의한 함수인것이다.
+`lookupPath`를 바탕으로 `lookupHandlerMethod`를 통해서 **적절한 `handlerMethod`를 가져온 후 return 한다**.  
+
+이 `handlerMethod`가 바로 우리가 직접 Controller 안에 정의한 함수인것이다.
 
 ```java
 try {
@@ -198,7 +207,9 @@ try {
 
 ![](https://images.velog.io/images/hsw0194/post/96c33f73-1c61-47c2-920f-965fdadc0bff/Untitled%20Diagram%20(1).jpg)
 
-**그러나 궁금증이 더 남아있다. url에 해당하는 적절한 method를 구별하는 방법과, method를 가져오는 것이 여전히 궁금하다.**
+그러나 궁금증이 더 남아있다.  
+
+**url에 해당하는 적절한 method를 구별하는 방법과, method를 가져오는 것이 여전히 궁금하다.**  
 각각 **MappingRegistry**와 **Reflection**이 답이다.
 
 나머지 궁금증은 2편에서 마저 다루도록 한다.
