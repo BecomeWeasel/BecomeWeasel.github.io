@@ -54,7 +54,7 @@ module.exports = {
 
       {
         date: '2020.01 ~ 2021.10',
-        activity: '군 복무 & Solved.ac 골드 1 달성',
+        activity: '군 복무 & Solved.ac 플래티넘 5 달성',
         links: {
           post: 'https://www.acmicpc.net/user/hsw0194',
         },
@@ -67,7 +67,7 @@ module.exports = {
         },
       },
       {
-        date: '2022.03 ~',
+        date: '2022.03 ~ 2022.06',
         activity: 'Metric Studio 인턴쉽',
         links: {
           post: 'https://www.metric-studio.com/',
